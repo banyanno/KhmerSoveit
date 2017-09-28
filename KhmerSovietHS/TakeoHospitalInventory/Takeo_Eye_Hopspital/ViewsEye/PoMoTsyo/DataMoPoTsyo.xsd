@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataMoPoTsyo" targetNamespace="http://tempuri.org/DataMoPoTsyo.xsd" xmlns:mstns="http://tempuri.org/DataMoPoTsyo.xsd" xmlns="http://tempuri.org/DataMoPoTsyo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_MoPoTysoTableAdapter" GeneratorDataComponentClassName="V_MoPoTysoTableAdapter" Name="V_MoPoTyso" UserDataComponentName="V_MoPoTysoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_MoPoTyso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     PatientNo, MoPoTsyCode, NameEng, NameKhmer, Age, Male, Female, Sex, Address, Treatment, TreatmentFee, AppDate, Filled, MoPoID, DRetina_desease, DCataract,
+                       DPteriguim, DGlaucom, DRefractive_error, DOther_deseases, Diagnosis, CreateDate, OPTReceipt, OPTReceiptNo, InReceipt, InReceiptNo, OldReceipt, OldReceiptNo, 
+                      NewReceipt, NewReceiptNo, PeriodDiabete, TyeOfDR
+FROM         V_MoPoTyso</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="MoPoTsyCode" DataSetColumn="MoPoTsyCode" />
+              <Mapping SourceColumn="NameEng" DataSetColumn="NameEng" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Male" DataSetColumn="Male" />
+              <Mapping SourceColumn="Female" DataSetColumn="Female" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Treatment" DataSetColumn="Treatment" />
+              <Mapping SourceColumn="TreatmentFee" DataSetColumn="TreatmentFee" />
+              <Mapping SourceColumn="AppDate" DataSetColumn="AppDate" />
+              <Mapping SourceColumn="Filled" DataSetColumn="Filled" />
+              <Mapping SourceColumn="MoPoID" DataSetColumn="MoPoID" />
+              <Mapping SourceColumn="DRetina_desease" DataSetColumn="DRetina_desease" />
+              <Mapping SourceColumn="DCataract" DataSetColumn="DCataract" />
+              <Mapping SourceColumn="DPteriguim" DataSetColumn="DPteriguim" />
+              <Mapping SourceColumn="DGlaucom" DataSetColumn="DGlaucom" />
+              <Mapping SourceColumn="DRefractive_error" DataSetColumn="DRefractive_error" />
+              <Mapping SourceColumn="DOther_deseases" DataSetColumn="DOther_deseases" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="OPTReceipt" DataSetColumn="OPTReceipt" />
+              <Mapping SourceColumn="OPTReceiptNo" DataSetColumn="OPTReceiptNo" />
+              <Mapping SourceColumn="InReceipt" DataSetColumn="InReceipt" />
+              <Mapping SourceColumn="InReceiptNo" DataSetColumn="InReceiptNo" />
+              <Mapping SourceColumn="OldReceipt" DataSetColumn="OldReceipt" />
+              <Mapping SourceColumn="OldReceiptNo" DataSetColumn="OldReceiptNo" />
+              <Mapping SourceColumn="NewReceipt" DataSetColumn="NewReceipt" />
+              <Mapping SourceColumn="NewReceiptNo" DataSetColumn="NewReceiptNo" />
+              <Mapping SourceColumn="PeriodDiabete" DataSetColumn="PeriodDiabete" />
+              <Mapping SourceColumn="TyeOfDR" DataSetColumn="TyeOfDR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_MoPoTyso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDate" GeneratorSourceName="FillByByDate" GetMethodModifier="Public" GetMethodName="GetDataByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDate" UserSourceName="FillByByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Address, Age, AppDate, CreateDate, DCataract, DGlaucom, DOther_deseases, DPteriguim, DRefractive_error, DRetina_desease, Diagnosis, Female, Filled, InReceipt, InReceiptNo, Male, MoPoID, MoPoTsyCode, NameEng, NameKhmer, NewReceipt, NewReceiptNo, OPTReceipt, OPTReceiptNo, OldReceipt, OldReceiptNo, PatientNo, PeriodDiabete, Sex, Treatment, TreatmentFee, TyeOfDR FROM V_MoPoTyso WHERE (CAST(CONVERT (VARCHAR(10), CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_MoPoTyso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByDateAndPatientNo" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDateAndPatientNo" GeneratorSourceName="FillByDateAndPatientNo" GetMethodModifier="Public" GetMethodName="GetDataByDateAndPatientNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDateAndPatientNo" UserSourceName="FillByDateAndPatientNo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Address, Age, AppDate, CreateDate, DCataract, DGlaucom, DOther_deseases, DPteriguim, DRefractive_error, DRetina_desease, Diagnosis, Female, Filled, InReceipt, InReceiptNo, Male, MoPoID, MoPoTsyCode, NameEng, NameKhmer, NewReceipt, NewReceiptNo, OPTReceipt, OPTReceiptNo, OldReceipt, OldReceiptNo, PatientNo, PeriodDiabete, Sex, Treatment, TreatmentFee, TyeOfDR FROM V_MoPoTyso WHERE (PatientNo = @PatientNo) AND (CAST(CONVERT (VARCHAR(10), CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="PatientNo" ColumnName="PatientNo" DataSourceName="TakeoDB.dbo.V_MoPoTyso" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataMoPoTsyo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataMoPoTsyo" msprop:Generator_DataSetName="DataMoPoTsyo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_MoPoTyso" msprop:Generator_UserTableName="V_MoPoTyso" msprop:Generator_RowDeletedName="V_MoPoTysoRowDeleted" msprop:Generator_RowChangedName="V_MoPoTysoRowChanged" msprop:Generator_RowClassName="V_MoPoTysoRow" msprop:Generator_RowChangingName="V_MoPoTysoRowChanging" msprop:Generator_RowEvArgName="V_MoPoTysoRowChangeEvent" msprop:Generator_RowEvHandlerName="V_MoPoTysoRowChangeEventHandler" msprop:Generator_TableClassName="V_MoPoTysoDataTable" msprop:Generator_TableVarName="tableV_MoPoTyso" msprop:Generator_RowDeletingName="V_MoPoTysoRowDeleting" msprop:Generator_TablePropName="V_MoPoTyso">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="MoPoTsyCode" msprop:Generator_UserColumnName="MoPoTsyCode" msprop:Generator_ColumnVarNameInTable="columnMoPoTsyCode" msprop:Generator_ColumnPropNameInRow="MoPoTsyCode" msprop:Generator_ColumnPropNameInTable="MoPoTsyCodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameEng" msprop:Generator_UserColumnName="NameEng" msprop:Generator_ColumnVarNameInTable="columnNameEng" msprop:Generator_ColumnPropNameInRow="NameEng" msprop:Generator_ColumnPropNameInTable="NameEngColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Male" msprop:Generator_UserColumnName="Male" msprop:Generator_ColumnVarNameInTable="columnMale" msprop:Generator_ColumnPropNameInRow="Male" msprop:Generator_ColumnPropNameInTable="MaleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Female" msprop:Generator_UserColumnName="Female" msprop:Generator_ColumnVarNameInTable="columnFemale" msprop:Generator_ColumnPropNameInRow="Female" msprop:Generator_ColumnPropNameInTable="FemaleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Treatment" msprop:Generator_UserColumnName="Treatment" msprop:Generator_ColumnVarNameInTable="columnTreatment" msprop:Generator_ColumnPropNameInRow="Treatment" msprop:Generator_ColumnPropNameInTable="TreatmentColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TreatmentFee" msprop:Generator_UserColumnName="TreatmentFee" msprop:Generator_ColumnVarNameInTable="columnTreatmentFee" msprop:Generator_ColumnPropNameInRow="TreatmentFee" msprop:Generator_ColumnPropNameInTable="TreatmentFeeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AppDate" msprop:Generator_UserColumnName="AppDate" msprop:Generator_ColumnVarNameInTable="columnAppDate" msprop:Generator_ColumnPropNameInRow="AppDate" msprop:Generator_ColumnPropNameInTable="AppDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Filled" msprop:Generator_UserColumnName="Filled" msprop:Generator_ColumnVarNameInTable="columnFilled" msprop:Generator_ColumnPropNameInRow="Filled" msprop:Generator_ColumnPropNameInTable="FilledColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MoPoID" msprop:Generator_UserColumnName="MoPoID" msprop:Generator_ColumnVarNameInTable="columnMoPoID" msprop:Generator_ColumnPropNameInRow="MoPoID" msprop:Generator_ColumnPropNameInTable="MoPoIDColumn" type="xs:decimal" />
+              <xs:element name="DRetina_desease" msprop:Generator_UserColumnName="DRetina_desease" msprop:Generator_ColumnVarNameInTable="columnDRetina_desease" msprop:Generator_ColumnPropNameInRow="DRetina_desease" msprop:Generator_ColumnPropNameInTable="DRetina_deseaseColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DCataract" msprop:Generator_UserColumnName="DCataract" msprop:Generator_ColumnVarNameInTable="columnDCataract" msprop:Generator_ColumnPropNameInRow="DCataract" msprop:Generator_ColumnPropNameInTable="DCataractColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DPteriguim" msprop:Generator_UserColumnName="DPteriguim" msprop:Generator_ColumnVarNameInTable="columnDPteriguim" msprop:Generator_ColumnPropNameInRow="DPteriguim" msprop:Generator_ColumnPropNameInTable="DPteriguimColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DGlaucom" msprop:Generator_UserColumnName="DGlaucom" msprop:Generator_ColumnVarNameInTable="columnDGlaucom" msprop:Generator_ColumnPropNameInRow="DGlaucom" msprop:Generator_ColumnPropNameInTable="DGlaucomColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DRefractive_error" msprop:Generator_UserColumnName="DRefractive_error" msprop:Generator_ColumnVarNameInTable="columnDRefractive_error" msprop:Generator_ColumnPropNameInRow="DRefractive_error" msprop:Generator_ColumnPropNameInTable="DRefractive_errorColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DOther_deseases" msprop:Generator_UserColumnName="DOther_deseases" msprop:Generator_ColumnVarNameInTable="columnDOther_deseases" msprop:Generator_ColumnPropNameInRow="DOther_deseases" msprop:Generator_ColumnPropNameInTable="DOther_deseasesColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OPTReceipt" msprop:Generator_UserColumnName="OPTReceipt" msprop:Generator_ColumnVarNameInTable="columnOPTReceipt" msprop:Generator_ColumnPropNameInRow="OPTReceipt" msprop:Generator_ColumnPropNameInTable="OPTReceiptColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OPTReceiptNo" msprop:Generator_UserColumnName="OPTReceiptNo" msprop:Generator_ColumnVarNameInTable="columnOPTReceiptNo" msprop:Generator_ColumnPropNameInRow="OPTReceiptNo" msprop:Generator_ColumnPropNameInTable="OPTReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InReceipt" msprop:Generator_UserColumnName="InReceipt" msprop:Generator_ColumnVarNameInTable="columnInReceipt" msprop:Generator_ColumnPropNameInRow="InReceipt" msprop:Generator_ColumnPropNameInTable="InReceiptColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InReceiptNo" msprop:Generator_UserColumnName="InReceiptNo" msprop:Generator_ColumnVarNameInTable="columnInReceiptNo" msprop:Generator_ColumnPropNameInRow="InReceiptNo" msprop:Generator_ColumnPropNameInTable="InReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OldReceipt" msprop:Generator_UserColumnName="OldReceipt" msprop:Generator_ColumnVarNameInTable="columnOldReceipt" msprop:Generator_ColumnPropNameInRow="OldReceipt" msprop:Generator_ColumnPropNameInTable="OldReceiptColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OldReceiptNo" msprop:Generator_UserColumnName="OldReceiptNo" msprop:Generator_ColumnVarNameInTable="columnOldReceiptNo" msprop:Generator_ColumnPropNameInRow="OldReceiptNo" msprop:Generator_ColumnPropNameInTable="OldReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NewReceipt" msprop:Generator_UserColumnName="NewReceipt" msprop:Generator_ColumnVarNameInTable="columnNewReceipt" msprop:Generator_ColumnPropNameInRow="NewReceipt" msprop:Generator_ColumnPropNameInTable="NewReceiptColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NewReceiptNo" msprop:Generator_UserColumnName="NewReceiptNo" msprop:Generator_ColumnVarNameInTable="columnNewReceiptNo" msprop:Generator_ColumnPropNameInRow="NewReceiptNo" msprop:Generator_ColumnPropNameInTable="NewReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PeriodDiabete" msprop:Generator_UserColumnName="PeriodDiabete" msprop:Generator_ColumnPropNameInRow="PeriodDiabete" msprop:Generator_ColumnVarNameInTable="columnPeriodDiabete" msprop:Generator_ColumnPropNameInTable="PeriodDiabeteColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TyeOfDR" msprop:Generator_UserColumnName="TyeOfDR" msprop:Generator_ColumnPropNameInRow="TyeOfDR" msprop:Generator_ColumnVarNameInTable="columnTyeOfDR" msprop:Generator_ColumnPropNameInTable="TyeOfDRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="TakeoDB" Class="TakeoHospitalInventoryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ITD-YANO120;Failover Partner=192.168.111.252\sql2;Initial Catalog=KhmerSovietDB;Persist Security Info=True;User ID=sa;Max Pool Size=4000;Asynchronous Processing=True;Connect Timeout=1000;Packet Size=2768" SettingsObjectName="TakeoHospitalInventory.My.MySettings" SettingsPropertyName="TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblCabinet" Member="tblCabinets">
+    <Type Name="tblCabinet">
+      <Column Name="CabinetID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CabinetName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCabinetLocation" Member="tblCabinetLocations">
+    <Type Name="tblCabinetLocation">
+      <Column Name="LocationID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShelfNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BlockNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CabinetID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="CateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CateName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CateDescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ItemCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblChemical" Member="tblChemicals">
+    <Type Name="tblChemical">
+      <Column Name="ChemicalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChemicalName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItemChemicalDetail" Member="tblItemChemicalDetails">
+    <Type Name="tblItemChemicalDetail">
+      <Column Name="ItemChemicalDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChemicalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContainerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItemUnit" Member="tblItemUnits">
+    <Type Name="tblItemUnit">
+      <Column Name="ItemUnitID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemUnitName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLabourFactory" Member="tblLabourFactories">
+    <Type Name="tblLabourFactory">
+      <Column Name="LabourFacID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LabourFacName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="LabourPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LabourFacAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LabourFacEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LabourFacFax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LabourFacRegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLocationItemDetail" Member="tblLocationItemDetails">
+    <Type Name="tblLocationItemDetail">
+      <Column Name="LocationItemDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOrderDetail" Member="tblOrderDetails">
+    <Type Name="tblOrderDetail">
+      <Column Name="OrderDetailID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LabourID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsUnStock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPermissionItemShoworHideForDepart" Member="tblPermissionItemShoworHideForDeparts">
+    <Type Name="tblPermissionItemShoworHideForDepart">
+      <Column Name="PermissionItemShoworHideForDepartID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPurchaseOrderStatus" Member="tblPurchaseOrderStatus">
+    <Type Name="tblPurchaseOrderStatus">
+      <Column Name="POStatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="POStatus" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceivedDetail" Member="tblReceivedDetails">
+    <Type Name="tblReceivedDetail">
+      <Column Name="ReceivedDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceivedID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ReceivedQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceivedStatusTracking" Member="tblReceivedStatusTrackings">
+    <Type Name="tblReceivedStatusTracking">
+      <Column Name="ReceivedStatusTrackingID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceivedID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="POStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDReceivedUpdateStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateReceivedStatusDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestStatusTracking" Member="tblRequestStatusTrackings">
+    <Type Name="tblRequestStatusTracking">
+      <Column Name="RequestStatusTrackingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="POStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDRequestUpdateStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateRequestStatusDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVender" Member="tblVenders">
+    <Type Name="tblVender">
+      <Column Name="VenderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VenderName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="VenderPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VenderEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VenderFax" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VenderAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsDonator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsVendor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMarkDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReceived" Member="tblReceiveds">
+    <Type Name="tblReceived">
+      <Column Name="ReceivedID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceivedDepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsed" Member="tblUseds">
+    <Type Name="tblUsed">
+      <Column Name="UsedID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UsedDepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UsedDescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="UsedUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsedDetail" Member="tblUsedDetails">
+    <Type Name="tblUsedDetail">
+      <Column Name="UsedDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UsedID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UsedQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBeginBalanceTrace" Member="tblBeginBalanceTraces">
+    <Type Name="tblBeginBalanceTrace">
+      <Column Name="BeginBalanceTraceID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BeginBalanceOfDay" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEndofMonthRun" Member="tblEndofMonthRuns">
+    <Type Name="tblEndofMonthRun">
+      <Column Name="Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RequestQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsedQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BeginBalance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndBalance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeptStock" Member="tblDeptStocks">
+    <Type Name="tblDeptStock">
+      <Column Name="DeptStockID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitsInStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockAlertQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAdjustStockHistory" Member="tblAdjustStockHistories">
+    <Type Name="tblAdjustStockHistory">
+      <Column Name="AdjustStockID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NewQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Difference" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AdjustDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsApproval" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ApprovalUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblPatients" Member="TblPatients">
+    <Type Name="TblPatient">
+      <Column Name="No" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientNo" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OlePatientNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Commune" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameEng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameKhmer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Male" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Female" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Neighborly" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Years" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Achieve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblDoctor" Member="TblDoctors">
+    <Type Name="TblDoctor">
+      <Column Name="DoctorNo" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoctorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Job" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEndofDayRunStatus" Member="tblEndofDayRunStatus">
+    <Type Name="tblEndofDayRunStatus">
+      <Column Name="RunEndOfDayStatusID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RunEndOfDayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItemPrice" Member="tblItemPrices">
+    <Type Name="tblItemPrice">
+      <Column Name="ItemPriceID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="IsUSD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsKHR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsCurPrice" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CURRENCY" Member="CURRENCies">
+    <Type Name="CURRENCY">
+      <Column Name="CurrencyID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Currency" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="CountryID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItem" Member="tblItems">
+    <Type Name="tblItem">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LabourFacID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ItemDescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ItemRegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContainerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DonatorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsMedicine" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrencyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEM_OUTSIDE_INVENTORY" Member="ITEM_OUTSIDE_INVENTORies">
+    <Type Name="ITEM_OUTSIDE_INVENTORY">
+      <Column Name="ItemID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PrescripID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRegistered" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ContainerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LabourFacID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RegisterDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITEM_PROVIDER_TRANS" Member="ITEM_PROVIDER_TRANs">
+    <Type Name="ITEM_PROVIDER_TRAN">
+      <Column Name="ItemDepartTransID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ProviderID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DepartUseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContainer" Member="tblContainers">
+    <Type Name="tblContainer">
+      <Column Name="ContainerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContainerName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCentralInventory" Member="tblCentralInventories">
+    <Type Name="tblCentralInventory">
+      <Column Name="InventoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitsInStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitsOnOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockAlertQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ExpiredAlert" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRESCIP_INVENTORY" Member="PRESCIP_INVENTORies">
+    <Type Name="PRESCIP_INVENTORY">
+      <Column Name="PrescripID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DoctorNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DiagnosisID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Female" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Male" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVendorItemSupplyStatus" Member="tblVendorItemSupplyStatus">
+    <Type Name="tblVendorItemSupplyStatus">
+      <Column Name="VendorItemSupplyStatusID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CurrencyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Sell" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Free" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDepartment" Member="tblDepartments">
+    <Type Name="tblDepartment">
+      <Column Name="DepartID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PARAMS_INVEN" Member="PARAMS_INVENs">
+    <Type Name="PARAMS_INVEN">
+      <Column Name="Id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParamName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblReceiptNIL" Member="TblReceiptNILs">
+    <Type Name="TblReceiptNIL">
+      <Column Name="ReceiptNILId" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptNILDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PatientNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Glasses" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblReceiptNILDetail" Member="TblReceiptNILDetails">
+    <Type Name="TblReceiptNILDetail">
+      <Column Name="ReceiptNILDId" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceiptNILId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQTY" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestHistoryStatusTracking" Member="tblRequestHistoryStatusTrackings">
+    <Type Name="tblRequestHistoryStatusTracking">
+      <Column Name="RequestHistoryID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="POStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDRequestUpdateStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateRequestStatusDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
+    <Type Name="tblRequestDetail">
+      <Column Name="RequestDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResponseQuantity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsOrginalItemReq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentBalance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequest" Member="tblRequests">
+    <Type Name="tblRequest">
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestOrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestFromDepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestDescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RequestToDepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRequestName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UserApproveName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTempUsedItem" Member="tblTempUsedItems">
+    <Type Name="tblTempUsedItem">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Used" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VAllUsedItem" Member="VAllUsedItems">
+    <Type Name="VAllUsedItem">
+      <Column Name="Used" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RunEndOfDayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTempBeginBalance" Member="tblTempBeginBalances">
+    <Type Name="tblTempBeginBalance">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BeginBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItemExpireControl" Member="tblItemExpireControls">
+    <Type Name="tblItemExpireControl">
+      <Column Name="ItemExpireContID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestDetailID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CARITAS_REQ_ITEM_PROVIDER_INFO" Member="CARITAS_REQ_ITEM_PROVIDER_INFOs">
+    <Type Name="CARITAS_REQ_ITEM_PROVIDER_INFO">
+      <Column Name="ProviderInfoID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestDetailID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProviderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GivenQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CostInUSD" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CurrencyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ExpiredDateRecItem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRESCRIP_DETAIL_INVENTORY" Member="PRESCRIP_DETAIL_INVENTORies">
+    <Type Name="PRESCRIP_DETAIL_INVENTORY">
+      <Column Name="PrescripDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrescripID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsOutsideMedicine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemUnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemQuantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTempRequestAllItem" Member="tblTempRequestAllItems">
+    <Type Name="tblTempRequestAllItem">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Request" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Received" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VAllRequestItem" Member="VAllRequestItems">
+    <Type Name="VAllRequestItem">
+      <Column Name="CateName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ReceivedQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VAllBeginBalance" Member="VAllBeginBalances">
+    <Type Name="VAllBeginBalance">
+      <Column Name="RunEndOfDayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BeginBalance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndBalance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEndofDayRun" Member="tblEndofDayRuns">
+    <Type Name="tblEndofDayRun">
+      <Column Name="RunEndOfDayID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RunEndOfDayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIDProcessRunEndOfDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ReceivedQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UseQty" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BeginBalance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="EndBalance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AdjustQTY" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CARITAS_REQUEST_INVENTORY" Member="CARITAS_REQUEST_INVENTORies">
+    <Type Name="CARITAS_REQUEST_INVENTORY">
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestOrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemUsedFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ItemUsedTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsRequestExistingItem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CARITAS_REQUEST_DETAIL_INVENTORY" Member="CARITAS_REQUEST_DETAIL_INVENTORies">
+    <Type Name="CARITAS_REQUEST_DETAIL_INVENTORY">
+      <Column Name="RequestDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PresentStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceivedDoReport" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemUsed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsReceive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsReady" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReceiveDateDetail" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

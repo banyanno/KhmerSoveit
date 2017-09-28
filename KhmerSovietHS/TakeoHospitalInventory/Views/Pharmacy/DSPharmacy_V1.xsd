@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSPharmacy_V1" targetNamespace="http://tempuri.org/DSPharmacy_V1.xsd" xmlns:mstns="http://tempuri.org/DSPharmacy_V1.xsd" xmlns="http://tempuri.org/DSPharmacy_V1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBTestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBTestingConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBTestingConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VPrescription_PharmacyTableAdapter" GeneratorDataComponentClassName="VPrescription_PharmacyTableAdapter" Name="VPrescription_Pharmacy" UserDataComponentName="VPrescription_PharmacyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="Takeo1.dbo.VPrescription_Pharmacy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ItemName, DoctorNo, PatientNo, NameEng, Age, Male, Female, Sex, IsOutsideMedicine, PrescripID, Remark, IssueDate FROM dbo.VPrescription_Pharmacy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="DoctorNo" DataSetColumn="DoctorNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="NameEng" DataSetColumn="NameEng" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Male" DataSetColumn="Male" />
+              <Mapping SourceColumn="Female" DataSetColumn="Female" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="IsOutsideMedicine" DataSetColumn="IsOutsideMedicine" />
+              <Mapping SourceColumn="PrescripID" DataSetColumn="PrescripID" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="Takeo1.dbo.VPrescription_Pharmacy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPharmacyAllItem_Date" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPharmacyAllItem_Date" GeneratorSourceName="FillByPharmacyAllItem_Date" GetMethodModifier="Public" GetMethodName="GetDataByPharmacyAllItem_Date" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPharmacyAllItem_Date" UserSourceName="FillByPharmacyAllItem_Date">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '0-4' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 0 AND 4) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '5-14' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 5 AND 14) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '15-49' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 15 AND 49) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '&gt;=50' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age &gt;= 50) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VPrescription_Pharmacy1TableAdapter" GeneratorDataComponentClassName="VPrescription_Pharmacy1TableAdapter" Name="VPrescription_Pharmacy1" UserDataComponentName="VPrescription_Pharmacy1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VPrescription_Pharmacy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillPrescriptionDate" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPrescriptionDate" GeneratorSourceName="FillPrescriptionDate" GetMethodModifier="Public" GetMethodName="GetDataPrescriptionDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPrescriptionDate" UserSourceName="FillPrescriptionDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '0-4' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 0 AND 4) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '5-14' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 5 AND 14) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '15-49' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 15 AND 49) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '&gt;=50' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age &gt;= 50) AND (IssueDate BETWEEN @DFrom  AND @DTo)
+GROUP BY  ItemName
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="male" DataSetColumn="male" />
+              <Mapping SourceColumn="female" DataSetColumn="female" />
+              <Mapping SourceColumn="agerang" DataSetColumn="agerang" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VPrescription_Pharmacy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPrescriptionByDoc" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPrescriptionByDoc" GeneratorSourceName="FillByPrescriptionByDoc" GetMethodModifier="Public" GetMethodName="GetDataByPrescriptionByDoc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPrescriptionByDoc" UserSourceName="FillByPrescriptionByDoc">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '0-4' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 0 AND 4) AND (IssueDate BETWEEN @DFrom  AND @DTo) AND DoctorNo=@DoctorNo
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '5-14' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 5 AND 14) AND (IssueDate BETWEEN @DFrom  AND @DTo) AND DoctorNo=@DoctorNo
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '15-49' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age BETWEEN 15 AND 49) AND (IssueDate BETWEEN @DFrom  AND @DTo) AND DoctorNo=@DoctorNo
+GROUP BY  ItemName
+
+UNION
+
+SELECT ItemName , COUNT( Male) AS male ,COUNT( Female) AS female, '&gt;=50' AS agerang FROM dbo.VPrescription_Pharmacy 
+WHERE (Age &gt;= 50) AND (IssueDate BETWEEN @DFrom  AND @DTo) AND DoctorNo=@DoctorNo
+GROUP BY  ItemName
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DoctorNo" ColumnName="" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@DoctorNo" Precision="18" Scale="0" Size="9" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblNew_Old_OutPatientTableAdapter" GeneratorDataComponentClassName="TblNew_Old_OutPatientTableAdapter" Name="TblNew_Old_OutPatient" UserDataComponentName="TblNew_Old_OutPatientTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="Takeo1.dbo.TblNew_Old_OutPatient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TblNew_Old_OutPatient] WHERE (([NewOutPatientNo] = @Original_NewOutPatientNo) AND ((@IsNull_ReceiptNo = 1 AND [ReceiptNo] IS NULL) OR ([ReceiptNo] = @Original_ReceiptNo)) AND ((@IsNull_PatientNo = 1 AND [PatientNo] IS NULL) OR ([PatientNo] = @Original_PatientNo)) AND ((@IsNull_Diagnosis = 1 AND [Diagnosis] IS NULL) OR ([Diagnosis] = @Original_Diagnosis)) AND ((@IsNull_DiagnosisTem = 1 AND [DiagnosisTem] IS NULL) OR ([DiagnosisTem] = @Original_DiagnosisTem)) AND ((@IsNull_PatientFee = 1 AND [PatientFee] IS NULL) OR ([PatientFee] = @Original_PatientFee)) AND ((@IsNull_PatientDolar = 1 AND [PatientDolar] IS NULL) OR ([PatientDolar] = @Original_PatientDolar)) AND ((@IsNull_Prescribed = 1 AND [Prescribed] IS NULL) OR ([Prescribed] = @Original_Prescribed)) AND ((@IsNull_Dispensed = 1 AND [Dispensed] IS NULL) OR ([Dispensed] = @Original_Dispensed)) AND ((@IsNull_Hearing = 1 AND [Hearing] IS NULL) OR ([Hearing] = @Original_Hearing)) AND ((@IsNull_Understand = 1 AND [Understand] IS NULL) OR ([Understand] = @Original_Understand)) AND ((@IsNull_Seeing = 1 AND [Seeing] IS NULL) OR ([Seeing] = @Original_Seeing)) AND ((@IsNull_Physical = 1 AND [Physical] IS NULL) OR ([Physical] = @Original_Physical)) AND ((@IsNull_Other = 1 AND [Other] IS NULL) OR ([Other] = @Original_Other)) AND ((@IsNull_CreateDate = 1 AND [CreateDate] IS NULL) OR ([CreateDate] = @Original_CreateDate)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_TypeDiagnosis = 1 AND [TypeDiagnosis] IS NULL) OR ([TypeDiagnosis] = @Original_TypeDiagnosis)) AND ((@IsNull_DeleteOption = 1 AND [DeleteOption] IS NULL) OR ([DeleteOption] = @Original_DeleteOption)) AND ((@IsNull_VAStatus = 1 AND [VAStatus] IS NULL) OR ([VAStatus] = @Original_VAStatus)) AND ((@IsNull_ComBindRefferal = 1 AND [ComBindRefferal] IS NULL) OR ([ComBindRefferal] = @Original_ComBindRefferal)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_NewOutPatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="NewOutPatientNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ReceiptNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ReceiptNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Diagnosis" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Diagnosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DiagnosisTem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DiagnosisTem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientFee" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_PatientFee" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientDolar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_PatientDolar" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Prescribed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Prescribed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Dispensed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Dispensed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hearing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Understand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Understand" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Seeing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Seeing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Physical" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Physical" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Other" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Other" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CreateDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CreateDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TypeDiagnosis" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_TypeDiagnosis" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DeleteOption" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_DeleteOption" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VAStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VAStatus" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ComBindRefferal" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ComBindRefferal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TblNew_Old_OutPatient] ([ReceiptNo], [PatientNo], [Diagnosis], [DiagnosisTem], [PatientFee], [PatientDolar], [Prescribed], [Dispensed], [Hearing], [Understand], [Seeing], [Physical], [Other], [CreateDate], [Status], [TypeDiagnosis], [DeleteOption], [VAStatus], [ComBindRefferal]) VALUES (@ReceiptNo, @PatientNo, @Diagnosis, @DiagnosisTem, @PatientFee, @PatientDolar, @Prescribed, @Dispensed, @Hearing, @Understand, @Seeing, @Physical, @Other, @CreateDate, @Status, @TypeDiagnosis, @DeleteOption, @VAStatus, @ComBindRefferal);
+SELECT NewOutPatientNo, ReceiptNo, PatientNo, Diagnosis, DiagnosisTem, PatientFee, PatientDolar, Prescribed, Dispensed, Hearing, Understand, Seeing, Physical, Other, CreateDate, Status, TypeDiagnosis, DeleteOption, VAStatus, ComBindRefferal FROM TblNew_Old_OutPatient WHERE (NewOutPatientNo = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ReceiptNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Diagnosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DiagnosisTem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PatientFee" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PatientDolar" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Prescribed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Dispensed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hearing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Understand" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Seeing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Physical" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Other" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CreateDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TypeDiagnosis" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@DeleteOption" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VAStatus" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ComBindRefferal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NewOutPatientNo, ReceiptNo, PatientNo, Diagnosis, DiagnosisTem, PatientFee, PatientDolar, Prescribed, Dispensed, Hearing, Understand, Seeing, Physical, Other, CreateDate, Status, TypeDiagnosis, DeleteOption, VAStatus, ComBindRefferal FROM dbo.TblNew_Old_OutPatient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TblNew_Old_OutPatient] SET [ReceiptNo] = @ReceiptNo, [PatientNo] = @PatientNo, [Diagnosis] = @Diagnosis, [DiagnosisTem] = @DiagnosisTem, [PatientFee] = @PatientFee, [PatientDolar] = @PatientDolar, [Prescribed] = @Prescribed, [Dispensed] = @Dispensed, [Hearing] = @Hearing, [Understand] = @Understand, [Seeing] = @Seeing, [Physical] = @Physical, [Other] = @Other, [CreateDate] = @CreateDate, [Status] = @Status, [TypeDiagnosis] = @TypeDiagnosis, [DeleteOption] = @DeleteOption, [VAStatus] = @VAStatus, [ComBindRefferal] = @ComBindRefferal WHERE (([NewOutPatientNo] = @Original_NewOutPatientNo) AND ((@IsNull_ReceiptNo = 1 AND [ReceiptNo] IS NULL) OR ([ReceiptNo] = @Original_ReceiptNo)) AND ((@IsNull_PatientNo = 1 AND [PatientNo] IS NULL) OR ([PatientNo] = @Original_PatientNo)) AND ((@IsNull_Diagnosis = 1 AND [Diagnosis] IS NULL) OR ([Diagnosis] = @Original_Diagnosis)) AND ((@IsNull_DiagnosisTem = 1 AND [DiagnosisTem] IS NULL) OR ([DiagnosisTem] = @Original_DiagnosisTem)) AND ((@IsNull_PatientFee = 1 AND [PatientFee] IS NULL) OR ([PatientFee] = @Original_PatientFee)) AND ((@IsNull_PatientDolar = 1 AND [PatientDolar] IS NULL) OR ([PatientDolar] = @Original_PatientDolar)) AND ((@IsNull_Prescribed = 1 AND [Prescribed] IS NULL) OR ([Prescribed] = @Original_Prescribed)) AND ((@IsNull_Dispensed = 1 AND [Dispensed] IS NULL) OR ([Dispensed] = @Original_Dispensed)) AND ((@IsNull_Hearing = 1 AND [Hearing] IS NULL) OR ([Hearing] = @Original_Hearing)) AND ((@IsNull_Understand = 1 AND [Understand] IS NULL) OR ([Understand] = @Original_Understand)) AND ((@IsNull_Seeing = 1 AND [Seeing] IS NULL) OR ([Seeing] = @Original_Seeing)) AND ((@IsNull_Physical = 1 AND [Physical] IS NULL) OR ([Physical] = @Original_Physical)) AND ((@IsNull_Other = 1 AND [Other] IS NULL) OR ([Other] = @Original_Other)) AND ((@IsNull_CreateDate = 1 AND [CreateDate] IS NULL) OR ([CreateDate] = @Original_CreateDate)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_TypeDiagnosis = 1 AND [TypeDiagnosis] IS NULL) OR ([TypeDiagnosis] = @Original_TypeDiagnosis)) AND ((@IsNull_DeleteOption = 1 AND [DeleteOption] IS NULL) OR ([DeleteOption] = @Original_DeleteOption)) AND ((@IsNull_VAStatus = 1 AND [VAStatus] IS NULL) OR ([VAStatus] = @Original_VAStatus)) AND ((@IsNull_ComBindRefferal = 1 AND [ComBindRefferal] IS NULL) OR ([ComBindRefferal] = @Original_ComBindRefferal)));
+SELECT NewOutPatientNo, ReceiptNo, PatientNo, Diagnosis, DiagnosisTem, PatientFee, PatientDolar, Prescribed, Dispensed, Hearing, Understand, Seeing, Physical, Other, CreateDate, Status, TypeDiagnosis, DeleteOption, VAStatus, ComBindRefferal FROM TblNew_Old_OutPatient WHERE (NewOutPatientNo = @NewOutPatientNo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ReceiptNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Diagnosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DiagnosisTem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PatientFee" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PatientDolar" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Prescribed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Dispensed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Hearing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Understand" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Seeing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Physical" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Other" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CreateDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TypeDiagnosis" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@DeleteOption" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VAStatus" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ComBindRefferal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_NewOutPatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="NewOutPatientNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ReceiptNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ReceiptNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ReceiptNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Diagnosis" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Diagnosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Diagnosis" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DiagnosisTem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DiagnosisTem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DiagnosisTem" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientFee" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_PatientFee" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientFee" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PatientDolar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_PatientDolar" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PatientDolar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Prescribed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Prescribed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Prescribed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Dispensed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Dispensed" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Dispensed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Hearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Hearing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Hearing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Understand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Understand" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Understand" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Seeing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Seeing" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Seeing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Physical" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Physical" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Physical" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Other" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Other" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Other" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CreateDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CreateDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TypeDiagnosis" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_TypeDiagnosis" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TypeDiagnosis" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DeleteOption" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_DeleteOption" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="DeleteOption" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VAStatus" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VAStatus" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VAStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ComBindRefferal" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ComBindRefferal" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ComBindRefferal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="NewOutPatientNo" ColumnName="NewOutPatientNo" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@NewOutPatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="NewOutPatientNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NewOutPatientNo" DataSetColumn="NewOutPatientNo" />
+              <Mapping SourceColumn="ReceiptNo" DataSetColumn="ReceiptNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+              <Mapping SourceColumn="DiagnosisTem" DataSetColumn="DiagnosisTem" />
+              <Mapping SourceColumn="PatientFee" DataSetColumn="PatientFee" />
+              <Mapping SourceColumn="PatientDolar" DataSetColumn="PatientDolar" />
+              <Mapping SourceColumn="Prescribed" DataSetColumn="Prescribed" />
+              <Mapping SourceColumn="Dispensed" DataSetColumn="Dispensed" />
+              <Mapping SourceColumn="Hearing" DataSetColumn="Hearing" />
+              <Mapping SourceColumn="Understand" DataSetColumn="Understand" />
+              <Mapping SourceColumn="Seeing" DataSetColumn="Seeing" />
+              <Mapping SourceColumn="Physical" DataSetColumn="Physical" />
+              <Mapping SourceColumn="Other" DataSetColumn="Other" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TypeDiagnosis" DataSetColumn="TypeDiagnosis" />
+              <Mapping SourceColumn="DeleteOption" DataSetColumn="DeleteOption" />
+              <Mapping SourceColumn="VAStatus" DataSetColumn="VAStatus" />
+              <Mapping SourceColumn="ComBindRefferal" DataSetColumn="ComBindRefferal" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="Takeo1.dbo.TblNew_Old_OutPatient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByBlankDiagnosis" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByBlankDiagnosis" GeneratorSourceName="FillByBlankDiagnosis" GetMethodModifier="Public" GetMethodName="GetDataByBlankDiagnosis" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByBlankDiagnosis" UserSourceName="FillByBlankDiagnosis">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT NewOutPatientNo, ReceiptNo, PatientNo, Diagnosis, DiagnosisTem, PatientFee, PatientDolar, Prescribed, Dispensed, Hearing, Understand, Seeing, Physical, Other, CreateDate, Status, TypeDiagnosis, DeleteOption, VAStatus, ComBindRefferal FROM dbo.TblNew_Old_OutPatient
+WHERE
+ PatientNo=@PatientNo AND  Diagnosis=@Diagnosis</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="PatientNo" ColumnName="PatientNo" DataSourceName="TakeoDBTesting.dbo.TblNew_Old_OutPatient" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@PatientNo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="PatientNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Diagnosis" ColumnName="Diagnosis" DataSourceName="TakeoDBTesting.dbo.TblNew_Old_OutPatient" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Diagnosis" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Diagnosis" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSPharmacy_V1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSPharmacy_V1" msprop:Generator_DataSetName="DSPharmacy_V1" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VPrescription_Pharmacy" msprop:Generator_UserTableName="VPrescription_Pharmacy" msprop:Generator_RowDeletedName="VPrescription_PharmacyRowDeleted" msprop:Generator_RowChangedName="VPrescription_PharmacyRowChanged" msprop:Generator_RowClassName="VPrescription_PharmacyRow" msprop:Generator_RowChangingName="VPrescription_PharmacyRowChanging" msprop:Generator_RowEvArgName="VPrescription_PharmacyRowChangeEvent" msprop:Generator_RowEvHandlerName="VPrescription_PharmacyRowChangeEventHandler" msprop:Generator_TableClassName="VPrescription_PharmacyDataTable" msprop:Generator_TableVarName="tableVPrescription_Pharmacy" msprop:Generator_RowDeletingName="VPrescription_PharmacyRowDeleting" msprop:Generator_TablePropName="VPrescription_Pharmacy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DoctorNo" msprop:Generator_UserColumnName="DoctorNo" msprop:Generator_ColumnPropNameInRow="DoctorNo" msprop:Generator_ColumnVarNameInTable="columnDoctorNo" msprop:Generator_ColumnPropNameInTable="DoctorNoColumn" type="xs:decimal" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="NameEng" msprop:Generator_UserColumnName="NameEng" msprop:Generator_ColumnPropNameInRow="NameEng" msprop:Generator_ColumnVarNameInTable="columnNameEng" msprop:Generator_ColumnPropNameInTable="NameEngColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Male" msprop:Generator_UserColumnName="Male" msprop:Generator_ColumnPropNameInRow="Male" msprop:Generator_ColumnVarNameInTable="columnMale" msprop:Generator_ColumnPropNameInTable="MaleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Female" msprop:Generator_UserColumnName="Female" msprop:Generator_ColumnPropNameInRow="Female" msprop:Generator_ColumnVarNameInTable="columnFemale" msprop:Generator_ColumnPropNameInTable="FemaleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsOutsideMedicine" msprop:Generator_UserColumnName="IsOutsideMedicine" msprop:Generator_ColumnPropNameInRow="IsOutsideMedicine" msprop:Generator_ColumnVarNameInTable="columnIsOutsideMedicine" msprop:Generator_ColumnPropNameInTable="IsOutsideMedicineColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PrescripID" msprop:Generator_UserColumnName="PrescripID" msprop:Generator_ColumnPropNameInRow="PrescripID" msprop:Generator_ColumnVarNameInTable="columnPrescripID" msprop:Generator_ColumnPropNameInTable="PrescripIDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_UserColumnName="Remark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IssueDate" msprop:Generator_UserColumnName="IssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VPrescription_Pharmacy1" msprop:Generator_UserTableName="VPrescription_Pharmacy1" msprop:Generator_RowDeletedName="VPrescription_Pharmacy1RowDeleted" msprop:Generator_RowChangedName="VPrescription_Pharmacy1RowChanged" msprop:Generator_RowClassName="VPrescription_Pharmacy1Row" msprop:Generator_RowChangingName="VPrescription_Pharmacy1RowChanging" msprop:Generator_RowEvArgName="VPrescription_Pharmacy1RowChangeEvent" msprop:Generator_RowEvHandlerName="VPrescription_Pharmacy1RowChangeEventHandler" msprop:Generator_TableClassName="VPrescription_Pharmacy1DataTable" msprop:Generator_TableVarName="tableVPrescription_Pharmacy1" msprop:Generator_RowDeletingName="VPrescription_Pharmacy1RowDeleting" msprop:Generator_TablePropName="VPrescription_Pharmacy1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemName" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="male" msdata:ReadOnly="true" msprop:Generator_UserColumnName="male" msprop:Generator_ColumnVarNameInTable="columnmale" msprop:Generator_ColumnPropNameInRow="male" msprop:Generator_ColumnPropNameInTable="maleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="female" msdata:ReadOnly="true" msprop:Generator_UserColumnName="female" msprop:Generator_ColumnVarNameInTable="columnfemale" msprop:Generator_ColumnPropNameInRow="female" msprop:Generator_ColumnPropNameInTable="femaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="agerang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="agerang" msprop:Generator_ColumnVarNameInTable="columnagerang" msprop:Generator_ColumnPropNameInRow="agerang" msprop:Generator_ColumnPropNameInTable="agerangColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblNew_Old_OutPatient" msprop:Generator_UserTableName="TblNew_Old_OutPatient" msprop:Generator_RowDeletedName="TblNew_Old_OutPatientRowDeleted" msprop:Generator_RowChangedName="TblNew_Old_OutPatientRowChanged" msprop:Generator_RowClassName="TblNew_Old_OutPatientRow" msprop:Generator_RowChangingName="TblNew_Old_OutPatientRowChanging" msprop:Generator_RowEvArgName="TblNew_Old_OutPatientRowChangeEvent" msprop:Generator_RowEvHandlerName="TblNew_Old_OutPatientRowChangeEventHandler" msprop:Generator_TableClassName="TblNew_Old_OutPatientDataTable" msprop:Generator_TableVarName="tableTblNew_Old_OutPatient" msprop:Generator_RowDeletingName="TblNew_Old_OutPatientRowDeleting" msprop:Generator_TablePropName="TblNew_Old_OutPatient">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NewOutPatientNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="NewOutPatientNo" msprop:Generator_ColumnVarNameInTable="columnNewOutPatientNo" msprop:Generator_ColumnPropNameInRow="NewOutPatientNo" msprop:Generator_ColumnPropNameInTable="NewOutPatientNoColumn" type="xs:decimal" />
+              <xs:element name="ReceiptNo" msprop:Generator_UserColumnName="ReceiptNo" msprop:Generator_ColumnVarNameInTable="columnReceiptNo" msprop:Generator_ColumnPropNameInRow="ReceiptNo" msprop:Generator_ColumnPropNameInTable="ReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Diagnosis" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiagnosisTem" msprop:Generator_UserColumnName="DiagnosisTem" msprop:Generator_ColumnVarNameInTable="columnDiagnosisTem" msprop:Generator_ColumnPropNameInRow="DiagnosisTem" msprop:Generator_ColumnPropNameInTable="DiagnosisTemColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PatientFee" msprop:Generator_UserColumnName="PatientFee" msprop:Generator_ColumnVarNameInTable="columnPatientFee" msprop:Generator_ColumnPropNameInRow="PatientFee" msprop:Generator_ColumnPropNameInTable="PatientFeeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PatientDolar" msprop:Generator_UserColumnName="PatientDolar" msprop:Generator_ColumnVarNameInTable="columnPatientDolar" msprop:Generator_ColumnPropNameInRow="PatientDolar" msprop:Generator_ColumnPropNameInTable="PatientDolarColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Prescribed" msprop:Generator_UserColumnName="Prescribed" msprop:Generator_ColumnVarNameInTable="columnPrescribed" msprop:Generator_ColumnPropNameInRow="Prescribed" msprop:Generator_ColumnPropNameInTable="PrescribedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Dispensed" msprop:Generator_UserColumnName="Dispensed" msprop:Generator_ColumnVarNameInTable="columnDispensed" msprop:Generator_ColumnPropNameInRow="Dispensed" msprop:Generator_ColumnPropNameInTable="DispensedColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Hearing" msprop:Generator_UserColumnName="Hearing" msprop:Generator_ColumnVarNameInTable="columnHearing" msprop:Generator_ColumnPropNameInRow="Hearing" msprop:Generator_ColumnPropNameInTable="HearingColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Understand" msprop:Generator_UserColumnName="Understand" msprop:Generator_ColumnVarNameInTable="columnUnderstand" msprop:Generator_ColumnPropNameInRow="Understand" msprop:Generator_ColumnPropNameInTable="UnderstandColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Seeing" msprop:Generator_UserColumnName="Seeing" msprop:Generator_ColumnVarNameInTable="columnSeeing" msprop:Generator_ColumnPropNameInRow="Seeing" msprop:Generator_ColumnPropNameInTable="SeeingColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Physical" msprop:Generator_UserColumnName="Physical" msprop:Generator_ColumnVarNameInTable="columnPhysical" msprop:Generator_ColumnPropNameInRow="Physical" msprop:Generator_ColumnPropNameInTable="PhysicalColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Other" msprop:Generator_UserColumnName="Other" msprop:Generator_ColumnVarNameInTable="columnOther" msprop:Generator_ColumnPropNameInRow="Other" msprop:Generator_ColumnPropNameInTable="OtherColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TypeDiagnosis" msprop:Generator_UserColumnName="TypeDiagnosis" msprop:Generator_ColumnVarNameInTable="columnTypeDiagnosis" msprop:Generator_ColumnPropNameInRow="TypeDiagnosis" msprop:Generator_ColumnPropNameInTable="TypeDiagnosisColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DeleteOption" msprop:Generator_UserColumnName="DeleteOption" msprop:Generator_ColumnVarNameInTable="columnDeleteOption" msprop:Generator_ColumnPropNameInRow="DeleteOption" msprop:Generator_ColumnPropNameInTable="DeleteOptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="VAStatus" msprop:Generator_UserColumnName="VAStatus" msprop:Generator_ColumnVarNameInTable="columnVAStatus" msprop:Generator_ColumnPropNameInRow="VAStatus" msprop:Generator_ColumnPropNameInTable="VAStatusColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ComBindRefferal" msprop:Generator_UserColumnName="ComBindRefferal" msprop:Generator_ColumnVarNameInTable="columnComBindRefferal" msprop:Generator_ColumnPropNameInRow="ComBindRefferal" msprop:Generator_ColumnPropNameInTable="ComBindRefferalColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblNew_Old_OutPatient" />
+      <xs:field xpath="mstns:NewOutPatientNo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

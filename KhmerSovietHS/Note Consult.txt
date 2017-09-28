@@ -1,0 +1,33 @@
+1= waiting at Nourse
+2=Waiting at doctor consult
+3=waiting at payment
+4=Consultation Completed
+
+Dim DA_Doctor As New DSWaitingConsultTableAdapters.VUsersInGroupTableAdapter
+With CboDoctor
+            .DataSource = DA_Doctor.SelectGroupDepartment(36)
+            .ValueMember = "UserID"
+            .DisplayMember = "EmployeeName"
+            .SelectedIndex = -1
+        End With
+
+TxtPatientNo
+TxtPatientName
+TxtSex
+TxtAge
+TxtTel
+TxtDateFollowUP
+TxtTime
+TxtDoctor
+
+81
+20141213449
+
+
+
+Data Source=//172.24.6.11/SSYS; User Id=WEB; password=web
+SELECT INT_ACC_CODE, NAME ,CREDIT_OUT, TYPE_CODE FROM SSYS.V_BALANCES WHERE TYPE_CODE='SETTLU'
+192.168.1.102
+
+FASTWEB_ACCTYPE (172.24.5.13), data source=//172.24.5.13/SSYS;User Id=ssys; password=SSYS
+VFASTWEBPARTICIPANT(172.24.6.11):data source=//172.24.6.11/SSYS;User Id=web; password=WEB

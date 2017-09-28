@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSLocationItemDetail" targetNamespace="http://tempuri.org/DSLocationItemDetail.xsd" xmlns:mstns="http://tempuri.org/DSLocationItemDetail.xsd" xmlns="http://tempuri.org/DSLocationItemDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString2" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString2" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VLocationItemDetailTableAdapter" GeneratorDataComponentClassName="VLocationItemDetailTableAdapter" Name="VLocationItemDetail" UserDataComponentName="VLocationItemDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VLocationItemDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CateName, ItemID, ItemName, LabourFacName, ContainerName, Barcode, ItemUnitName, LocationID, LocationItemDetailID
+FROM            VLocationItemDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="LabourFacName" DataSetColumn="LabourFacName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="LocationID" DataSetColumn="LocationID" />
+              <Mapping SourceColumn="LocationItemDetailID" DataSetColumn="LocationItemDetailID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VLocationItemDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataItemByLocationID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataItemByLocationID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataItemByLocationID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, CateName, ContainerName, ItemID, ItemName, ItemUnitName, LabourFacName, LocationID, LocationItemDetailID FROM VLocationItemDetail WHERE (LocationID = @LocationID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="LocationID" ColumnName="LocationID" DataSourceName="TakeoInventory.dbo.VLocationItemDetail" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@LocationID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="LocationID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VItemsInCabinetTableAdapter" GeneratorDataComponentClassName="VItemsInCabinetTableAdapter" Name="VItemsInCabinet" UserDataComponentName="VItemsInCabinetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemsInCabinet" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CabinetID, CabinetName, LocationName, ShelfNum, BlockNum, ItemID, LocationID, Expr1, ItemName, DepartID FROM dbo.VItemsInCabinet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CabinetID" DataSetColumn="CabinetID" />
+              <Mapping SourceColumn="CabinetName" DataSetColumn="CabinetName" />
+              <Mapping SourceColumn="LocationName" DataSetColumn="LocationName" />
+              <Mapping SourceColumn="ShelfNum" DataSetColumn="ShelfNum" />
+              <Mapping SourceColumn="BlockNum" DataSetColumn="BlockNum" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="LocationID" DataSetColumn="LocationID" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemsInCabinet" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetLocationItemDataByItemName" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetLocationItemDataByItemName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLocationItemDataByItemName" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CabinetID, CabinetName, LocationName, ShelfNum, BlockNum, ItemID, LocationID, Expr1, ItemName, DepartID FROM dbo.VItemsInCabinet
+WHERE ItemName = @ItemName AND DepartID = @DepartID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemName" ColumnName="ItemName" DataSourceName="TakeoInventory.dbo.VItemsInCabinet" DataTypeServer="nvarchar(150)" DbType="String" Direction="Input" ParameterName="@ItemName" Precision="0" ProviderType="NVarChar" Scale="0" Size="150" SourceColumn="ItemName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoInventory.dbo.VItemsInCabinet" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemsInCabinet" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetLocationItemDataByItemID" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetLocationItemDataByItemID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLocationItemDataByItemID" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CabinetID, CabinetName, LocationName, ShelfNum, BlockNum, ItemID, LocationID, Expr1, ItemName, DepartID FROM dbo.VItemsInCabinet
+WHERE ItemID=@ItemID AND DepartID=@DepartID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoInventory.dbo.VItemsInCabinet" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoInventory.dbo.VItemsInCabinet" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSLocationItemDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSLocationItemDetail" msprop:Generator_DataSetName="DSLocationItemDetail" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VLocationItemDetail" msprop:Generator_UserTableName="VLocationItemDetail" msprop:Generator_RowDeletedName="VLocationItemDetailRowDeleted" msprop:Generator_RowChangedName="VLocationItemDetailRowChanged" msprop:Generator_RowClassName="VLocationItemDetailRow" msprop:Generator_RowChangingName="VLocationItemDetailRowChanging" msprop:Generator_RowEvArgName="VLocationItemDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VLocationItemDetailRowChangeEventHandler" msprop:Generator_TableClassName="VLocationItemDetailDataTable" msprop:Generator_TableVarName="tableVLocationItemDetail" msprop:Generator_RowDeletingName="VLocationItemDetailRowDeleting" msprop:Generator_TablePropName="VLocationItemDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LabourFacName" msprop:Generator_UserColumnName="LabourFacName" msprop:Generator_ColumnVarNameInTable="columnLabourFacName" msprop:Generator_ColumnPropNameInRow="LabourFacName" msprop:Generator_ColumnPropNameInTable="LabourFacNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationID" msprop:Generator_UserColumnName="LocationID" msprop:Generator_ColumnVarNameInTable="columnLocationID" msprop:Generator_ColumnPropNameInRow="LocationID" msprop:Generator_ColumnPropNameInTable="LocationIDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LocationItemDetailID" msprop:Generator_UserColumnName="LocationItemDetailID" msprop:Generator_ColumnPropNameInRow="LocationItemDetailID" msprop:Generator_ColumnVarNameInTable="columnLocationItemDetailID" msprop:Generator_ColumnPropNameInTable="LocationItemDetailIDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VItemsInCabinet" msprop:Generator_UserTableName="VItemsInCabinet" msprop:Generator_RowDeletedName="VItemsInCabinetRowDeleted" msprop:Generator_RowChangedName="VItemsInCabinetRowChanged" msprop:Generator_RowClassName="VItemsInCabinetRow" msprop:Generator_RowChangingName="VItemsInCabinetRowChanging" msprop:Generator_RowEvArgName="VItemsInCabinetRowChangeEvent" msprop:Generator_RowEvHandlerName="VItemsInCabinetRowChangeEventHandler" msprop:Generator_TableClassName="VItemsInCabinetDataTable" msprop:Generator_TableVarName="tableVItemsInCabinet" msprop:Generator_RowDeletingName="VItemsInCabinetRowDeleting" msprop:Generator_TablePropName="VItemsInCabinet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CabinetID" msprop:Generator_UserColumnName="CabinetID" msprop:Generator_ColumnVarNameInTable="columnCabinetID" msprop:Generator_ColumnPropNameInRow="CabinetID" msprop:Generator_ColumnPropNameInTable="CabinetIDColumn" type="xs:decimal" />
+              <xs:element name="CabinetName" msprop:Generator_UserColumnName="CabinetName" msprop:Generator_ColumnVarNameInTable="columnCabinetName" msprop:Generator_ColumnPropNameInRow="CabinetName" msprop:Generator_ColumnPropNameInTable="CabinetNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationName" msprop:Generator_UserColumnName="LocationName" msprop:Generator_ColumnVarNameInTable="columnLocationName" msprop:Generator_ColumnPropNameInRow="LocationName" msprop:Generator_ColumnPropNameInTable="LocationNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShelfNum" msprop:Generator_UserColumnName="ShelfNum" msprop:Generator_ColumnVarNameInTable="columnShelfNum" msprop:Generator_ColumnPropNameInRow="ShelfNum" msprop:Generator_ColumnPropNameInTable="ShelfNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BlockNum" msprop:Generator_UserColumnName="BlockNum" msprop:Generator_ColumnVarNameInTable="columnBlockNum" msprop:Generator_ColumnPropNameInRow="BlockNum" msprop:Generator_ColumnPropNameInTable="BlockNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LocationID" msprop:Generator_UserColumnName="LocationID" msprop:Generator_ColumnVarNameInTable="columnLocationID" msprop:Generator_ColumnPropNameInRow="LocationID" msprop:Generator_ColumnPropNameInTable="LocationIDColumn" type="xs:decimal" />
+              <xs:element name="Expr1" msprop:Generator_UserColumnName="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" type="xs:int" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VLocationItemDetail" />
+      <xs:field xpath="mstns:LocationItemDetailID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

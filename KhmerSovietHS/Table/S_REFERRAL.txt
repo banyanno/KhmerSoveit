@@ -1,0 +1,38 @@
+
+GO
+/****** Object:  Table [dbo].[S_REFERRAL]    Script Date: 08/03/2015 13:24:17 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[S_REFERRAL](
+	[REFERRAL_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[PATIENT_NO] [numeric](18, 0) NULL,
+	[PATIENT_NAME] [nvarchar](150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[PATIENT_SEX] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[PATIENT_AGE] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[CREATE_DATE] [datetime] NULL,
+	[CHIEF_COMPLAINT] [nvarchar](250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODSC] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODCC] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODCCPH] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSSC] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSCC] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSCCPH] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODSPH] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODCYL] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODVA] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSSPH] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSCYL] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSVA] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ODMMHG] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[OSMMHG] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[SLIT_LAM] [nvarchar](250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[FUNDUS_FINDING] [nvarchar](250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[DIAGNOSIS] [nvarchar](150) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[TREATMENT] [nvarchar](250) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+ CONSTRAINT [PK_S_REFERRAL] PRIMARY KEY CLUSTERED 
+(
+	[REFERRAL_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]

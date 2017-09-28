@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSRequest" targetNamespace="http://tempuri.org/DSRequest.xsd" xmlns:mstns="http://tempuri.org/DSRequest.xsd" xmlns="http://tempuri.org/DSRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString3" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString3 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.MySettings.GlobalReference.Default.TakeoInventoryConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.MySettings.GlobalReference.Default.TakeoInventoryConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRequestDepartmentDetailTableAdapter" GeneratorDataComponentClassName="VRequestDepartmentDetailTableAdapter" Name="VRequestDepartmentDetail" UserDataComponentName="VRequestDepartmentDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RequestID, RequestOrderNumber, RequestDate, RequestDescription, RequestToDepartID, POStatusID, POStatus, RequestFromDepartID, DepartName
+FROM         VRequestDepartmentDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestOrderNumber" DataSetColumn="RequestOrderNumber" />
+              <Mapping SourceColumn="RequestDate" DataSetColumn="RequestDate" />
+              <Mapping SourceColumn="RequestDescription" DataSetColumn="RequestDescription" />
+              <Mapping SourceColumn="RequestToDepartID" DataSetColumn="RequestToDepartID" />
+              <Mapping SourceColumn="POStatusID" DataSetColumn="POStatusID" />
+              <Mapping SourceColumn="POStatus" DataSetColumn="POStatus" />
+              <Mapping SourceColumn="RequestFromDepartID" DataSetColumn="RequestFromDepartID" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOfDepartmentByRequestStatusID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataOfDepartmentByRequestStatusID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOfDepartmentByRequestStatusID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID FROM VRequestDepartmentDetail WHERE (POStatusID = @POStatusID) AND (RequestFromDepartID = @RequestFromDepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="RequestFromDepartID" ColumnName="RequestFromDepartID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@RequestFromDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataReceivedRequestList" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataReceivedRequestList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataReceivedRequestList" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID FROM VRequestDepartmentDetail WHERE (RequestToDepartID = @OwnerDepartID) AND (POStatusID = @POStatusID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestToDepartID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestToDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataResponseOfDepart" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataResponseOfDepart" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataResponseOfDepart" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID FROM VRequestDepartmentDetail WHERE (RequestFromDepartID = @OwnerDepart) AND (POStatusID = 7 OR POStatusID = 9)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepart" ColumnName="RequestFromDepartID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepart" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByRequestStatusID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRequestStatusID" GeneratorSourceName="FillByRequestStatusID" GetMethodModifier="Public" GetMethodName="GetDataByRequestStatusID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRequestStatusID" UserSourceName="FillByRequestStatusID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID FROM VRequestDepartmentDetail WHERE (POStatusID = @POStatusID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoInventory.dbo.VRequestDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRequestItemDetailTableAdapter" GeneratorDataComponentClassName="VRequestItemDetailTableAdapter" Name="VRequestItemDetail" UserDataComponentName="VRequestItemDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestItemDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ItemID, Quantity, ItemCode, ItemName, ItemDescription, Barcode, LabourFacName, ContainerName, ItemUnitName, CateName, ResponseQuantity, 
+               Comment, UnitsInStock, POStatus, IsOrginalItemReq, RequestDetailID
+FROM  VRequestItemDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="ItemCode" DataSetColumn="ItemCode" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="ItemDescription" DataSetColumn="ItemDescription" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="LabourFacName" DataSetColumn="LabourFacName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="ResponseQuantity" DataSetColumn="ResponseQuantity" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+              <Mapping SourceColumn="UnitsInStock" DataSetColumn="UnitsInStock" />
+              <Mapping SourceColumn="POStatus" DataSetColumn="POStatus" />
+              <Mapping SourceColumn="IsOrginalItemReq" DataSetColumn="IsOrginalItemReq" />
+              <Mapping SourceColumn="RequestDetailID" DataSetColumn="RequestDetailID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestItemDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByRequestID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRequestID" GeneratorSourceName="FillByRequestID" GetMethodModifier="Public" GetMethodName="GetDataByRequestID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRequestID" UserSourceName="FillByRequestID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, CateName, Comment, ContainerName, IsOrginalItemReq, ItemCode, ItemDescription, ItemID, ItemName, ItemUnitName, LabourFacName, POStatus, Quantity, RequestDetailID, ResponseQuantity, UnitsInStock FROM VRequestItemDetail WHERE (RequestID = @RequestID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="RequestID" ColumnName="RequestID" DataSourceName="TakeoInventory.dbo.VRequestItemDetail" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRequestToDepartmentDetailTableAdapter" GeneratorDataComponentClassName="VRequestToDepartmentDetailTableAdapter" Name="VRequestToDepartmentDetail" UserDataComponentName="VRequestToDepartmentDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestToDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RequestID, RequestOrderNumber, RequestDate, RequestDescription, RequestToDepartID, POStatusID, POStatus, RequestFromDepartID, DepartName, 
+                      ReceivedDate
+FROM         VRequestToDepartmentDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="RequestOrderNumber" DataSetColumn="RequestOrderNumber" />
+              <Mapping SourceColumn="RequestDate" DataSetColumn="RequestDate" />
+              <Mapping SourceColumn="RequestDescription" DataSetColumn="RequestDescription" />
+              <Mapping SourceColumn="RequestToDepartID" DataSetColumn="RequestToDepartID" />
+              <Mapping SourceColumn="POStatusID" DataSetColumn="POStatusID" />
+              <Mapping SourceColumn="POStatus" DataSetColumn="POStatus" />
+              <Mapping SourceColumn="RequestFromDepartID" DataSetColumn="RequestFromDepartID" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="ReceivedDate" DataSetColumn="ReceivedDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestToDepartmentDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRequestStatusID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByRequestStatusID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRequestStatusID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, ReceivedDate, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID FROM VRequestToDepartmentDetail WHERE (POStatusID = @POStatusID) AND (RequestFromDepartID = @OwnerDepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoInventory.dbo.VRequestToDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestFromDepartID" DataSourceName="TakeoInventory.dbo.VRequestToDepartmentDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ITEM_PROVIDER_TRANSTableAdapter" GeneratorDataComponentClassName="ITEM_PROVIDER_TRANSTableAdapter" Name="ITEM_PROVIDER_TRANS" UserDataComponentName="ITEM_PROVIDER_TRANSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.ITEM_PROVIDER_TRANS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [ITEM_PROVIDER_TRANS] WHERE (([ItemDepartTransID] = @Original_ItemDepartTransID) AND ((@IsNull_ItemID = 1 AND [ItemID] IS NULL) OR ([ItemID] = @Original_ItemID)) AND ((@IsNull_RequestID = 1 AND [RequestID] IS NULL) OR ([RequestID] = @Original_RequestID)) AND ((@IsNull_TransDate = 1 AND [TransDate] IS NULL) OR ([TransDate] = @Original_TransDate)) AND ((@IsNull_DepartUseID = 1 AND [DepartUseID] IS NULL) OR ([DepartUseID] = @Original_DepartUseID)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_ProviderID = 1 AND [ProviderID] IS NULL) OR ([ProviderID] = @Original_ProviderID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ItemDepartTransID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ItemDepartTransID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RequestID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TransDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_TransDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Quantity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProviderID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ProviderID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ITEM_PROVIDER_TRANS] ([ItemID], [RequestID], [TransDate], [DepartUseID], [Quantity], [Status], [ProviderID]) VALUES (@ItemID, @RequestID, @TransDate, @DepartUseID, @Quantity, @Status, @ProviderID);
+SELECT ItemDepartTransID, ItemID, RequestID, TransDate, DepartUseID, Quantity, Status, ProviderID FROM ITEM_PROVIDER_TRANS WHERE (ItemDepartTransID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@TransDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Quantity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ProviderID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemDepartTransID, ItemID, RequestID, TransDate, DepartUseID, Quantity, Status, ProviderID
+FROM         ITEM_PROVIDER_TRANS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [ITEM_PROVIDER_TRANS] SET [ItemID] = @ItemID, [RequestID] = @RequestID, [TransDate] = @TransDate, [DepartUseID] = @DepartUseID, [Quantity] = @Quantity, [Status] = @Status, [ProviderID] = @ProviderID WHERE (([ItemDepartTransID] = @Original_ItemDepartTransID) AND ((@IsNull_ItemID = 1 AND [ItemID] IS NULL) OR ([ItemID] = @Original_ItemID)) AND ((@IsNull_RequestID = 1 AND [RequestID] IS NULL) OR ([RequestID] = @Original_RequestID)) AND ((@IsNull_TransDate = 1 AND [TransDate] IS NULL) OR ([TransDate] = @Original_TransDate)) AND ((@IsNull_DepartUseID = 1 AND [DepartUseID] IS NULL) OR ([DepartUseID] = @Original_DepartUseID)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_ProviderID = 1 AND [ProviderID] IS NULL) OR ([ProviderID] = @Original_ProviderID)));
+SELECT ItemDepartTransID, ItemID, RequestID, TransDate, DepartUseID, Quantity, Status, ProviderID FROM ITEM_PROVIDER_TRANS WHERE (ItemDepartTransID = @ItemDepartTransID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@TransDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Quantity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ProviderID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ItemDepartTransID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ItemDepartTransID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ItemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RequestID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TransDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_TransDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TransDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DepartUseID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartUseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Quantity" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProviderID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ProviderID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ProviderID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ItemDepartTransID" ColumnName="ItemDepartTransID" DataSourceName="TakeoDB.dbo.ITEM_PROVIDER_TRANS" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@ItemDepartTransID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="ItemDepartTransID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemDepartTransID" DataSetColumn="ItemDepartTransID" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="TransDate" DataSetColumn="TransDate" />
+              <Mapping SourceColumn="DepartUseID" DataSetColumn="DepartUseID" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="ProviderID" DataSetColumn="ProviderID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.ITEM_PROVIDER_TRANS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetProInfoResToDepart" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetProInfoResToDepart" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetProInfoResToDepart" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemDepartTransID, ItemID, RequestID, TransDate, DepartUseID, Quantity, Status, ProviderID
+FROM         ITEM_PROVIDER_TRANS
+where ItemID=@ItemID and RequestID=@RequestID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoDB.dbo.ITEM_PROVIDER_TRANS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="RequestID" ColumnName="RequestID" DataSourceName="TakeoDB.dbo.ITEM_PROVIDER_TRANS" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@RequestID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="RequestID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VUsedWithUsedDetailTableAdapter" GeneratorDataComponentClassName="VUsedWithUsedDetailTableAdapter" Name="VUsedWithUsedDetail" UserDataComponentName="VUsedWithUsedDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VUsedWithUsedDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     DepartName, UsedDate, UsedDepartID, Barcode, UsedDescription, ItemName, UsedQuantity, ItemID, ItemUnitName, ContainerName, CateName, DepartID
+FROM         VUsedWithUsedDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="UsedDate" DataSetColumn="UsedDate" />
+              <Mapping SourceColumn="UsedDepartID" DataSetColumn="UsedDepartID" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="UsedDescription" DataSetColumn="UsedDescription" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="UsedQuantity" DataSetColumn="UsedQuantity" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VUsedWithUsedDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DialyUsedRequest" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="DialyUsedRequest" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DialyUsedRequest" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Barcode, ItemName, SUM(UsedQuantity) AS TotalItemUsed, ItemID, ItemUnitName, ContainerName, CateName, DepartID
+FROM         VUsedWithUsedDetail
+WHERE     (UsedDate BETWEEN @From AND @To) AND (UsedDepartID = @UsedDepartID)
+GROUP BY ItemID, ItemName, Barcode, ItemUnitName, ContainerName, CateName, DepartID
+ORDER BY CateName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="From" ColumnName="UsedDate" DataSourceName="TakeoDB.dbo.VUsedWithUsedDetail" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@From" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="UsedDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="To" ColumnName="UsedDate" DataSourceName="TakeoDB.dbo.VUsedWithUsedDetail" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@To" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="UsedDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="UsedDepartID" ColumnName="UsedDepartID" DataSourceName="TakeoDB.dbo.VUsedWithUsedDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UsedDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UsedDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSRequest" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSRequest" msprop:Generator_DataSetName="DSRequest" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VRequestDepartmentDetail" msprop:Generator_UserTableName="VRequestDepartmentDetail" msprop:Generator_RowDeletedName="VRequestDepartmentDetailRowDeleted" msprop:Generator_RowChangedName="VRequestDepartmentDetailRowChanged" msprop:Generator_RowClassName="VRequestDepartmentDetailRow" msprop:Generator_RowChangingName="VRequestDepartmentDetailRowChanging" msprop:Generator_RowEvArgName="VRequestDepartmentDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VRequestDepartmentDetailRowChangeEventHandler" msprop:Generator_TableClassName="VRequestDepartmentDetailDataTable" msprop:Generator_TableVarName="tableVRequestDepartmentDetail" msprop:Generator_RowDeletingName="VRequestDepartmentDetailRowDeleting" msprop:Generator_TablePropName="VRequestDepartmentDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestOrderNumber" msprop:Generator_UserColumnName="RequestOrderNumber" msprop:Generator_ColumnPropNameInRow="RequestOrderNumber" msprop:Generator_ColumnVarNameInTable="columnRequestOrderNumber" msprop:Generator_ColumnPropNameInTable="RequestOrderNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestDate" msprop:Generator_UserColumnName="RequestDate" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnVarNameInTable="columnRequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestDescription" msprop:Generator_UserColumnName="RequestDescription" msprop:Generator_ColumnPropNameInRow="RequestDescription" msprop:Generator_ColumnVarNameInTable="columnRequestDescription" msprop:Generator_ColumnPropNameInTable="RequestDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestToDepartID" msprop:Generator_UserColumnName="RequestToDepartID" msprop:Generator_ColumnPropNameInRow="RequestToDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestToDepartID" msprop:Generator_ColumnPropNameInTable="RequestToDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatusID" msprop:Generator_UserColumnName="POStatusID" msprop:Generator_ColumnPropNameInRow="POStatusID" msprop:Generator_ColumnVarNameInTable="columnPOStatusID" msprop:Generator_ColumnPropNameInTable="POStatusIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatus" msprop:Generator_UserColumnName="POStatus" msprop:Generator_ColumnPropNameInRow="POStatus" msprop:Generator_ColumnVarNameInTable="columnPOStatus" msprop:Generator_ColumnPropNameInTable="POStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestFromDepartID" msprop:Generator_UserColumnName="RequestFromDepartID" msprop:Generator_ColumnPropNameInRow="RequestFromDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestFromDepartID" msprop:Generator_ColumnPropNameInTable="RequestFromDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VRequestItemDetail" msprop:Generator_UserTableName="VRequestItemDetail" msprop:Generator_RowDeletedName="VRequestItemDetailRowDeleted" msprop:Generator_RowChangedName="VRequestItemDetailRowChanged" msprop:Generator_RowClassName="VRequestItemDetailRow" msprop:Generator_RowChangingName="VRequestItemDetailRowChanging" msprop:Generator_RowEvArgName="VRequestItemDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VRequestItemDetailRowChangeEventHandler" msprop:Generator_TableClassName="VRequestItemDetailDataTable" msprop:Generator_TableVarName="tableVRequestItemDetail" msprop:Generator_RowDeletingName="VRequestItemDetailRowDeleting" msprop:Generator_TablePropName="VRequestItemDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" type="xs:int" />
+              <xs:element name="ItemCode" msprop:Generator_UserColumnName="ItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemDescription" msprop:Generator_UserColumnName="ItemDescription" msprop:Generator_ColumnPropNameInRow="ItemDescription" msprop:Generator_ColumnVarNameInTable="columnItemDescription" msprop:Generator_ColumnPropNameInTable="ItemDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LabourFacName" msprop:Generator_UserColumnName="LabourFacName" msprop:Generator_ColumnPropNameInRow="LabourFacName" msprop:Generator_ColumnVarNameInTable="columnLabourFacName" msprop:Generator_ColumnPropNameInTable="LabourFacNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ResponseQuantity" msprop:Generator_UserColumnName="ResponseQuantity" msprop:Generator_ColumnPropNameInRow="ResponseQuantity" msprop:Generator_ColumnVarNameInTable="columnResponseQuantity" msprop:Generator_ColumnPropNameInTable="ResponseQuantityColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="Comment" msprop:Generator_UserColumnName="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitsInStock" msprop:Generator_UserColumnName="UnitsInStock" msprop:Generator_ColumnPropNameInRow="UnitsInStock" msprop:Generator_ColumnVarNameInTable="columnUnitsInStock" msprop:Generator_ColumnPropNameInTable="UnitsInStockColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatus" msprop:Generator_UserColumnName="POStatus" msprop:Generator_ColumnPropNameInRow="POStatus" msprop:Generator_ColumnVarNameInTable="columnPOStatus" msprop:Generator_ColumnPropNameInTable="POStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsOrginalItemReq" msprop:Generator_UserColumnName="IsOrginalItemReq" msprop:Generator_ColumnVarNameInTable="columnIsOrginalItemReq" msprop:Generator_ColumnPropNameInRow="IsOrginalItemReq" msprop:Generator_ColumnPropNameInTable="IsOrginalItemReqColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RequestDetailID" msprop:Generator_UserColumnName="RequestDetailID" msprop:Generator_ColumnVarNameInTable="columnRequestDetailID" msprop:Generator_ColumnPropNameInRow="RequestDetailID" msprop:Generator_ColumnPropNameInTable="RequestDetailIDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VRequestToDepartmentDetail" msprop:Generator_UserTableName="VRequestToDepartmentDetail" msprop:Generator_RowDeletedName="VRequestToDepartmentDetailRowDeleted" msprop:Generator_RowChangedName="VRequestToDepartmentDetailRowChanged" msprop:Generator_RowClassName="VRequestToDepartmentDetailRow" msprop:Generator_RowChangingName="VRequestToDepartmentDetailRowChanging" msprop:Generator_RowEvArgName="VRequestToDepartmentDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VRequestToDepartmentDetailRowChangeEventHandler" msprop:Generator_TableClassName="VRequestToDepartmentDetailDataTable" msprop:Generator_TableVarName="tableVRequestToDepartmentDetail" msprop:Generator_RowDeletingName="VRequestToDepartmentDetailRowDeleting" msprop:Generator_TablePropName="VRequestToDepartmentDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" />
+              <xs:element name="RequestOrderNumber" msprop:Generator_UserColumnName="RequestOrderNumber" msprop:Generator_ColumnVarNameInTable="columnRequestOrderNumber" msprop:Generator_ColumnPropNameInRow="RequestOrderNumber" msprop:Generator_ColumnPropNameInTable="RequestOrderNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestDate" msprop:Generator_UserColumnName="RequestDate" msprop:Generator_ColumnVarNameInTable="columnRequestDate" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestDescription" msprop:Generator_UserColumnName="RequestDescription" msprop:Generator_ColumnVarNameInTable="columnRequestDescription" msprop:Generator_ColumnPropNameInRow="RequestDescription" msprop:Generator_ColumnPropNameInTable="RequestDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestToDepartID" msprop:Generator_UserColumnName="RequestToDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestToDepartID" msprop:Generator_ColumnPropNameInRow="RequestToDepartID" msprop:Generator_ColumnPropNameInTable="RequestToDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatusID" msprop:Generator_UserColumnName="POStatusID" msprop:Generator_ColumnVarNameInTable="columnPOStatusID" msprop:Generator_ColumnPropNameInRow="POStatusID" msprop:Generator_ColumnPropNameInTable="POStatusIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatus" msprop:Generator_UserColumnName="POStatus" msprop:Generator_ColumnVarNameInTable="columnPOStatus" msprop:Generator_ColumnPropNameInRow="POStatus" msprop:Generator_ColumnPropNameInTable="POStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestFromDepartID" msprop:Generator_UserColumnName="RequestFromDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestFromDepartID" msprop:Generator_ColumnPropNameInRow="RequestFromDepartID" msprop:Generator_ColumnPropNameInTable="RequestFromDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReceivedDate" msprop:Generator_UserColumnName="ReceivedDate" msprop:Generator_ColumnPropNameInRow="ReceivedDate" msprop:Generator_ColumnVarNameInTable="columnReceivedDate" msprop:Generator_ColumnPropNameInTable="ReceivedDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ITEM_PROVIDER_TRANS" msprop:Generator_UserTableName="ITEM_PROVIDER_TRANS" msprop:Generator_RowDeletedName="ITEM_PROVIDER_TRANSRowDeleted" msprop:Generator_RowChangedName="ITEM_PROVIDER_TRANSRowChanged" msprop:Generator_RowClassName="ITEM_PROVIDER_TRANSRow" msprop:Generator_RowChangingName="ITEM_PROVIDER_TRANSRowChanging" msprop:Generator_RowEvArgName="ITEM_PROVIDER_TRANSRowChangeEvent" msprop:Generator_RowEvHandlerName="ITEM_PROVIDER_TRANSRowChangeEventHandler" msprop:Generator_TableClassName="ITEM_PROVIDER_TRANSDataTable" msprop:Generator_TableVarName="tableITEM_PROVIDER_TRANS" msprop:Generator_RowDeletingName="ITEM_PROVIDER_TRANSRowDeleting" msprop:Generator_TablePropName="ITEM_PROVIDER_TRANS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemDepartTransID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ItemDepartTransID" msprop:Generator_ColumnPropNameInRow="ItemDepartTransID" msprop:Generator_ColumnVarNameInTable="columnItemDepartTransID" msprop:Generator_ColumnPropNameInTable="ItemDepartTransIDColumn" type="xs:decimal" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TransDate" msprop:Generator_UserColumnName="TransDate" msprop:Generator_ColumnPropNameInRow="TransDate" msprop:Generator_ColumnVarNameInTable="columnTransDate" msprop:Generator_ColumnPropNameInTable="TransDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartUseID" msprop:Generator_UserColumnName="DepartUseID" msprop:Generator_ColumnPropNameInRow="DepartUseID" msprop:Generator_ColumnVarNameInTable="columnDepartUseID" msprop:Generator_ColumnPropNameInTable="DepartUseIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ProviderID" msprop:Generator_UserColumnName="ProviderID" msprop:Generator_ColumnPropNameInRow="ProviderID" msprop:Generator_ColumnVarNameInTable="columnProviderID" msprop:Generator_ColumnPropNameInTable="ProviderIDColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VUsedWithUsedDetail" msprop:Generator_UserTableName="VUsedWithUsedDetail" msprop:Generator_RowDeletedName="VUsedWithUsedDetailRowDeleted" msprop:Generator_RowChangedName="VUsedWithUsedDetailRowChanged" msprop:Generator_RowClassName="VUsedWithUsedDetailRow" msprop:Generator_RowChangingName="VUsedWithUsedDetailRowChanging" msprop:Generator_RowEvArgName="VUsedWithUsedDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VUsedWithUsedDetailRowChangeEventHandler" msprop:Generator_TableClassName="VUsedWithUsedDetailDataTable" msprop:Generator_TableVarName="tableVUsedWithUsedDetail" msprop:Generator_RowDeletingName="VUsedWithUsedDetailRowDeleting" msprop:Generator_TablePropName="VUsedWithUsedDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UsedDate" msprop:Generator_UserColumnName="UsedDate" msprop:Generator_ColumnVarNameInTable="columnUsedDate" msprop:Generator_ColumnPropNameInRow="UsedDate" msprop:Generator_ColumnPropNameInTable="UsedDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UsedDepartID" msprop:Generator_UserColumnName="UsedDepartID" msprop:Generator_ColumnVarNameInTable="columnUsedDepartID" msprop:Generator_ColumnPropNameInRow="UsedDepartID" msprop:Generator_ColumnPropNameInTable="UsedDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UsedDescription" msprop:Generator_UserColumnName="UsedDescription" msprop:Generator_ColumnVarNameInTable="columnUsedDescription" msprop:Generator_ColumnPropNameInRow="UsedDescription" msprop:Generator_ColumnPropNameInTable="UsedDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UsedQuantity" msprop:Generator_UserColumnName="UsedQuantity" msprop:Generator_ColumnVarNameInTable="columnUsedQuantity" msprop:Generator_ColumnPropNameInRow="UsedQuantity" msprop:Generator_ColumnPropNameInTable="UsedQuantityColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VRequestDepartmentDetail" />
+      <xs:field xpath="mstns:RequestID" />
+    </xs:unique>
+    <xs:unique name="ITEM_PROVIDER_TRANS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ITEM_PROVIDER_TRANS" />
+      <xs:field xpath="mstns:ItemDepartTransID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

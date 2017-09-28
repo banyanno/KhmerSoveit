@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ToolMenuConsuling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="MenuConsulting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>290, 17</value>
+  </metadata>
+  <data name="GridConsulting_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="CONSULING_ID"&gt;&lt;Caption&gt;CONSULING_ID&lt;/Caption&gt;&lt;DataMember&gt;CONSULING_ID&lt;/DataMember&gt;&lt;Key&gt;CONSULING_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="PatientNo"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataMember&gt;PatientNo&lt;/DataMember&gt;&lt;Key&gt;PatientNo&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;120&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="NameEng"&gt;&lt;Caption&gt;Name English&lt;/Caption&gt;&lt;DataMember&gt;NameEng&lt;/DataMember&gt;&lt;Key&gt;NameEng&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;131&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="NameKhmer"&gt;&lt;Caption&gt;Name Khmer&lt;/Caption&gt;&lt;DataMember&gt;NameKhmer&lt;/DataMember&gt;&lt;Key&gt;NameKhmer&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;42&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Sex"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataMember&gt;Sex&lt;/DataMember&gt;&lt;Key&gt;Sex&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;45&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="Address"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataMember&gt;Address&lt;/DataMember&gt;&lt;Key&gt;Address&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;81&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="Occupation"&gt;&lt;Caption&gt;Occupation&lt;/Caption&gt;&lt;DataMember&gt;Occupation&lt;/DataMember&gt;&lt;Key&gt;Occupation&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;/Column7&gt;&lt;Column8 ID="DATE_CREATE"&gt;&lt;Caption&gt;DATE_CREATE&lt;/Caption&gt;&lt;DataMember&gt;DATE_CREATE&lt;/DataMember&gt;&lt;Key&gt;DATE_CREATE&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column8&gt;&lt;Column9 ID="CONSULING_DATE"&gt;&lt;Caption&gt;Consulting Date&lt;/Caption&gt;&lt;DataMember&gt;CONSULING_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd/MM/yyyy&lt;/FormatString&gt;&lt;Key&gt;CONSULING_DATE&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Width&gt;124&lt;/Width&gt;&lt;/Column9&gt;&lt;Column10 ID="CONSULT_FOR"&gt;&lt;Caption&gt;Consult For&lt;/Caption&gt;&lt;DataMember&gt;CONSULT_FOR&lt;/DataMember&gt;&lt;Key&gt;CONSULT_FOR&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;Width&gt;101&lt;/Width&gt;&lt;CellStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;/CellStyle&gt;&lt;/Column10&gt;&lt;Column11 ID="FAMILY_STATUS"&gt;&lt;DataMember&gt;FAMILY_STATUS&lt;/DataMember&gt;&lt;Key&gt;FAMILY_STATUS&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;74&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column11&gt;&lt;Column12 ID="FAMINLY_MONEY"&gt;&lt;Caption&gt;FAMINLY_MONEY&lt;/Caption&gt;&lt;DataMember&gt;FAMINLY_MONEY&lt;/DataMember&gt;&lt;Key&gt;FAMINLY_MONEY&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column12&gt;&lt;Column13 ID="STATUS"&gt;&lt;Caption&gt;STATUS&lt;/Caption&gt;&lt;DataMember&gt;STATUS&lt;/DataMember&gt;&lt;Key&gt;STATUS&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column13&gt;&lt;Column14 ID="ORG"&gt;&lt;Caption&gt;Refer To&lt;/Caption&gt;&lt;DataMember&gt;ORG&lt;/DataMember&gt;&lt;Key&gt;ORG&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;Width&gt;88&lt;/Width&gt;&lt;/Column14&gt;&lt;Column15 ID="ORG_GIVE"&gt;&lt;Caption&gt;Give&lt;/Caption&gt;&lt;DataMember&gt;ORG_GIVE&lt;/DataMember&gt;&lt;Key&gt;ORG_GIVE&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;Width&gt;73&lt;/Width&gt;&lt;/Column15&gt;&lt;Column16 ID="DONATE_DOLAR"&gt;&lt;Caption&gt;Donate Support&lt;/Caption&gt;&lt;DataMember&gt;DONATE_DOLAR&lt;/DataMember&gt;&lt;Key&gt;DONATE_DOLAR&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;/Column16&gt;&lt;Column17 ID="ORG_NOTE"&gt;&lt;Caption&gt;Donate Note&lt;/Caption&gt;&lt;DataMember&gt;ORG_NOTE&lt;/DataMember&gt;&lt;Key&gt;ORG_NOTE&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;Width&gt;105&lt;/Width&gt;&lt;/Column17&gt;&lt;Column18 ID="DIAGNOSIS2"&gt;&lt;Caption&gt;Diagnosis&lt;/Caption&gt;&lt;DataMember&gt;DIAGNOSIS2&lt;/DataMember&gt;&lt;Key&gt;DIAGNOSIS2&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;/Column18&gt;&lt;Column19 ID="OPERATION2"&gt;&lt;Caption&gt;Surgery&lt;/Caption&gt;&lt;DataMember&gt;OPERATION2&lt;/DataMember&gt;&lt;Key&gt;OPERATION2&lt;/Key&gt;&lt;Position&gt;19&lt;/Position&gt;&lt;/Column19&gt;&lt;Column20 ID="EYE"&gt;&lt;Caption&gt;Eye&lt;/Caption&gt;&lt;DataMember&gt;EYE&lt;/DataMember&gt;&lt;Key&gt;EYE&lt;/Key&gt;&lt;Position&gt;20&lt;/Position&gt;&lt;/Column20&gt;&lt;Column21 ID="HOSPITAL_FEE"&gt;&lt;Caption&gt;Hospital Fee&lt;/Caption&gt;&lt;DataMember&gt;HOSPITAL_FEE&lt;/DataMember&gt;&lt;Key&gt;HOSPITAL_FEE&lt;/Key&gt;&lt;Position&gt;21&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column21&gt;&lt;Column22 ID="DONATE_TYPE"&gt;&lt;Caption&gt;Donate Type&lt;/Caption&gt;&lt;DataMember&gt;DONATE_TYPE&lt;/DataMember&gt;&lt;Key&gt;DONATE_TYPE&lt;/Key&gt;&lt;Position&gt;22&lt;/Position&gt;&lt;/Column22&gt;&lt;Column23 ID="IS_RIEL_DOLAR"&gt;&lt;Caption&gt;IS_RIEL_DOLAR&lt;/Caption&gt;&lt;DataMember&gt;IS_RIEL_DOLAR&lt;/DataMember&gt;&lt;Key&gt;IS_RIEL_DOLAR&lt;/Key&gt;&lt;Position&gt;23&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column23&gt;&lt;Column24 ID="DONATE_RIEL"&gt;&lt;Caption&gt;Patient Paid(R)&lt;/Caption&gt;&lt;DataMember&gt;DONATE_RIEL&lt;/DataMember&gt;&lt;Key&gt;DONATE_RIEL&lt;/Key&gt;&lt;Position&gt;24&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column24&gt;&lt;Column25 ID="PATIENT_PAY_DOLAR"&gt;&lt;Caption&gt;Patient Paid($)&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_PAY_DOLAR&lt;/DataMember&gt;&lt;Key&gt;PATIENT_PAY_DOLAR&lt;/Key&gt;&lt;Position&gt;25&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column25&gt;&lt;Column26 ID="CONSULTING_NOTE"&gt;&lt;Caption&gt;Consulting Note&lt;/Caption&gt;&lt;DataMember&gt;CONSULTING_NOTE&lt;/DataMember&gt;&lt;Key&gt;CONSULTING_NOTE&lt;/Key&gt;&lt;Position&gt;26&lt;/Position&gt;&lt;Width&gt;138&lt;/Width&gt;&lt;/Column26&gt;&lt;Column27 ID="FAMILY_NAME"&gt;&lt;Caption&gt;សមាជិក ក្រួសារ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_NAME&lt;/DataMember&gt;&lt;Key&gt;FAMILY_NAME&lt;/Key&gt;&lt;Position&gt;27&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column27&gt;&lt;Column28 ID="FAMILY_AGE"&gt;&lt;Caption&gt;អាយុ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_AGE&lt;/DataMember&gt;&lt;Key&gt;FAMILY_AGE&lt;/Key&gt;&lt;Position&gt;28&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column28&gt;&lt;Column29 ID="FAMILY_SEX"&gt;&lt;Caption&gt;ភេទ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_SEX&lt;/DataMember&gt;&lt;Key&gt;FAMILY_SEX&lt;/Key&gt;&lt;Position&gt;29&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column29&gt;&lt;Column30 ID="FAMILY_MONEY1"&gt;&lt;Caption&gt;ស្ថានភាពគ្រួសារ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_MONEY1&lt;/DataMember&gt;&lt;Key&gt;FAMILY_MONEY1&lt;/Key&gt;&lt;Position&gt;30&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column30&gt;&lt;Column31 ID="FAMILY_STATUS1"&gt;&lt;Caption&gt;ចំណូល&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_STATUS1&lt;/DataMember&gt;&lt;Key&gt;FAMILY_STATUS1&lt;/Key&gt;&lt;Position&gt;31&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column31&gt;&lt;Column32 ID="FAMILY_RELATIVE_PATIENT"&gt;&lt;Caption&gt;ពាក់ព័ន្ធជាមួយអ្នកជំងឺ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_RELATIVE_PATIENT&lt;/DataMember&gt;&lt;Key&gt;FAMILY_RELATIVE_PATIENT&lt;/Key&gt;&lt;Position&gt;32&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Wat Phnom T3, 8.249999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column32&gt;&lt;Column33 ID="FAMILY_OCCUPATION"&gt;&lt;Caption&gt;មុខរបរ&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_OCCUPATION&lt;/DataMember&gt;&lt;Key&gt;FAMILY_OCCUPATION&lt;/Key&gt;&lt;Position&gt;33&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column33&gt;&lt;Column34 ID="FAMILY_ADDRES"&gt;&lt;Caption&gt;អាស័យដ្ធាន&lt;/Caption&gt;&lt;DataMember&gt;FAMILY_ADDRES&lt;/DataMember&gt;&lt;Key&gt;FAMILY_ADDRES&lt;/Key&gt;&lt;Position&gt;34&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column34&gt;&lt;Column35 ID="CH1"&gt;&lt;Caption&gt;គ្រួសារពុំមានស្ថេរភាពចំណូល&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;CH1&lt;/DataMember&gt;&lt;Key&gt;CH1&lt;/Key&gt;&lt;Position&gt;35&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column35&gt;&lt;Column36 ID="CH2"&gt;&lt;Caption&gt;មេគ្រួសារមានជំងឺ&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;CH2&lt;/DataMember&gt;&lt;Key&gt;CH2&lt;/Key&gt;&lt;Position&gt;36&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column36&gt;&lt;Column37 ID="CH3"&gt;&lt;Caption&gt;គ្រួសារអាស្រ័យលើជំនួយពីសាច់ញាត្តិ និងមិត្តភ័ក្តិ&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;CH3&lt;/DataMember&gt;&lt;Key&gt;CH3&lt;/Key&gt;&lt;Position&gt;37&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column37&gt;&lt;Column38 ID="CH4"&gt;&lt;Caption&gt;មានជំងឺផាប្រចាំ&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;CH4&lt;/DataMember&gt;&lt;Key&gt;CH4&lt;/Key&gt;&lt;Position&gt;38&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column38&gt;&lt;Column39 ID="CH5"&gt;&lt;Caption&gt;ផ្សេងៗ&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;CH5&lt;/DataMember&gt;&lt;Key&gt;CH5&lt;/Key&gt;&lt;Position&gt;39&lt;/Position&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Khmer OS, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column39&gt;&lt;/Columns&gt;&lt;FormatConditions Collection="true" ElementName="Condition"&gt;&lt;Condition0 ID="PatientNotYetIssue"&gt;&lt;ColIndex&gt;13&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;BackColor&gt;255, 192, 128&lt;/BackColor&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;BackColor&gt;255, 192, 128&lt;/BackColor&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;0&lt;/Value1&gt;&lt;Value2&gt;0&lt;/Value2&gt;&lt;Key&gt;PatientNotYetIssue&lt;/Key&gt;&lt;/Condition0&gt;&lt;Condition1 ID="FormatCondition1"&gt;&lt;ColIndex&gt;13&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;FontItalic&gt;True&lt;/FontItalic&gt;&lt;FontStrikeout&gt;True&lt;/FontStrikeout&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;FontItalic&gt;True&lt;/FontItalic&gt;&lt;FontStrikeout&gt;True&lt;/FontStrikeout&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;2&lt;/Value1&gt;&lt;Value2&gt;2&lt;/Value2&gt;&lt;Key&gt;FormatCondition1&lt;/Key&gt;&lt;/Condition1&gt;&lt;/FormatConditions&gt;&lt;GroupCondition /&gt;&lt;GroupMode&gt;Expanded&lt;/GroupMode&gt;&lt;Groups Collection="true" ElementName="Group"&gt;&lt;Group0 ID="Group0"&gt;&lt;ColIndex&gt;22&lt;/ColIndex&gt;&lt;GroupPrefix&gt;Type of Social:&lt;/GroupPrefix&gt;&lt;HeaderCaption&gt;Type of Social&lt;/HeaderCaption&gt;&lt;/Group0&gt;&lt;/Groups&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;60&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;35&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/HeaderFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;/GroupRowFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <metadata name="BgLoadConsult.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 17</value>
+  </metadata>
+</root>

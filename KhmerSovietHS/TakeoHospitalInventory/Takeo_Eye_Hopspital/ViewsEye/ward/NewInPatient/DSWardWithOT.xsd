@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSWardWithOT" targetNamespace="http://tempuri.org/DSWard.xsd" xmlns:mstns="http://tempuri.org/DSWard.xsd" xmlns="http://tempuri.org/DSWard.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_NewInpatientDetialTableAdapter" GeneratorDataComponentClassName="V_NewInpatientDetialTableAdapter" Name="V_NewInpatientDetial" UserDataComponentName="V_NewInpatientDetialTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_NewInpatientDetial" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     NewInPatientNo, PatientNo, NameKhmer, Age, Sex, Address, Eye, Diagnosis, VA_RE, VA_LE, DateDischarge, DateFollowUp, Signature, Leave, 
+                      CreateDate, Waiting, TypeDiagnosis
+FROM         V_NewInpatientDetial</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NewInPatientNo" DataSetColumn="NewInPatientNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Eye" DataSetColumn="Eye" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+              <Mapping SourceColumn="VA_RE" DataSetColumn="VA_RE" />
+              <Mapping SourceColumn="VA_LE" DataSetColumn="VA_LE" />
+              <Mapping SourceColumn="DateDischarge" DataSetColumn="DateDischarge" />
+              <Mapping SourceColumn="DateFollowUp" DataSetColumn="DateFollowUp" />
+              <Mapping SourceColumn="Signature" DataSetColumn="Signature" />
+              <Mapping SourceColumn="Leave" DataSetColumn="Leave" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="TypeDiagnosis" DataSetColumn="TypeDiagnosis" />
+              <Mapping SourceColumn="Waiting" DataSetColumn="Waiting" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_OTRegistrationTableAdapter" GeneratorDataComponentClassName="View_OTRegistrationTableAdapter" Name="View_OTRegistration" UserDataComponentName="View_OTRegistrationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="KhmerSovietDB.dbo.View_OTRegistration" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        OTNo, NewInPatientNo, PatientNo, NameKhmer, Age, Sex, Address, OperationTime, Anesthesia, Eye, OperationType, Surgeon, Assistant, Circulation, Compli, 
+                         CreateDate, Status, Anesthetist, IOL, DateOperated, Others, NameEng
+FROM            View_OTRegistration</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OTNo" DataSetColumn="OTNo" />
+              <Mapping SourceColumn="NewInPatientNo" DataSetColumn="NewInPatientNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="OperationTime" DataSetColumn="OperationTime" />
+              <Mapping SourceColumn="Anesthesia" DataSetColumn="Anesthesia" />
+              <Mapping SourceColumn="Eye" DataSetColumn="Eye" />
+              <Mapping SourceColumn="OperationType" DataSetColumn="OperationType" />
+              <Mapping SourceColumn="Surgeon" DataSetColumn="Surgeon" />
+              <Mapping SourceColumn="Assistant" DataSetColumn="Assistant" />
+              <Mapping SourceColumn="Circulation" DataSetColumn="Circulation" />
+              <Mapping SourceColumn="Compli" DataSetColumn="Compli" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="Anesthetist" DataSetColumn="Anesthetist" />
+              <Mapping SourceColumn="IOL" DataSetColumn="IOL" />
+              <Mapping SourceColumn="DateOperated" DataSetColumn="DateOperated" />
+              <Mapping SourceColumn="Others" DataSetColumn="Others" />
+              <Mapping SourceColumn="NameEng" DataSetColumn="NameEng" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_IOLRegistrationTableAdapter" GeneratorDataComponentClassName="V_IOLRegistrationTableAdapter" Name="V_IOLRegistration" UserDataComponentName="V_IOLRegistrationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_IOLRegistration" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     IOLNo, OTNo, PatientNo, NameKhmer, Age, Sex, Surgeon, Eye, IOLNumber, CreateDate
+FROM         V_IOLRegistration</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IOLNo" DataSetColumn="IOLNo" />
+              <Mapping SourceColumn="OTNo" DataSetColumn="OTNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Surgeon" DataSetColumn="Surgeon" />
+              <Mapping SourceColumn="Eye" DataSetColumn="Eye" />
+              <Mapping SourceColumn="IOLNumber" DataSetColumn="IOLNumber" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_NewInpatientDetialLeaveTableAdapter" GeneratorDataComponentClassName="V_NewInpatientDetialLeaveTableAdapter" Name="V_NewInpatientDetialLeave" UserDataComponentName="V_NewInpatientDetialLeaveTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.V_NewInpatientDetialLeave" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     NewInPatientNo, PatientNo, NameKhmer, Age, Sex, Address, Eye, Diagnosis, VA_RE, VA_LE, DateDischarge, DateFollowUp, Signature, Leave, 
+                      CreateDate, Waiting, TypeDiagnosis
+FROM         V_NewInpatientDetialLeave</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NewInPatientNo" DataSetColumn="NewInPatientNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Eye" DataSetColumn="Eye" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+              <Mapping SourceColumn="VA_RE" DataSetColumn="VA_RE" />
+              <Mapping SourceColumn="VA_LE" DataSetColumn="VA_LE" />
+              <Mapping SourceColumn="DateDischarge" DataSetColumn="DateDischarge" />
+              <Mapping SourceColumn="DateFollowUp" DataSetColumn="DateFollowUp" />
+              <Mapping SourceColumn="Signature" DataSetColumn="Signature" />
+              <Mapping SourceColumn="Leave" DataSetColumn="Leave" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="Waiting" DataSetColumn="Waiting" />
+              <Mapping SourceColumn="TypeDiagnosis" DataSetColumn="TypeDiagnosis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSWardWithOT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSWardWithOT" msprop:Generator_DataSetName="DSWardWithOT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_NewInpatientDetial" msprop:Generator_UserTableName="V_NewInpatientDetial" msprop:Generator_RowDeletedName="V_NewInpatientDetialRowDeleted" msprop:Generator_RowChangedName="V_NewInpatientDetialRowChanged" msprop:Generator_RowClassName="V_NewInpatientDetialRow" msprop:Generator_RowChangingName="V_NewInpatientDetialRowChanging" msprop:Generator_RowEvArgName="V_NewInpatientDetialRowChangeEvent" msprop:Generator_RowEvHandlerName="V_NewInpatientDetialRowChangeEventHandler" msprop:Generator_TableClassName="V_NewInpatientDetialDataTable" msprop:Generator_TableVarName="tableV_NewInpatientDetial" msprop:Generator_RowDeletingName="V_NewInpatientDetialRowDeleting" msprop:Generator_TablePropName="V_NewInpatientDetial">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NewInPatientNo" msprop:Generator_UserColumnName="NewInPatientNo" msprop:Generator_ColumnPropNameInRow="NewInPatientNo" msprop:Generator_ColumnVarNameInTable="columnNewInPatientNo" msprop:Generator_ColumnPropNameInTable="NewInPatientNoColumn" type="xs:decimal" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eye" msprop:Generator_UserColumnName="Eye" msprop:Generator_ColumnPropNameInRow="Eye" msprop:Generator_ColumnVarNameInTable="columnEye" msprop:Generator_ColumnPropNameInTable="EyeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VA_RE" msprop:Generator_UserColumnName="VA_RE" msprop:Generator_ColumnPropNameInRow="VA_RE" msprop:Generator_ColumnVarNameInTable="columnVA_RE" msprop:Generator_ColumnPropNameInTable="VA_REColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VA_LE" msprop:Generator_UserColumnName="VA_LE" msprop:Generator_ColumnPropNameInRow="VA_LE" msprop:Generator_ColumnVarNameInTable="columnVA_LE" msprop:Generator_ColumnPropNameInTable="VA_LEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateDischarge" msprop:Generator_UserColumnName="DateDischarge" msprop:Generator_ColumnPropNameInRow="DateDischarge" msprop:Generator_ColumnVarNameInTable="columnDateDischarge" msprop:Generator_ColumnPropNameInTable="DateDischargeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateFollowUp" msprop:Generator_UserColumnName="DateFollowUp" msprop:Generator_ColumnPropNameInRow="DateFollowUp" msprop:Generator_ColumnVarNameInTable="columnDateFollowUp" msprop:Generator_ColumnPropNameInTable="DateFollowUpColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Signature" msprop:Generator_UserColumnName="Signature" msprop:Generator_ColumnPropNameInRow="Signature" msprop:Generator_ColumnVarNameInTable="columnSignature" msprop:Generator_ColumnPropNameInTable="SignatureColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Leave" msprop:Generator_UserColumnName="Leave" msprop:Generator_ColumnPropNameInRow="Leave" msprop:Generator_ColumnVarNameInTable="columnLeave" msprop:Generator_ColumnPropNameInTable="LeaveColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeDiagnosis" msprop:Generator_UserColumnName="TypeDiagnosis" msprop:Generator_ColumnVarNameInTable="columnTypeDiagnosis" msprop:Generator_ColumnPropNameInRow="TypeDiagnosis" msprop:Generator_ColumnPropNameInTable="TypeDiagnosisColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Waiting" msprop:Generator_UserColumnName="Waiting" msprop:Generator_ColumnPropNameInRow="Waiting" msprop:Generator_ColumnVarNameInTable="columnWaiting" msprop:Generator_ColumnPropNameInTable="WaitingColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_OTRegistration" msprop:Generator_UserTableName="View_OTRegistration" msprop:Generator_RowDeletedName="View_OTRegistrationRowDeleted" msprop:Generator_RowChangedName="View_OTRegistrationRowChanged" msprop:Generator_RowClassName="View_OTRegistrationRow" msprop:Generator_RowChangingName="View_OTRegistrationRowChanging" msprop:Generator_RowEvArgName="View_OTRegistrationRowChangeEvent" msprop:Generator_RowEvHandlerName="View_OTRegistrationRowChangeEventHandler" msprop:Generator_TableClassName="View_OTRegistrationDataTable" msprop:Generator_TableVarName="tableView_OTRegistration" msprop:Generator_RowDeletingName="View_OTRegistrationRowDeleting" msprop:Generator_TablePropName="View_OTRegistration">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OTNo" msprop:Generator_UserColumnName="OTNo" msprop:Generator_ColumnPropNameInRow="OTNo" msprop:Generator_ColumnVarNameInTable="columnOTNo" msprop:Generator_ColumnPropNameInTable="OTNoColumn" type="xs:decimal" />
+              <xs:element name="NewInPatientNo" msprop:Generator_UserColumnName="NewInPatientNo" msprop:Generator_ColumnPropNameInRow="NewInPatientNo" msprop:Generator_ColumnVarNameInTable="columnNewInPatientNo" msprop:Generator_ColumnPropNameInTable="NewInPatientNoColumn" type="xs:decimal" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OperationTime" msprop:Generator_UserColumnName="OperationTime" msprop:Generator_ColumnPropNameInRow="OperationTime" msprop:Generator_ColumnVarNameInTable="columnOperationTime" msprop:Generator_ColumnPropNameInTable="OperationTimeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Anesthesia" msprop:Generator_UserColumnName="Anesthesia" msprop:Generator_ColumnPropNameInRow="Anesthesia" msprop:Generator_ColumnVarNameInTable="columnAnesthesia" msprop:Generator_ColumnPropNameInTable="AnesthesiaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eye" msprop:Generator_UserColumnName="Eye" msprop:Generator_ColumnPropNameInRow="Eye" msprop:Generator_ColumnVarNameInTable="columnEye" msprop:Generator_ColumnPropNameInTable="EyeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OperationType" msprop:Generator_UserColumnName="OperationType" msprop:Generator_ColumnPropNameInRow="OperationType" msprop:Generator_ColumnVarNameInTable="columnOperationType" msprop:Generator_ColumnPropNameInTable="OperationTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Surgeon" msprop:Generator_UserColumnName="Surgeon" msprop:Generator_ColumnPropNameInRow="Surgeon" msprop:Generator_ColumnVarNameInTable="columnSurgeon" msprop:Generator_ColumnPropNameInTable="SurgeonColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Assistant" msprop:Generator_UserColumnName="Assistant" msprop:Generator_ColumnPropNameInRow="Assistant" msprop:Generator_ColumnVarNameInTable="columnAssistant" msprop:Generator_ColumnPropNameInTable="AssistantColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Circulation" msprop:Generator_UserColumnName="Circulation" msprop:Generator_ColumnPropNameInRow="Circulation" msprop:Generator_ColumnVarNameInTable="columnCirculation" msprop:Generator_ColumnPropNameInTable="CirculationColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Compli" msprop:Generator_UserColumnName="Compli" msprop:Generator_ColumnPropNameInRow="Compli" msprop:Generator_ColumnVarNameInTable="columnCompli" msprop:Generator_ColumnPropNameInTable="CompliColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Anesthetist" msprop:Generator_UserColumnName="Anesthetist" msprop:Generator_ColumnPropNameInRow="Anesthetist" msprop:Generator_ColumnVarNameInTable="columnAnesthetist" msprop:Generator_ColumnPropNameInTable="AnesthetistColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IOL" msprop:Generator_UserColumnName="IOL" msprop:Generator_ColumnPropNameInRow="IOL" msprop:Generator_ColumnVarNameInTable="columnIOL" msprop:Generator_ColumnPropNameInTable="IOLColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOperated" msprop:Generator_UserColumnName="DateOperated" msprop:Generator_ColumnVarNameInTable="columnDateOperated" msprop:Generator_ColumnPropNameInRow="DateOperated" msprop:Generator_ColumnPropNameInTable="DateOperatedColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Others" msprop:Generator_UserColumnName="Others" msprop:Generator_ColumnVarNameInTable="columnOthers" msprop:Generator_ColumnPropNameInRow="Others" msprop:Generator_ColumnPropNameInTable="OthersColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameEng" msprop:Generator_UserColumnName="NameEng" msprop:Generator_ColumnPropNameInRow="NameEng" msprop:Generator_ColumnVarNameInTable="columnNameEng" msprop:Generator_ColumnPropNameInTable="NameEngColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_IOLRegistration" msprop:Generator_UserTableName="V_IOLRegistration" msprop:Generator_RowDeletedName="V_IOLRegistrationRowDeleted" msprop:Generator_RowChangedName="V_IOLRegistrationRowChanged" msprop:Generator_RowClassName="V_IOLRegistrationRow" msprop:Generator_RowChangingName="V_IOLRegistrationRowChanging" msprop:Generator_RowEvArgName="V_IOLRegistrationRowChangeEvent" msprop:Generator_RowEvHandlerName="V_IOLRegistrationRowChangeEventHandler" msprop:Generator_TableClassName="V_IOLRegistrationDataTable" msprop:Generator_TableVarName="tableV_IOLRegistration" msprop:Generator_RowDeletingName="V_IOLRegistrationRowDeleting" msprop:Generator_TablePropName="V_IOLRegistration">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IOLNo" msprop:Generator_UserColumnName="IOLNo" msprop:Generator_ColumnVarNameInTable="columnIOLNo" msprop:Generator_ColumnPropNameInRow="IOLNo" msprop:Generator_ColumnPropNameInTable="IOLNoColumn" type="xs:decimal" />
+              <xs:element name="OTNo" msprop:Generator_UserColumnName="OTNo" msprop:Generator_ColumnVarNameInTable="columnOTNo" msprop:Generator_ColumnPropNameInRow="OTNo" msprop:Generator_ColumnPropNameInTable="OTNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Surgeon" msprop:Generator_UserColumnName="Surgeon" msprop:Generator_ColumnVarNameInTable="columnSurgeon" msprop:Generator_ColumnPropNameInRow="Surgeon" msprop:Generator_ColumnPropNameInTable="SurgeonColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eye" msprop:Generator_UserColumnName="Eye" msprop:Generator_ColumnVarNameInTable="columnEye" msprop:Generator_ColumnPropNameInRow="Eye" msprop:Generator_ColumnPropNameInTable="EyeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IOLNumber" msprop:Generator_UserColumnName="IOLNumber" msprop:Generator_ColumnVarNameInTable="columnIOLNumber" msprop:Generator_ColumnPropNameInRow="IOLNumber" msprop:Generator_ColumnPropNameInTable="IOLNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_NewInpatientDetialLeave" msprop:Generator_UserTableName="V_NewInpatientDetialLeave" msprop:Generator_RowDeletedName="V_NewInpatientDetialLeaveRowDeleted" msprop:Generator_RowChangedName="V_NewInpatientDetialLeaveRowChanged" msprop:Generator_RowClassName="V_NewInpatientDetialLeaveRow" msprop:Generator_RowChangingName="V_NewInpatientDetialLeaveRowChanging" msprop:Generator_RowEvArgName="V_NewInpatientDetialLeaveRowChangeEvent" msprop:Generator_RowEvHandlerName="V_NewInpatientDetialLeaveRowChangeEventHandler" msprop:Generator_TableClassName="V_NewInpatientDetialLeaveDataTable" msprop:Generator_TableVarName="tableV_NewInpatientDetialLeave" msprop:Generator_RowDeletingName="V_NewInpatientDetialLeaveRowDeleting" msprop:Generator_TablePropName="V_NewInpatientDetialLeave">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NewInPatientNo" msprop:Generator_UserColumnName="NewInPatientNo" msprop:Generator_ColumnVarNameInTable="columnNewInPatientNo" msprop:Generator_ColumnPropNameInRow="NewInPatientNo" msprop:Generator_ColumnPropNameInTable="NewInPatientNoColumn" type="xs:decimal" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eye" msprop:Generator_UserColumnName="Eye" msprop:Generator_ColumnVarNameInTable="columnEye" msprop:Generator_ColumnPropNameInRow="Eye" msprop:Generator_ColumnPropNameInTable="EyeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VA_RE" msprop:Generator_UserColumnName="VA_RE" msprop:Generator_ColumnVarNameInTable="columnVA_RE" msprop:Generator_ColumnPropNameInRow="VA_RE" msprop:Generator_ColumnPropNameInTable="VA_REColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VA_LE" msprop:Generator_UserColumnName="VA_LE" msprop:Generator_ColumnVarNameInTable="columnVA_LE" msprop:Generator_ColumnPropNameInRow="VA_LE" msprop:Generator_ColumnPropNameInTable="VA_LEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateDischarge" msprop:Generator_UserColumnName="DateDischarge" msprop:Generator_ColumnVarNameInTable="columnDateDischarge" msprop:Generator_ColumnPropNameInRow="DateDischarge" msprop:Generator_ColumnPropNameInTable="DateDischargeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateFollowUp" msprop:Generator_UserColumnName="DateFollowUp" msprop:Generator_ColumnVarNameInTable="columnDateFollowUp" msprop:Generator_ColumnPropNameInRow="DateFollowUp" msprop:Generator_ColumnPropNameInTable="DateFollowUpColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Signature" msprop:Generator_UserColumnName="Signature" msprop:Generator_ColumnVarNameInTable="columnSignature" msprop:Generator_ColumnPropNameInRow="Signature" msprop:Generator_ColumnPropNameInTable="SignatureColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Leave" msprop:Generator_UserColumnName="Leave" msprop:Generator_ColumnVarNameInTable="columnLeave" msprop:Generator_ColumnPropNameInRow="Leave" msprop:Generator_ColumnPropNameInTable="LeaveColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Waiting" msprop:Generator_UserColumnName="Waiting" msprop:Generator_ColumnVarNameInTable="columnWaiting" msprop:Generator_ColumnPropNameInRow="Waiting" msprop:Generator_ColumnPropNameInTable="WaitingColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TypeDiagnosis" msprop:Generator_UserColumnName="TypeDiagnosis" msprop:Generator_ColumnVarNameInTable="columnTypeDiagnosis" msprop:Generator_ColumnPropNameInRow="TypeDiagnosis" msprop:Generator_ColumnPropNameInTable="TypeDiagnosisColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_NewInpatientDetial" />
+      <xs:field xpath="mstns:NewInPatientNo" />
+      <xs:field xpath="mstns:PatientNo" />
+    </xs:unique>
+    <xs:unique name="View_OTRegistration_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_OTRegistration" />
+      <xs:field xpath="mstns:OTNo" />
+      <xs:field xpath="mstns:NewInPatientNo" />
+      <xs:field xpath="mstns:PatientNo" />
+    </xs:unique>
+    <xs:unique name="V_IOLRegistration_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_IOLRegistration" />
+      <xs:field xpath="mstns:IOLNo" />
+      <xs:field xpath="mstns:PatientNo" />
+    </xs:unique>
+    <xs:unique name="V_NewInpatientDetialLeave_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_NewInpatientDetialLeave" />
+      <xs:field xpath="mstns:NewInPatientNo" />
+      <xs:field xpath="mstns:PatientNo" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="V_NewInpatientDetial_View_OTRegistration" msdata:parent="V_NewInpatientDetial" msdata:child="View_OTRegistration" msdata:parentkey="NewInPatientNo" msdata:childkey="NewInPatientNo" msprop:Generator_UserRelationName="V_NewInpatientDetial_View_OTRegistration" msprop:Generator_RelationVarName="relationV_NewInpatientDetial_View_OTRegistration" msprop:Generator_UserChildTable="View_OTRegistration" msprop:Generator_UserParentTable="V_NewInpatientDetial" msprop:Generator_ParentPropName="V_NewInpatientDetialRow" msprop:Generator_ChildPropName="GetView_OTRegistrationRows" />
+      <msdata:Relationship name="View_OTRegistration_V_IOLRegistration" msdata:parent="View_OTRegistration" msdata:child="V_IOLRegistration" msdata:parentkey="OTNo" msdata:childkey="OTNo" msprop:Generator_UserRelationName="View_OTRegistration_V_IOLRegistration" msprop:Generator_RelationVarName="relationView_OTRegistration_V_IOLRegistration" msprop:Generator_UserChildTable="V_IOLRegistration" msprop:Generator_UserParentTable="View_OTRegistration" msprop:Generator_ParentPropName="View_OTRegistrationRow" msprop:Generator_ChildPropName="GetV_IOLRegistrationRows" />
+      <msdata:Relationship name="V_NewInpatientDetialLeave_View_OTRegistration" msdata:parent="V_NewInpatientDetialLeave" msdata:child="View_OTRegistration" msdata:parentkey="NewInPatientNo" msdata:childkey="NewInPatientNo" msprop:Generator_UserRelationName="V_NewInpatientDetialLeave_View_OTRegistration" msprop:Generator_RelationVarName="relationV_NewInpatientDetialLeave_View_OTRegistration" msprop:Generator_UserChildTable="View_OTRegistration" msprop:Generator_UserParentTable="V_NewInpatientDetialLeave" msprop:Generator_ParentPropName="V_NewInpatientDetialLeaveRow" msprop:Generator_ChildPropName="GetView_OTRegistrationRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

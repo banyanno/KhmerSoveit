@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEndofDayRun" targetNamespace="http://tempuri.org/DSEndofDayRun.xsd" xmlns:mstns="http://tempuri.org/DSEndofDayRun.xsd" xmlns="http://tempuri.org/DSEndofDayRun.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.MySettings.GlobalReference.Default.TakeoInventoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.MySettings.GlobalReference.Default.TakeoInventoryConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRunEndofDayResultTableAdapter" GeneratorDataComponentClassName="VRunEndofDayResultTableAdapter" Name="VRunEndofDayResult" UserDataComponentName="VRunEndofDayResultTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RunEndOfDayDate, DepartName, ItemName, RequestQty, ReceivedQty, UseQty, ItemID, Barcode, BeginBalance, EndBalance, CateID, CateName, ItemUnitName, 
+                      ContainerName, DepartID
+FROM         VRunEndofDayResult</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RunEndOfDayDate" DataSetColumn="RunEndOfDayDate" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="RequestQty" DataSetColumn="RequestQty" />
+              <Mapping SourceColumn="ReceivedQty" DataSetColumn="ReceivedQty" />
+              <Mapping SourceColumn="UseQty" DataSetColumn="UseQty" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="BeginBalance" DataSetColumn="BeginBalance" />
+              <Mapping SourceColumn="EndBalance" DataSetColumn="EndBalance" />
+              <Mapping SourceColumn="CateID" DataSetColumn="CateID" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetRunEndofDayByDepartIDandSpecificDate" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetRunEndofDayByDepartIDandSpecificDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetRunEndofDayByDepartIDandSpecificDate" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) = CAST(CONVERT (VARCHAR(10), @RunEndOfDayDate, 1) AS DateTime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="RunEndOfDayDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@RunEndOfDayDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetItemEndofDaySearch" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetItemEndofDaySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetItemEndofDaySearch" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (ItemID = @ItemID) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@ToDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ToDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@ToDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllItemEndofDaySearch" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetAllItemEndofDaySearch" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllItemEndofDaySearch" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (CONVERT (datetime, RunEndOfDayDate, 101) &gt;= CONVERT (datetime, @FromDate, 101)) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@ToDate AS DATETIME), 1) AS Datetime)) ORDER BY RunEndOfDayDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ToDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@ToDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDepartTranDataByCateID" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetDepartTranDataByCateID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDepartTranDataByCateID" UserSourceName="FillBy3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (CateID = @CateID) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) ORDER BY RunEndOfDayDate, ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CateID" ColumnName="CateID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CateID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CateID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy4" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDepartTranDataByItemID" GeneratorSourceName="FillBy4" GetMethodModifier="Public" GetMethodName="GetDepartTranDataByItemID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDepartTranDataByItemID" UserSourceName="FillBy4">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (ItemID = @ItemID) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) ORDER BY RunEndOfDayDate, ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy5" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDepartTranDataByDepartID" GeneratorSourceName="FillBy5" GetMethodModifier="Public" GetMethodName="GetDepartTranDataByDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDepartTranDataByDepartID" UserSourceName="FillBy5">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (DepartID = @DepartID) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) ORDER BY RunEndOfDayDate, ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VRunEndofDayResult" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRunEndofDayResult" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy6" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllRunEndofDayData" GeneratorSourceName="FillBy6" GetMethodModifier="Public" GetMethodName="GetAllRunEndofDayData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllRunEndofDayData" UserSourceName="FillBy6">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, BeginBalance, CateID, CateName, ContainerName, DepartID, DepartName, EndBalance, ItemID, ItemName, ItemUnitName, ReceivedQty, RequestQty, RunEndOfDayDate, UseQty FROM VRunEndofDayResult WHERE (CONVERT (datetime, RunEndOfDayDate, 101) &gt;= CONVERT (datetime, @FromDate, 101)) AND (CAST(CONVERT (VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FromDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@ToDate AS DATETIME), 1) AS Datetime)) ORDER BY RunEndOfDayDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ToDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@ToDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblDepartmentTableAdapter" GeneratorDataComponentClassName="tblDepartmentTableAdapter" Name="tblDepartment" UserDataComponentName="tblDepartmentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.tblDepartment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[tblDepartment] WHERE (([DepartID] = @Original_DepartID) AND ((@IsNull_DepartName = 1 AND [DepartName] IS NULL) OR ([DepartName] = @Original_DepartName)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DepartName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DepartName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[tblDepartment] ([DepartName]) VALUES (@DepartName);
+SELECT DepartID, DepartName FROM tblDepartment WHERE (DepartID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DepartName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DepartID, DepartName FROM dbo.tblDepartment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[tblDepartment] SET [DepartName] = @DepartName WHERE (([DepartID] = @Original_DepartID) AND ((@IsNull_DepartName = 1 AND [DepartName] IS NULL) OR ([DepartName] = @Original_DepartName)));
+SELECT DepartID, DepartName FROM tblDepartment WHERE (DepartID = @DepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DepartName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DepartName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DepartName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DepartName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@DepartID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRunEndOfPeriodMonthTableAdapter" GeneratorDataComponentClassName="VRunEndOfPeriodMonthTableAdapter" Name="VRunEndOfPeriodMonth" UserDataComponentName="VRunEndOfPeriodMonthTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (100) PERCENT CONVERT(varchar(2), t.M) + '/' + CONVERT(varchar(4), t.Y) AS smonth, SUM(t.RequestQty) AS RequestQty, SUM(t.ReceivedQty) AS ReceivedQty, 
+                      SUM(t.UseQty) AS UsedQty, t.ItemID, t.DepartID, tblItem.ItemName, tblItem.CateID
+FROM         (SELECT     RunEndOfDayDate, ItemName, RequestQty, ReceivedQty, UseQty, ItemID, DepartName, Barcode, DepartID, BeginBalance, EndBalance, 
+                                              YEAR(RunEndOfDayDate) AS Y, MONTH(RunEndOfDayDate) AS M, DAY(RunEndOfDayDate) AS D
+                       FROM          VRunEndofDayResult
+                       WHERE      (CAST(CONVERT(VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@fromDate AS DATETIME), 1) 
+                                              AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime))) AS t INNER JOIN
+                      tblItem ON t.ItemID = tblItem.ItemID
+GROUP BY t.Y, t.M, t.ItemID, t.DepartID, tblItem.ItemName, tblItem.CateID
+ORDER BY  tblItem.ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="smonth" DataSetColumn="smonth" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="CateID" DataSetColumn="CateID" />
+              <Mapping SourceColumn="UsedQty" DataSetColumn="UsedQty" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCateIDAndDepartID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByCateIDAndDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCateIDAndDepartID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (100) PERCENT CONVERT(varchar(2), t.M) + '/' + CONVERT(varchar(4), t.Y) AS smonth, SUM(t.RequestQty) AS RequestQty, SUM(t.ReceivedQty) AS ReceivedQty, 
+                      SUM(t.UseQty) AS UsedQty, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+FROM         (SELECT     RunEndOfDayDate, ItemName, RequestQty, ReceivedQty, UseQty, ItemID, DepartName, Barcode, DepartID, BeginBalance, EndBalance, 
+                                              YEAR(RunEndOfDayDate) AS Y, MONTH(RunEndOfDayDate) AS M, DAY(RunEndOfDayDate) AS D
+                       FROM          dbo.VRunEndofDayResult
+                       WHERE      ((CAST(CONVERT(VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) AND CateID=@CateID AND DepartID=@DepartID)) AS t INNER JOIN
+                      dbo.tblItem ON t.ItemID = dbo.tblItem.ItemID
+GROUP BY t.Y, t.M, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+ORDER BY  dbo.tblItem.ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CateID" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CateID" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByItemIDAndDepartID" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataByItemIDAndDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByItemIDAndDepartID" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (100) PERCENT CONVERT(varchar(2), t.M) + '/' + CONVERT(varchar(4), t.Y) AS smonth, SUM(t.RequestQty) AS RequestQty, SUM(t.ReceivedQty) AS ReceivedQty, 
+                      SUM(t.UseQty) AS UsedQty, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+FROM         (SELECT     RunEndOfDayDate, ItemName, RequestQty, ReceivedQty, UseQty, ItemID, DepartName, Barcode, DepartID, BeginBalance, EndBalance, 
+                                              YEAR(RunEndOfDayDate) AS Y, MONTH(RunEndOfDayDate) AS M, DAY(RunEndOfDayDate) AS D
+                       FROM          dbo.VRunEndofDayResult
+                       WHERE      ((CAST(CONVERT(VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) AND ItemID=@ItemID AND DepartID=@DepartID)) AS t INNER JOIN
+                      dbo.tblItem ON t.ItemID = dbo.tblItem.ItemID
+GROUP BY t.Y, t.M, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+ORDER BY dbo.tblItem.ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ItemID" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDepartID" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataByDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDepartID" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      CONVERT(varchar(2), t.M) + '/' + CONVERT(varchar(4), t.Y) AS smonth, SUM(t.RequestQty) AS RequestQty, SUM(t.ReceivedQty) AS ReceivedQty, 
+                      SUM(t.UseQty) AS UsedQty, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+FROM         (SELECT     RunEndOfDayDate, ItemName, RequestQty, ReceivedQty, UseQty, ItemID, DepartName, Barcode, DepartID, BeginBalance, EndBalance, 
+                                              YEAR(RunEndOfDayDate) AS Y, MONTH(RunEndOfDayDate) AS M, DAY(RunEndOfDayDate) AS D
+                       FROM          dbo.VRunEndofDayResult
+                       WHERE      ((CAST(CONVERT(VARCHAR(10), RunEndOfDayDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime)) AND DepartID=@DepartID )) AS t INNER JOIN
+                      dbo.tblItem ON t.ItemID = dbo.tblItem.ItemID
+GROUP BY t.Y, t.M, t.ItemID, t.DepartID, dbo.tblItem.ItemName, dbo.tblItem.CateID
+ORDER BY dbo.tblItem.ItemName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DepartID" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblEndofMonthRunTableAdapter" GeneratorDataComponentClassName="tblEndofMonthRunTableAdapter" Name="tblEndofMonthRun" UserDataComponentName="tblEndofMonthRunTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.tblEndofMonthRun" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Date, RequestQty, ReceivedQty, UsedQty, BeginBalance, EndBalance, DepartID, ItemID, ItemName, Barcode
+FROM         tblEndofMonthRun</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="RequestQty" DataSetColumn="RequestQty" />
+              <Mapping SourceColumn="ReceivedQty" DataSetColumn="ReceivedQty" />
+              <Mapping SourceColumn="UsedQty" DataSetColumn="UsedQty" />
+              <Mapping SourceColumn="BeginBalance" DataSetColumn="BeginBalance" />
+              <Mapping SourceColumn="EndBalance" DataSetColumn="EndBalance" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEndofDayRun" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSEndofDayRun" msprop:Generator_DataSetName="DSEndofDayRun" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VRunEndofDayResult" msprop:Generator_UserTableName="VRunEndofDayResult" msprop:Generator_RowDeletedName="VRunEndofDayResultRowDeleted" msprop:Generator_RowChangedName="VRunEndofDayResultRowChanged" msprop:Generator_RowClassName="VRunEndofDayResultRow" msprop:Generator_RowChangingName="VRunEndofDayResultRowChanging" msprop:Generator_RowEvArgName="VRunEndofDayResultRowChangeEvent" msprop:Generator_RowEvHandlerName="VRunEndofDayResultRowChangeEventHandler" msprop:Generator_TableClassName="VRunEndofDayResultDataTable" msprop:Generator_TableVarName="tableVRunEndofDayResult" msprop:Generator_RowDeletingName="VRunEndofDayResultRowDeleting" msprop:Generator_TablePropName="VRunEndofDayResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RunEndOfDayDate" msprop:Generator_UserColumnName="RunEndOfDayDate" msprop:Generator_ColumnVarNameInTable="columnRunEndOfDayDate" msprop:Generator_ColumnPropNameInRow="RunEndOfDayDate" msprop:Generator_ColumnPropNameInTable="RunEndOfDayDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestQty" msprop:Generator_UserColumnName="RequestQty" msprop:Generator_ColumnVarNameInTable="columnRequestQty" msprop:Generator_ColumnPropNameInRow="RequestQty" msprop:Generator_ColumnPropNameInTable="RequestQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ReceivedQty" msprop:Generator_UserColumnName="ReceivedQty" msprop:Generator_ColumnVarNameInTable="columnReceivedQty" msprop:Generator_ColumnPropNameInRow="ReceivedQty" msprop:Generator_ColumnPropNameInTable="ReceivedQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UseQty" msprop:Generator_UserColumnName="UseQty" msprop:Generator_ColumnVarNameInTable="columnUseQty" msprop:Generator_ColumnPropNameInRow="UseQty" msprop:Generator_ColumnPropNameInTable="UseQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BeginBalance" msprop:Generator_UserColumnName="BeginBalance" msprop:Generator_ColumnPropNameInRow="BeginBalance" msprop:Generator_ColumnVarNameInTable="columnBeginBalance" msprop:Generator_ColumnPropNameInTable="BeginBalanceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EndBalance" msprop:Generator_UserColumnName="EndBalance" msprop:Generator_ColumnPropNameInRow="EndBalance" msprop:Generator_ColumnVarNameInTable="columnEndBalance" msprop:Generator_ColumnPropNameInTable="EndBalanceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CateID" msprop:Generator_UserColumnName="CateID" msprop:Generator_ColumnPropNameInRow="CateID" msprop:Generator_ColumnVarNameInTable="columnCateID" msprop:Generator_ColumnPropNameInTable="CateIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" />
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblDepartment" msprop:Generator_UserTableName="tblDepartment" msprop:Generator_RowDeletedName="tblDepartmentRowDeleted" msprop:Generator_RowChangedName="tblDepartmentRowChanged" msprop:Generator_RowClassName="tblDepartmentRow" msprop:Generator_RowChangingName="tblDepartmentRowChanging" msprop:Generator_RowEvArgName="tblDepartmentRowChangeEvent" msprop:Generator_RowEvHandlerName="tblDepartmentRowChangeEventHandler" msprop:Generator_TableClassName="tblDepartmentDataTable" msprop:Generator_TableVarName="tabletblDepartment" msprop:Generator_RowDeletingName="tblDepartmentRowDeleting" msprop:Generator_TablePropName="tblDepartment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:decimal" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VRunEndOfPeriodMonth" msprop:Generator_UserTableName="VRunEndOfPeriodMonth" msprop:Generator_RowDeletedName="VRunEndOfPeriodMonthRowDeleted" msprop:Generator_RowChangedName="VRunEndOfPeriodMonthRowChanged" msprop:Generator_RowClassName="VRunEndOfPeriodMonthRow" msprop:Generator_RowChangingName="VRunEndOfPeriodMonthRowChanging" msprop:Generator_RowEvArgName="VRunEndOfPeriodMonthRowChangeEvent" msprop:Generator_RowEvHandlerName="VRunEndOfPeriodMonthRowChangeEventHandler" msprop:Generator_TableClassName="VRunEndOfPeriodMonthDataTable" msprop:Generator_TableVarName="tableVRunEndOfPeriodMonth" msprop:Generator_RowDeletingName="VRunEndOfPeriodMonthRowDeleting" msprop:Generator_TablePropName="VRunEndOfPeriodMonth">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="smonth" msdata:ReadOnly="true" msprop:Generator_UserColumnName="smonth" msprop:Generator_ColumnPropNameInRow="smonth" msprop:Generator_ColumnVarNameInTable="columnsmonth" msprop:Generator_ColumnPropNameInTable="smonthColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestQty" msdata:ReadOnly="true" msprop:Generator_UserColumnName="RequestQty" msprop:Generator_ColumnPropNameInRow="RequestQty" msprop:Generator_ColumnVarNameInTable="columnRequestQty" msprop:Generator_ColumnPropNameInTable="RequestQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ReceivedQty" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ReceivedQty" msprop:Generator_ColumnPropNameInRow="ReceivedQty" msprop:Generator_ColumnVarNameInTable="columnReceivedQty" msprop:Generator_ColumnPropNameInTable="ReceivedQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:decimal" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CateID" msprop:Generator_UserColumnName="CateID" msprop:Generator_ColumnPropNameInRow="CateID" msprop:Generator_ColumnVarNameInTable="columnCateID" msprop:Generator_ColumnPropNameInTable="CateIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UsedQty" msdata:ReadOnly="true" msprop:Generator_UserColumnName="UsedQty" msprop:Generator_ColumnPropNameInRow="UsedQty" msprop:Generator_ColumnVarNameInTable="columnUsedQty" msprop:Generator_ColumnPropNameInTable="UsedQtyColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblEndofMonthRun" msprop:Generator_UserTableName="tblEndofMonthRun" msprop:Generator_RowDeletedName="tblEndofMonthRunRowDeleted" msprop:Generator_RowChangedName="tblEndofMonthRunRowChanged" msprop:Generator_RowClassName="tblEndofMonthRunRow" msprop:Generator_RowChangingName="tblEndofMonthRunRowChanging" msprop:Generator_RowEvArgName="tblEndofMonthRunRowChangeEvent" msprop:Generator_RowEvHandlerName="tblEndofMonthRunRowChangeEventHandler" msprop:Generator_TableClassName="tblEndofMonthRunDataTable" msprop:Generator_TableVarName="tabletblEndofMonthRun" msprop:Generator_RowDeletingName="tblEndofMonthRunRowDeleting" msprop:Generator_TablePropName="tblEndofMonthRun">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="_Date" msprop:Generator_ColumnPropNameInTable="DateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestQty" msprop:Generator_UserColumnName="RequestQty" msprop:Generator_ColumnVarNameInTable="columnRequestQty" msprop:Generator_ColumnPropNameInRow="RequestQty" msprop:Generator_ColumnPropNameInTable="RequestQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ReceivedQty" msprop:Generator_UserColumnName="ReceivedQty" msprop:Generator_ColumnVarNameInTable="columnReceivedQty" msprop:Generator_ColumnPropNameInRow="ReceivedQty" msprop:Generator_ColumnPropNameInTable="ReceivedQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UsedQty" msprop:Generator_UserColumnName="UsedQty" msprop:Generator_ColumnVarNameInTable="columnUsedQty" msprop:Generator_ColumnPropNameInRow="UsedQty" msprop:Generator_ColumnPropNameInTable="UsedQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BeginBalance" msprop:Generator_UserColumnName="BeginBalance" msprop:Generator_ColumnVarNameInTable="columnBeginBalance" msprop:Generator_ColumnPropNameInRow="BeginBalance" msprop:Generator_ColumnPropNameInTable="BeginBalanceColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="EndBalance" msprop:Generator_UserColumnName="EndBalance" msprop:Generator_ColumnVarNameInTable="columnEndBalance" msprop:Generator_ColumnPropNameInRow="EndBalance" msprop:Generator_ColumnPropNameInTable="EndBalanceColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblDepartment" />
+      <xs:field xpath="mstns:DepartID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

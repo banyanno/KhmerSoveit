@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDepartmentStock" targetNamespace="http://tempuri.org/DSDepartmentStock.xsd" xmlns:mstns="http://tempuri.org/DSDepartmentStock.xsd" xmlns="http://tempuri.org/DSDepartmentStock.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VItemListDepartPermissionTableAdapter" GeneratorDataComponentClassName="VItemListDepartPermissionTableAdapter" Name="VItemListDepartPermission" UserDataComponentName="VItemListDepartPermissionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListDepartPermission" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemID, ItemName, ItemUnitName, ContainerName, LabourFacName, VenderName, UnitPrice, Picture, ItemUnitID, CateID, LabourFacID, VendorID, ContainerID, 
+                      CateName, Barcode, UnitsInStock, IsShow, DepartID, DepartName
+FROM         VItemListDepartPermission</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="LabourFacName" DataSetColumn="LabourFacName" />
+              <Mapping SourceColumn="VenderName" DataSetColumn="VenderName" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="Picture" DataSetColumn="Picture" />
+              <Mapping SourceColumn="ItemUnitID" DataSetColumn="ItemUnitID" />
+              <Mapping SourceColumn="CateID" DataSetColumn="CateID" />
+              <Mapping SourceColumn="LabourFacID" DataSetColumn="LabourFacID" />
+              <Mapping SourceColumn="VendorID" DataSetColumn="VendorID" />
+              <Mapping SourceColumn="ContainerID" DataSetColumn="ContainerID" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="UnitsInStock" DataSetColumn="UnitsInStock" />
+              <Mapping SourceColumn="IsShow" DataSetColumn="IsShow" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListDepartPermission" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetListItemAvailableForDepart" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetListItemAvailableForDepart" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetListItemAvailableForDepart" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, CateID, CateName, ContainerID, ContainerName, DepartID, DepartName, IsShow, ItemID, ItemName, ItemUnitID, ItemUnitName, LabourFacID, LabourFacName, Picture, UnitPrice, UnitsInStock, VenderName, VendorID FROM VItemListDepartPermission WHERE (DepartID = @DepartID) AND (IsShow = 1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoInventory.dbo.VItemListDepartPermission" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListDepartPermission" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetListDepartShowItemsByItemID" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetListDepartShowItemsByItemID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetListDepartShowItemsByItemID" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemID, ItemName, ItemUnitName, ContainerName, LabourFacName, VenderName, UnitPrice, Picture, ItemUnitID, CateID, LabourFacID, VendorID, ContainerID, 
+                      CateName, Barcode, UnitsInStock, IsShow, DepartID, DepartName
+FROM         VItemListDepartPermission
+WHERE ItemID=@ItemID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoInventory.dbo.VItemListDepartPermission" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListDepartPermission" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetItemPrivilege" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetItemPrivilege" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetItemPrivilege" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemID, ItemName, ItemUnitName, ContainerName, LabourFacName, VenderName, UnitPrice, Picture, ItemUnitID, CateID, LabourFacID, VendorID, ContainerID, 
+                      CateName, Barcode, UnitsInStock, IsShow, DepartID, DepartName
+FROM         VItemListDepartPermission
+WHERE  ItemID=@ItemID AND  DepartID &lt;&gt; @MainStockDepartID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoDB.dbo.VItemListDepartPermission" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MainStockDepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VItemListDepartPermission" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MainStockDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VItemListInDepartTableAdapter" GeneratorDataComponentClassName="VItemListInDepartTableAdapter" Name="VItemListInDepart" UserDataComponentName="VItemListInDepartTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListInDepart" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        ItemID, ItemName, ItemUnitName, ContainerName, LabourFacName, VenderName, UnitPrice, Picture, CateID, ItemUnitID, LabourFacID, VendorID, ContainerID, 
+                         CateName, Barcode, DepartID, UnitsInStock, StockAlertQty
+FROM            VItemListInDepart</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+              <Mapping SourceColumn="LabourFacName" DataSetColumn="LabourFacName" />
+              <Mapping SourceColumn="VenderName" DataSetColumn="VenderName" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="Picture" DataSetColumn="Picture" />
+              <Mapping SourceColumn="CateID" DataSetColumn="CateID" />
+              <Mapping SourceColumn="ItemUnitID" DataSetColumn="ItemUnitID" />
+              <Mapping SourceColumn="LabourFacID" DataSetColumn="LabourFacID" />
+              <Mapping SourceColumn="VendorID" DataSetColumn="VendorID" />
+              <Mapping SourceColumn="ContainerID" DataSetColumn="ContainerID" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="UnitsInStock" DataSetColumn="UnitsInStock" />
+              <Mapping SourceColumn="StockAlertQty" DataSetColumn="StockAlertQty" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListInDepart" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetItemDataInDepartByItemID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetItemDataInDepartByItemID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetItemDataInDepartByItemID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Barcode, CateID, CateName, ContainerID, ContainerName, DepartID, ItemID, ItemName, ItemUnitID, ItemUnitName, LabourFacID, LabourFacName, Picture, StockAlertQty, UnitPrice, UnitsInStock, VenderName, VendorID FROM VItemListInDepart WHERE (DepartID = @DepartID) AND (ItemID = @ItemID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ItemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VItemListInDepart" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetItemDataByDepartID" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetItemDataByDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetItemDataByDepartID" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Barcode, CateID, CateName, ContainerID, ContainerName, DepartID, ItemID, ItemName, ItemUnitID, ItemUnitName, LabourFacID, LabourFacName, Picture, StockAlertQty, UnitPrice, UnitsInStock, VenderName, VendorID FROM VItemListInDepart WHERE (DepartID = @DepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VAdjustStockHistoryTableAdapter" GeneratorDataComponentClassName="VAdjustStockHistoryTableAdapter" Name="VAdjustStockHistory" UserDataComponentName="VAdjustStockHistoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="CurrentQty" DataSetColumn="CurrentQty" />
+              <Mapping SourceColumn="NewQty" DataSetColumn="NewQty" />
+              <Mapping SourceColumn="Difference" DataSetColumn="Difference" />
+              <Mapping SourceColumn="AdjustDate" DataSetColumn="AdjustDate" />
+              <Mapping SourceColumn="DepartID" DataSetColumn="DepartID" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="EmployeeName" DataSetColumn="EmployeeName" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
+              <Mapping SourceColumn="IsApproval" DataSetColumn="IsApproval" />
+              <Mapping SourceColumn="ApprovalUserID" DataSetColumn="ApprovalUserID" />
+              <Mapping SourceColumn="AdjustStockID" DataSetColumn="AdjustStockID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAdjustmentDataByDepartID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAdjustmentDataByDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAdjustmentDataByDepartID" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     AdjustDate, Barcode, CurrentQty, DepartID, DepartName, Difference, EmployeeName, ItemID, ItemName, NewQty, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE     (DepartID = @DepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataStockAdjustmentInPeriodTime" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataStockAdjustmentInPeriodTime" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataStockAdjustmentInPeriodTime" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName
+FROM         VAdjustStockHistory
+WHERE DepartID=@DepartID AND (CAST(CONVERT(VARCHAR(10), AdjustDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@fromDate AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@toDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fromDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@fromDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="toDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@toDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDepartAdjustItem" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDepartAdjustItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDepartAdjustItem" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE DepartID !=@MainStockID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="MainStockID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MainStockID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAdjustStockInPeriodTime" GeneratorSourceName="FillBy3" GetMethodModifier="Public" GetMethodName="GetDataAdjustStockInPeriodTime" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAdjustStockInPeriodTime" UserSourceName="FillBy3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE DepartID=@DepartID AND (CAST(CONVERT(VARCHAR(10),AdjustDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy4" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAdjustmentDataByDepatIDAndItemID" GeneratorSourceName="FillBy4" GetMethodModifier="Public" GetMethodName="GetAdjustmentDataByDepatIDAndItemID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAdjustmentDataByDepatIDAndItemID" UserSourceName="FillBy4">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE DepartID = @DepartID AND ItemID=@ItemID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ItemID" ColumnName="ItemID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@ItemID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="ItemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy5" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAdjustmentDataCurDateByDepartID" GeneratorSourceName="FillBy5" GetMethodModifier="Public" GetMethodName="GetAdjustmentDataCurDateByDepartID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAdjustmentDataCurDateByDepartID" UserSourceName="FillBy5">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     AdjustDate, Barcode, CurrentQty, DepartID, DepartName, Difference, EmployeeName, ItemID, ItemName, NewQty, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE     (DepartID = @DepartID) AND CAST(CONVERT(VARCHAR(10), AdjustDate, 1) AS DateTime) = CAST(CONVERT(VARCHAR(10), CAST(@pDate AS DATETIME), 1) AS Datetime)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DepartID" ColumnName="DepartID" DataSourceName="TakeoDB.dbo.VAdjustStockHistory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="pDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@pDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VAdjustStockHistory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy6" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="SelectAdjustDateToDate" GeneratorSourceName="FillBy6" GetMethodModifier="Public" GetMethodName="SelectAdjustDateToDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectAdjustDateToDate" UserSourceName="FillBy6">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     ItemName, Barcode, DepartName, CurrentQty, NewQty, Difference, AdjustDate, DepartID, ItemID, EmployeeName, UserName, Comment, IsApproval, ApprovalUserID, 
+                      AdjustStockID
+FROM         VAdjustStockHistory
+WHERE 
+(CAST(CONVERT(VARCHAR(10),AdjustDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND 
+                      CAST(CONVERT(VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))
+ORDER BY AdjustDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDepartmentStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSDepartmentStock" msprop:Generator_DataSetName="DSDepartmentStock" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VItemListDepartPermission" msprop:Generator_UserTableName="VItemListDepartPermission" msprop:Generator_RowDeletedName="VItemListDepartPermissionRowDeleted" msprop:Generator_RowChangedName="VItemListDepartPermissionRowChanged" msprop:Generator_RowClassName="VItemListDepartPermissionRow" msprop:Generator_RowChangingName="VItemListDepartPermissionRowChanging" msprop:Generator_RowEvArgName="VItemListDepartPermissionRowChangeEvent" msprop:Generator_RowEvHandlerName="VItemListDepartPermissionRowChangeEventHandler" msprop:Generator_TableClassName="VItemListDepartPermissionDataTable" msprop:Generator_TableVarName="tableVItemListDepartPermission" msprop:Generator_RowDeletingName="VItemListDepartPermissionRowDeleting" msprop:Generator_TablePropName="VItemListDepartPermission">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LabourFacName" msprop:Generator_UserColumnName="LabourFacName" msprop:Generator_ColumnPropNameInRow="LabourFacName" msprop:Generator_ColumnVarNameInTable="columnLabourFacName" msprop:Generator_ColumnPropNameInTable="LabourFacNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VenderName" msprop:Generator_UserColumnName="VenderName" msprop:Generator_ColumnPropNameInRow="VenderName" msprop:Generator_ColumnVarNameInTable="columnVenderName" msprop:Generator_ColumnPropNameInTable="VenderNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Picture" msprop:Generator_UserColumnName="Picture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInTable="PictureColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ItemUnitID" msprop:Generator_UserColumnName="ItemUnitID" msprop:Generator_ColumnPropNameInRow="ItemUnitID" msprop:Generator_ColumnVarNameInTable="columnItemUnitID" msprop:Generator_ColumnPropNameInTable="ItemUnitIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CateID" msprop:Generator_UserColumnName="CateID" msprop:Generator_ColumnPropNameInRow="CateID" msprop:Generator_ColumnVarNameInTable="columnCateID" msprop:Generator_ColumnPropNameInTable="CateIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LabourFacID" msprop:Generator_UserColumnName="LabourFacID" msprop:Generator_ColumnPropNameInRow="LabourFacID" msprop:Generator_ColumnVarNameInTable="columnLabourFacID" msprop:Generator_ColumnPropNameInTable="LabourFacIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorID" msprop:Generator_UserColumnName="VendorID" msprop:Generator_ColumnPropNameInRow="VendorID" msprop:Generator_ColumnVarNameInTable="columnVendorID" msprop:Generator_ColumnPropNameInTable="VendorIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ContainerID" msprop:Generator_UserColumnName="ContainerID" msprop:Generator_ColumnPropNameInRow="ContainerID" msprop:Generator_ColumnVarNameInTable="columnContainerID" msprop:Generator_ColumnPropNameInTable="ContainerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitsInStock" msprop:Generator_UserColumnName="UnitsInStock" msprop:Generator_ColumnPropNameInRow="UnitsInStock" msprop:Generator_ColumnVarNameInTable="columnUnitsInStock" msprop:Generator_ColumnPropNameInTable="UnitsInStockColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="IsShow" msprop:Generator_UserColumnName="IsShow" msprop:Generator_ColumnPropNameInRow="IsShow" msprop:Generator_ColumnVarNameInTable="columnIsShow" msprop:Generator_ColumnPropNameInTable="IsShowColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VItemListInDepart" msprop:Generator_UserTableName="VItemListInDepart" msprop:Generator_RowDeletedName="VItemListInDepartRowDeleted" msprop:Generator_RowChangedName="VItemListInDepartRowChanged" msprop:Generator_RowClassName="VItemListInDepartRow" msprop:Generator_RowChangingName="VItemListInDepartRowChanging" msprop:Generator_RowEvArgName="VItemListInDepartRowChangeEvent" msprop:Generator_RowEvHandlerName="VItemListInDepartRowChangeEventHandler" msprop:Generator_TableClassName="VItemListInDepartDataTable" msprop:Generator_TableVarName="tableVItemListInDepart" msprop:Generator_RowDeletingName="VItemListInDepartRowDeleting" msprop:Generator_TablePropName="VItemListInDepart">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LabourFacName" msprop:Generator_UserColumnName="LabourFacName" msprop:Generator_ColumnPropNameInRow="LabourFacName" msprop:Generator_ColumnVarNameInTable="columnLabourFacName" msprop:Generator_ColumnPropNameInTable="LabourFacNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VenderName" msprop:Generator_UserColumnName="VenderName" msprop:Generator_ColumnPropNameInRow="VenderName" msprop:Generator_ColumnVarNameInTable="columnVenderName" msprop:Generator_ColumnPropNameInTable="VenderNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Picture" msprop:Generator_UserColumnName="Picture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInTable="PictureColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CateID" msprop:Generator_UserColumnName="CateID" msprop:Generator_ColumnPropNameInRow="CateID" msprop:Generator_ColumnVarNameInTable="columnCateID" msprop:Generator_ColumnPropNameInTable="CateIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemUnitID" msprop:Generator_UserColumnName="ItemUnitID" msprop:Generator_ColumnPropNameInRow="ItemUnitID" msprop:Generator_ColumnVarNameInTable="columnItemUnitID" msprop:Generator_ColumnPropNameInTable="ItemUnitIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LabourFacID" msprop:Generator_UserColumnName="LabourFacID" msprop:Generator_ColumnPropNameInRow="LabourFacID" msprop:Generator_ColumnVarNameInTable="columnLabourFacID" msprop:Generator_ColumnPropNameInTable="LabourFacIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorID" msprop:Generator_UserColumnName="VendorID" msprop:Generator_ColumnPropNameInRow="VendorID" msprop:Generator_ColumnVarNameInTable="columnVendorID" msprop:Generator_ColumnPropNameInTable="VendorIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ContainerID" msprop:Generator_UserColumnName="ContainerID" msprop:Generator_ColumnPropNameInRow="ContainerID" msprop:Generator_ColumnVarNameInTable="columnContainerID" msprop:Generator_ColumnPropNameInTable="ContainerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UnitsInStock" msprop:Generator_UserColumnName="UnitsInStock" msprop:Generator_ColumnPropNameInRow="UnitsInStock" msprop:Generator_ColumnVarNameInTable="columnUnitsInStock" msprop:Generator_ColumnPropNameInTable="UnitsInStockColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="StockAlertQty" msprop:Generator_UserColumnName="StockAlertQty" msprop:Generator_ColumnPropNameInRow="StockAlertQty" msprop:Generator_ColumnVarNameInTable="columnStockAlertQty" msprop:Generator_ColumnPropNameInTable="StockAlertQtyColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VAdjustStockHistory" msprop:Generator_UserTableName="VAdjustStockHistory" msprop:Generator_RowDeletedName="VAdjustStockHistoryRowDeleted" msprop:Generator_RowChangedName="VAdjustStockHistoryRowChanged" msprop:Generator_RowClassName="VAdjustStockHistoryRow" msprop:Generator_RowChangingName="VAdjustStockHistoryRowChanging" msprop:Generator_RowEvArgName="VAdjustStockHistoryRowChangeEvent" msprop:Generator_RowEvHandlerName="VAdjustStockHistoryRowChangeEventHandler" msprop:Generator_TableClassName="VAdjustStockHistoryDataTable" msprop:Generator_TableVarName="tableVAdjustStockHistory" msprop:Generator_RowDeletingName="VAdjustStockHistoryRowDeleting" msprop:Generator_TablePropName="VAdjustStockHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentQty" msprop:Generator_UserColumnName="CurrentQty" msprop:Generator_ColumnVarNameInTable="columnCurrentQty" msprop:Generator_ColumnPropNameInRow="CurrentQty" msprop:Generator_ColumnPropNameInTable="CurrentQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NewQty" msprop:Generator_UserColumnName="NewQty" msprop:Generator_ColumnVarNameInTable="columnNewQty" msprop:Generator_ColumnPropNameInRow="NewQty" msprop:Generator_ColumnPropNameInTable="NewQtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Difference" msprop:Generator_UserColumnName="Difference" msprop:Generator_ColumnVarNameInTable="columnDifference" msprop:Generator_ColumnPropNameInRow="Difference" msprop:Generator_ColumnPropNameInTable="DifferenceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AdjustDate" msprop:Generator_UserColumnName="AdjustDate" msprop:Generator_ColumnVarNameInTable="columnAdjustDate" msprop:Generator_ColumnPropNameInRow="AdjustDate" msprop:Generator_ColumnPropNameInTable="AdjustDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartID" msprop:Generator_UserColumnName="DepartID" msprop:Generator_ColumnVarNameInTable="columnDepartID" msprop:Generator_ColumnPropNameInRow="DepartID" msprop:Generator_ColumnPropNameInTable="DepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:decimal" />
+              <xs:element name="EmployeeName" msprop:Generator_UserColumnName="EmployeeName" msprop:Generator_ColumnPropNameInRow="EmployeeName" msprop:Generator_ColumnVarNameInTable="columnEmployeeName" msprop:Generator_ColumnPropNameInTable="EmployeeNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_UserColumnName="Comment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInTable="CommentColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsApproval" msprop:Generator_UserColumnName="IsApproval" msprop:Generator_ColumnPropNameInRow="IsApproval" msprop:Generator_ColumnVarNameInTable="columnIsApproval" msprop:Generator_ColumnPropNameInTable="IsApprovalColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ApprovalUserID" msprop:Generator_UserColumnName="ApprovalUserID" msprop:Generator_ColumnPropNameInRow="ApprovalUserID" msprop:Generator_ColumnVarNameInTable="columnApprovalUserID" msprop:Generator_ColumnPropNameInTable="ApprovalUserIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="AdjustStockID" msprop:Generator_UserColumnName="AdjustStockID" msprop:Generator_ColumnPropNameInRow="AdjustStockID" msprop:Generator_ColumnVarNameInTable="columnAdjustStockID" msprop:Generator_ColumnPropNameInTable="AdjustStockIDColumn" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InitialItemDT" msprop:Generator_UserTableName="InitialItemDT" msprop:Generator_RowDeletedName="InitialItemDTRowDeleted" msprop:Generator_RowChangedName="InitialItemDTRowChanged" msprop:Generator_RowClassName="InitialItemDTRow" msprop:Generator_RowChangingName="InitialItemDTRowChanging" msprop:Generator_RowEvArgName="InitialItemDTRowChangeEvent" msprop:Generator_RowEvHandlerName="InitialItemDTRowChangeEventHandler" msprop:Generator_TableClassName="InitialItemDTDataTable" msprop:Generator_TableVarName="tableInitialItemDT" msprop:Generator_RowDeletingName="InitialItemDTRowDeleting" msprop:Generator_TablePropName="InitialItemDT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:string" />
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemQTY" msprop:Generator_UserColumnName="ItemQTY" msprop:Generator_ColumnPropNameInRow="ItemQTY" msprop:Generator_ColumnVarNameInTable="columnItemQTY" msprop:Generator_ColumnPropNameInTable="ItemQTYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemAlertQTY" msprop:Generator_UserColumnName="ItemAlertQTY" msprop:Generator_ColumnPropNameInRow="ItemAlertQTY" msprop:Generator_ColumnVarNameInTable="columnItemAlertQTY" msprop:Generator_ColumnPropNameInTable="ItemAlertQTYColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InitialItemDT" />
+      <xs:field xpath="mstns:ItemID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

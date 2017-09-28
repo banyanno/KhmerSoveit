@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSOperationReport" targetNamespace="http://tempuri.org/DSOperationReport.xsd" xmlns:mstns="http://tempuri.org/DSOperationReport.xsd" xmlns="http://tempuri.org/DSOperationReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTblOperationTableAdapter" GeneratorDataComponentClassName="DTblOperationTableAdapter" Name="DTblOperation" UserDataComponentName="DTblOperationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.TblOTRegistration" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     p3.OperationType, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '0-4' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo
+WHERE    p3.status='True' AND  (p1.Age BETWEEN 0 AND 4) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime))
+AND p3.DeleteOption='False'
+GROUP BY p3.OperationType
+UNION
+SELECT     p3.OperationType, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '5-14' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo
+WHERE    p3.status='True' AND  (p1.Age BETWEEN 5 AND 14) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime))
+AND p3.DeleteOption='False'
+GROUP BY p3.OperationType
+UNION
+SELECT     p3.OperationType, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '15-49' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo
+WHERE    p3.status='True' AND  (p1.Age BETWEEN 15 AND 49) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime))
+AND p3.DeleteOption='False'
+GROUP BY p3.OperationType
+UNION
+SELECT     p3.OperationType, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '&gt;=50' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo
+WHERE     p3.status='True' AND (p1.Age &gt;= 50) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime))
+AND p3.DeleteOption='False'
+GROUP BY p3.OperationType</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTo" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTo" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Male" DataSetColumn="Male" />
+              <Mapping SourceColumn="Female" DataSetColumn="Female" />
+              <Mapping SourceColumn="AgeRang" DataSetColumn="AgeRang" />
+              <Mapping SourceColumn="OperationType" DataSetColumn="OperationType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblOperationIOLTableAdapter" GeneratorDataComponentClassName="TblOperationIOLTableAdapter" Name="TblOperationIOL" UserDataComponentName="TblOperationIOLTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.TblNewInPatient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber AS OTAndIOL, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '0-4' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo INNER JOIN
+                      TblIOLRegistration AS P4 ON P4.OTNo = p3.OTNo
+WHERE     (p1.Age BETWEEN 0 AND 4) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p3.DeleteOption = 'False')
+GROUP BY p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber
+UNION
+SELECT     p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber AS OTAndIOL, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, '5-14' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo INNER JOIN
+                      TblIOLRegistration AS P4 ON P4.OTNo = p3.OTNo
+WHERE     (p1.Age BETWEEN 5 AND 14) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p3.DeleteOption = 'False')
+GROUP BY p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber
+UNION
+SELECT     p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber AS OTAndIOL, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, 
+                      '15-49' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo INNER JOIN
+                      TblIOLRegistration AS P4 ON P4.OTNo = p3.OTNo
+WHERE     (p1.Age BETWEEN 15 AND 49) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p3.DeleteOption = 'False')
+GROUP BY p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber
+UNION
+SELECT     p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber AS OTAndIOL, COUNT(p1.Male) AS Male, COUNT(p1.Female) AS Female, 
+                      '&gt;=50' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNewInPatient AS p2 ON p1.PatientNo = p2.PatientNo INNER JOIN
+                      TblOTRegistration AS p3 ON p2.NewInPatientNo = p3.NewInpatientNo INNER JOIN
+                      TblIOLRegistration AS P4 ON P4.OTNo = p3.OTNo
+WHERE     (p1.Age &gt;= 50) AND (CAST(CONVERT(VARCHAR(10), p3.DateOperated, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p3.DeleteOption = 'False')
+GROUP BY p2.Diagnosis, p3.OperationType + ' ' + P4.IOLNumber</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTo" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTo" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OTAndIOL" DataSetColumn="OTAndIOL" />
+              <Mapping SourceColumn="Male" DataSetColumn="Male" />
+              <Mapping SourceColumn="Female" DataSetColumn="Female" />
+              <Mapping SourceColumn="AgeRang" DataSetColumn="AgeRang" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSOperationReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSOperationReport" msprop:Generator_DataSetName="DSOperationReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTblOperation" msprop:Generator_UserTableName="DTblOperation" msprop:Generator_RowDeletedName="DTblOperationRowDeleted" msprop:Generator_RowChangedName="DTblOperationRowChanged" msprop:Generator_RowClassName="DTblOperationRow" msprop:Generator_RowChangingName="DTblOperationRowChanging" msprop:Generator_RowEvArgName="DTblOperationRowChangeEvent" msprop:Generator_RowEvHandlerName="DTblOperationRowChangeEventHandler" msprop:Generator_TableClassName="DTblOperationDataTable" msprop:Generator_TableVarName="tableDTblOperation" msprop:Generator_RowDeletingName="DTblOperationRowDeleting" msprop:Generator_TablePropName="DTblOperation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Male" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Male" msprop:Generator_ColumnVarNameInTable="columnMale" msprop:Generator_ColumnPropNameInRow="Male" msprop:Generator_ColumnPropNameInTable="MaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Female" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Female" msprop:Generator_ColumnVarNameInTable="columnFemale" msprop:Generator_ColumnPropNameInRow="Female" msprop:Generator_ColumnPropNameInTable="FemaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="AgeRang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="AgeRang" msprop:Generator_ColumnVarNameInTable="columnAgeRang" msprop:Generator_ColumnPropNameInRow="AgeRang" msprop:Generator_ColumnPropNameInTable="AgeRangColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OperationType" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OperationType" msprop:Generator_ColumnVarNameInTable="columnOperationType" msprop:Generator_ColumnPropNameInRow="OperationType" msprop:Generator_ColumnPropNameInTable="OperationTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblOperationIOL" msprop:Generator_UserTableName="TblOperationIOL" msprop:Generator_RowDeletedName="TblOperationIOLRowDeleted" msprop:Generator_RowChangedName="TblOperationIOLRowChanged" msprop:Generator_RowClassName="TblOperationIOLRow" msprop:Generator_RowChangingName="TblOperationIOLRowChanging" msprop:Generator_RowEvArgName="TblOperationIOLRowChangeEvent" msprop:Generator_RowEvHandlerName="TblOperationIOLRowChangeEventHandler" msprop:Generator_TableClassName="TblOperationIOLDataTable" msprop:Generator_TableVarName="tableTblOperationIOL" msprop:Generator_RowDeletingName="TblOperationIOLRowDeleting" msprop:Generator_TablePropName="TblOperationIOL">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OTAndIOL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OTAndIOL" msprop:Generator_ColumnPropNameInRow="OTAndIOL" msprop:Generator_ColumnVarNameInTable="columnOTAndIOL" msprop:Generator_ColumnPropNameInTable="OTAndIOLColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Male" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Male" msprop:Generator_ColumnPropNameInRow="Male" msprop:Generator_ColumnVarNameInTable="columnMale" msprop:Generator_ColumnPropNameInTable="MaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Female" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Female" msprop:Generator_ColumnPropNameInRow="Female" msprop:Generator_ColumnVarNameInTable="columnFemale" msprop:Generator_ColumnPropNameInTable="FemaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="AgeRang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="AgeRang" msprop:Generator_ColumnPropNameInRow="AgeRang" msprop:Generator_ColumnVarNameInTable="columnAgeRang" msprop:Generator_ColumnPropNameInTable="AgeRangColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

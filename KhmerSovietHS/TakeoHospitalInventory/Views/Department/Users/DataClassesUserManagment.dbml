@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="TakeoDB" Class="DataClassesUserManagmentDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ITD-YANO120;Failover Partner=192.168.111.252\sql2;Initial Catalog=KhmerSovietDB;Persist Security Info=True;User ID=sa;Max Pool Size=4000;Asynchronous Processing=True;Connect Timeout=1000;Packet Size=2768" SettingsObjectName="TakeoHospitalInventory.My.MySettings" SettingsPropertyName="TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EOD_ACCESS_RIGHTS" Member="EOD_ACCESS_RIGHTs">
+    <Type Name="EOD_ACCESS_RIGHT">
+      <Column Name="Id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EOD_Right_DepartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department_Add_User" Member="Department_Add_Users">
+    <Type Name="Department_Add_User">
+      <Column Name="GUNo" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Deppartment_Permistion_Menu" Member="Deppartment_Permistion_Menus">
+    <Type Name="Deppartment_Permistion_Menu">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu_INVENTORY" Member="Menu_INVENTORies">
+    <Type Name="Menu_INVENTORY">
+      <Column Name="MenuNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MenuKey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MenuDisplay" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department_User" Member="Department_Users">
+    <Type Name="Department_User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="VarBinary(250)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isActive" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isBadLogIn" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GroupNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isHospitalManager" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isMainStockManager" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NewPassword" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

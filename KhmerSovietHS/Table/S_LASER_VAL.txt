@@ -1,0 +1,7 @@
+1	Yag PI. 2 Eye	100.00
+2	Yag PI. 1 Eye	50.00
+3	Yag Cap. 1 Eye	50.00
+4	Yag Cap. 2 Eye	100.00
+5	PRP	100.00
+6	Macular Laser	100.00
+NULL	NULL	NULL

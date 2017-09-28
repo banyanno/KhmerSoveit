@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.5" name="LinqOpticalShopClasses">
+  <DataContextMoniker Name="/LinqOpticalShopClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a9cdcece-96a8-4455-ac77-45c3d970038a" absoluteBounds="0.5, 0.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/INCOME_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e36f3343-2a74-45eb-8b93-83df56b8ca05" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37001e36-849d-4c8a-81dc-979118b3433e" absoluteBounds="2.875, 0.5, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/BARCODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="655b662c-ec8b-460f-b99a-1dd605ba0987" absoluteBounds="2.89, 0.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="565fe03d-2b92-4b9e-8b48-894090ca6f97" absoluteBounds="0.625, 6.875, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/DONATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="308e2820-eeb1-4729-97f2-f99c96f5032a" absoluteBounds="0.64, 7.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a1f1a62-9a7b-4aa7-8ee2-497e06dde195" absoluteBounds="5.375, 0.5, 2, 3.3970157877604166">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/RECEIPT_CUSTOMER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d49d794f-10c5-41ca-a8b5-a44c804423a4" absoluteBounds="5.39, 0.96, 1.9700000000000002, 2.8370157877604165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cc80b1c-a0c2-46da-a973-52028d431550" absoluteBounds="0.5, 0.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/ACCOUNT_PAYABLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ead087b0-444c-4467-baf0-ed265bbe26d4" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18c8d7c4-72ff-43d7-ba81-666646ab40fb" absoluteBounds="8.75, 1.875, 2, 2.2465844726562496">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/ACCOUNT_PAYABLE_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abf96f69-a9d8-4a34-b4c4-d2f67a52777d" absoluteBounds="8.765, 2.335, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="116dc88e-06c9-48ba-9f9c-4d460a3d13bd" absoluteBounds="5.5, 4.125, 2, 10.135256347656251">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/tblPatientReceipt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9160fd5e-ea32-4073-95e6-d4690b225e6b" absoluteBounds="5.515, 4.585, 1.9700000000000002, 9.57525634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe7ba99b-2a89-4377-af2b-32a7d86df70a" absoluteBounds="0.5, 2.75, 2, 2.24658447265625">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/RECEIPT_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de89945f-9709-4070-aa39-0eab0dc04926" absoluteBounds="0.515, 3.21, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="337a2150-5f81-4bf2-83db-0c55785df5c4" absoluteBounds="2.75, 2.75, 2, 8.9848250325520826">
+      <DataClassMoniker Name="/LinqOpticalShopClassesDataContext/RECEIPT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66b40c2e-b04d-4f2d-bbd2-8e691c89c8a8" absoluteBounds="2.765, 3.21, 1.9700000000000002, 8.4248250325520821" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

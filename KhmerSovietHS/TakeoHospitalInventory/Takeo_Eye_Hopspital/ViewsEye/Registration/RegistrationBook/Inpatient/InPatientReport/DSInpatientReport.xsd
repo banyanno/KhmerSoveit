@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSInpatientReport" targetNamespace="http://tempuri.org/DSInpatientReport.xsd" xmlns:mstns="http://tempuri.org/DSInpatientReport.xsd" xmlns="http://tempuri.org/DSInpatientReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblInpatientReportTableAdapter" GeneratorDataComponentClassName="TblInpatientReportTableAdapter" Name="TblInpatientReport" UserDataComponentName="TblInpatientReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.TblInpatient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataByMonth" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataByMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataByMonth" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '0-4' AS agerang
+FROM         TblInpatient AS p2 INNER JOIN
+                      TblPatients AS p1 ON p2.PatientNo = p1.PatientNo
+WHERE     (p1.Age BETWEEN 0 AND 4) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False')
+GROUP BY p2.Diagnosis
+UNION
+SELECT     p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '5-14' AS agerang
+FROM         TblInpatient AS p2 INNER JOIN
+                      TblPatients AS p1 ON p2.PatientNo = p1.PatientNo
+WHERE     (p1.Age BETWEEN 5 AND 14) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False')
+GROUP BY p2.Diagnosis
+UNION
+SELECT     p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '15-49' AS agerang
+FROM         TblInpatient AS p2 INNER JOIN
+                      TblPatients AS p1 ON p2.PatientNo = p1.PatientNo
+WHERE     (p1.Age BETWEEN 15 AND 49) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False')
+GROUP BY p2.Diagnosis
+UNION
+SELECT     p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '&gt;=50' AS agerang
+FROM         TblInpatient AS p2 INNER JOIN
+                      TblPatients AS p1 ON p2.PatientNo = p1.PatientNo
+WHERE     (p1.Age &gt;= 50) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False')
+GROUP BY p2.Diagnosis</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTo" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTo" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="male" DataSetColumn="male" />
+              <Mapping SourceColumn="female" DataSetColumn="female" />
+              <Mapping SourceColumn="agerang" DataSetColumn="agerang" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_InpatientDetailTableAdapter" GeneratorDataComponentClassName="V_InpatientDetailTableAdapter" Name="V_InpatientDetail" UserDataComponentName="V_InpatientDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDBTesting.dbo.V_InpatientDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT InNo, PatientNo, ReceiptNo, NameKhmer, Age, Sex, Address, Diagnosis, TypeOfOperation, HosFee, SosialFee, DolarSosial, FullFee, DolarFull, Other, CreateDate, DeleteOption, CalDolarSosial, CalDolarFull FROM dbo.V_InpatientDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InNo" DataSetColumn="InNo" />
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="ReceiptNo" DataSetColumn="ReceiptNo" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+              <Mapping SourceColumn="TypeOfOperation" DataSetColumn="TypeOfOperation" />
+              <Mapping SourceColumn="HosFee" DataSetColumn="HosFee" />
+              <Mapping SourceColumn="SosialFee" DataSetColumn="SosialFee" />
+              <Mapping SourceColumn="DolarSosial" DataSetColumn="DolarSosial" />
+              <Mapping SourceColumn="FullFee" DataSetColumn="FullFee" />
+              <Mapping SourceColumn="DolarFull" DataSetColumn="DolarFull" />
+              <Mapping SourceColumn="Other" DataSetColumn="Other" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="DeleteOption" DataSetColumn="DeleteOption" />
+              <Mapping SourceColumn="CalDolarSosial" DataSetColumn="CalDolarSosial" />
+              <Mapping SourceColumn="CalDolarFull" DataSetColumn="CalDolarFull" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDBTesting.dbo.V_InpatientDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInpatientPayFull" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataByInpatientPayFull" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInpatientPayFull" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT InNo, PatientNo, ReceiptNo, NameKhmer, Age, Sex, Address, Diagnosis, TypeOfOperation, HosFee, SosialFee, DolarSosial, FullFee, DolarFull, Other, CreateDate, DeleteOption, CalDolarSosial, CalDolarFull
+FROM dbo.V_InpatientDetail
+WHERE
+(CAST(CONVERT (VARCHAR(10), CreateDate, 1) AS DateTime) 
+BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) 
+AND CAST(CONVERT (VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))  AND (ReceiptNo&lt;&gt;0) AND (DeleteOption=0) AND ((FullFee+DolarFull)&lt;&gt;0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDBTesting.dbo.V_InpatientDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInPatientPaySocial" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataByInPatientPaySocial" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInPatientPaySocial" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT InNo, PatientNo, ReceiptNo, NameKhmer, Age, Sex, Address, Diagnosis, TypeOfOperation, HosFee, SosialFee, DolarSosial, FullFee, DolarFull, Other, CreateDate, DeleteOption, CalDolarSosial, CalDolarFull FROM dbo.V_InpatientDetail
+WHERE
+(CAST(CONVERT (VARCHAR(10), CreateDate, 1) AS DateTime) 
+BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) 
+AND CAST(CONVERT (VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime)) AND(ReceiptNo&lt;&gt;0) AND (DeleteOption=0) AND ((SosialFee+ DolarSosial)&lt;&gt;0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDBTesting.dbo.V_InpatientDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByInPatientNil" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataByInPatientNil" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByInPatientNil" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT InNo, PatientNo, ReceiptNo, NameKhmer, Age, Sex, Address, Diagnosis, TypeOfOperation, HosFee, SosialFee, DolarSosial, FullFee, DolarFull, Other, CreateDate, DeleteOption, CalDolarSosial, CalDolarFull FROM dbo.V_InpatientDetail
+WHERE
+(CAST(CONVERT (VARCHAR(10), CreateDate, 1) AS DateTime) 
+BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@DateFrom AS DATETIME), 1) AS Datetime) 
+AND CAST(CONVERT (VARCHAR(10), CAST(@DateTO AS DATETIME), 1) AS Datetime))
+AND  (ReceiptNo=0) AND (DeleteOption=0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTO" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTO" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSInpatientReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSInpatientReport" msprop:Generator_DataSetName="DSInpatientReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TblInpatientReport" msprop:Generator_UserTableName="TblInpatientReport" msprop:Generator_RowDeletedName="TblInpatientReportRowDeleted" msprop:Generator_RowChangedName="TblInpatientReportRowChanged" msprop:Generator_RowClassName="TblInpatientReportRow" msprop:Generator_RowChangingName="TblInpatientReportRowChanging" msprop:Generator_RowEvArgName="TblInpatientReportRowChangeEvent" msprop:Generator_RowEvHandlerName="TblInpatientReportRowChangeEventHandler" msprop:Generator_TableClassName="TblInpatientReportDataTable" msprop:Generator_TableVarName="tableTblInpatientReport" msprop:Generator_RowDeletingName="TblInpatientReportRowDeleting" msprop:Generator_TablePropName="TblInpatientReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="male" msdata:ReadOnly="true" msprop:Generator_UserColumnName="male" msprop:Generator_ColumnPropNameInRow="male" msprop:Generator_ColumnVarNameInTable="columnmale" msprop:Generator_ColumnPropNameInTable="maleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="female" msdata:ReadOnly="true" msprop:Generator_UserColumnName="female" msprop:Generator_ColumnPropNameInRow="female" msprop:Generator_ColumnVarNameInTable="columnfemale" msprop:Generator_ColumnPropNameInTable="femaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="agerang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="agerang" msprop:Generator_ColumnPropNameInRow="agerang" msprop:Generator_ColumnVarNameInTable="columnagerang" msprop:Generator_ColumnPropNameInTable="agerangColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_InpatientDetail" msprop:Generator_UserTableName="V_InpatientDetail" msprop:Generator_RowDeletedName="V_InpatientDetailRowDeleted" msprop:Generator_RowChangedName="V_InpatientDetailRowChanged" msprop:Generator_RowClassName="V_InpatientDetailRow" msprop:Generator_RowChangingName="V_InpatientDetailRowChanging" msprop:Generator_RowEvArgName="V_InpatientDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="V_InpatientDetailRowChangeEventHandler" msprop:Generator_TableClassName="V_InpatientDetailDataTable" msprop:Generator_TableVarName="tableV_InpatientDetail" msprop:Generator_RowDeletingName="V_InpatientDetailRowDeleting" msprop:Generator_TablePropName="V_InpatientDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InNo" msprop:Generator_UserColumnName="InNo" msprop:Generator_ColumnVarNameInTable="columnInNo" msprop:Generator_ColumnPropNameInRow="InNo" msprop:Generator_ColumnPropNameInTable="InNoColumn" type="xs:decimal" />
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="ReceiptNo" msprop:Generator_UserColumnName="ReceiptNo" msprop:Generator_ColumnVarNameInTable="columnReceiptNo" msprop:Generator_ColumnPropNameInRow="ReceiptNo" msprop:Generator_ColumnPropNameInTable="ReceiptNoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeOfOperation" msprop:Generator_UserColumnName="TypeOfOperation" msprop:Generator_ColumnVarNameInTable="columnTypeOfOperation" msprop:Generator_ColumnPropNameInRow="TypeOfOperation" msprop:Generator_ColumnPropNameInTable="TypeOfOperationColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HosFee" msprop:Generator_UserColumnName="HosFee" msprop:Generator_ColumnVarNameInTable="columnHosFee" msprop:Generator_ColumnPropNameInRow="HosFee" msprop:Generator_ColumnPropNameInTable="HosFeeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SosialFee" msprop:Generator_UserColumnName="SosialFee" msprop:Generator_ColumnVarNameInTable="columnSosialFee" msprop:Generator_ColumnPropNameInRow="SosialFee" msprop:Generator_ColumnPropNameInTable="SosialFeeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DolarSosial" msprop:Generator_UserColumnName="DolarSosial" msprop:Generator_ColumnVarNameInTable="columnDolarSosial" msprop:Generator_ColumnPropNameInRow="DolarSosial" msprop:Generator_ColumnPropNameInTable="DolarSosialColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="FullFee" msprop:Generator_UserColumnName="FullFee" msprop:Generator_ColumnVarNameInTable="columnFullFee" msprop:Generator_ColumnPropNameInRow="FullFee" msprop:Generator_ColumnPropNameInTable="FullFeeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DolarFull" msprop:Generator_UserColumnName="DolarFull" msprop:Generator_ColumnVarNameInTable="columnDolarFull" msprop:Generator_ColumnPropNameInRow="DolarFull" msprop:Generator_ColumnPropNameInTable="DolarFullColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Other" msprop:Generator_UserColumnName="Other" msprop:Generator_ColumnVarNameInTable="columnOther" msprop:Generator_ColumnPropNameInRow="Other" msprop:Generator_ColumnPropNameInTable="OtherColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeleteOption" msprop:Generator_UserColumnName="DeleteOption" msprop:Generator_ColumnVarNameInTable="columnDeleteOption" msprop:Generator_ColumnPropNameInRow="DeleteOption" msprop:Generator_ColumnPropNameInTable="DeleteOptionColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CalDolarSosial" msprop:Generator_UserColumnName="CalDolarSosial" msprop:Generator_ColumnVarNameInTable="columnCalDolarSosial" msprop:Generator_ColumnPropNameInRow="CalDolarSosial" msprop:Generator_ColumnPropNameInTable="CalDolarSosialColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="CalDolarFull" msprop:Generator_UserColumnName="CalDolarFull" msprop:Generator_ColumnVarNameInTable="columnCalDolarFull" msprop:Generator_ColumnPropNameInRow="CalDolarFull" msprop:Generator_ColumnPropNameInTable="CalDolarFullColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

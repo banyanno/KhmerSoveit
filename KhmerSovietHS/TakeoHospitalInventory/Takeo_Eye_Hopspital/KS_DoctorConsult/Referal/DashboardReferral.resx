@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="GridReferral_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="REFERRAL_ID"&gt;&lt;Caption&gt;REFERRAL_ID&lt;/Caption&gt;&lt;DataMember&gt;REFERRAL_ID&lt;/DataMember&gt;&lt;Key&gt;REFERRAL_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="PATIENT_NO"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NO&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NO&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;134&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="PATIENT_NAME"&gt;&lt;Caption&gt;Patient Name&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NAME&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NAME&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;183&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="PATIENT_SEX"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_SEX&lt;/DataMember&gt;&lt;Key&gt;PATIENT_SEX&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;58&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="PATIENT_AGE"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_AGE&lt;/DataMember&gt;&lt;Key&gt;PATIENT_AGE&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;57&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="CREATE_DATE"&gt;&lt;Caption&gt;Date Referral&lt;/Caption&gt;&lt;DataMember&gt;CREATE_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd - MM - yyyy&lt;/FormatString&gt;&lt;Key&gt;CREATE_DATE&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;133&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="CHIEF_COMPLAINT"&gt;&lt;Caption&gt;Chief Complaint&lt;/Caption&gt;&lt;DataMember&gt;CHIEF_COMPLAINT&lt;/DataMember&gt;&lt;Key&gt;CHIEF_COMPLAINT&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;193&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="ODSC"&gt;&lt;Caption&gt;OD:SC&lt;/Caption&gt;&lt;DataMember&gt;ODSC&lt;/DataMember&gt;&lt;Key&gt;ODSC&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;/Column7&gt;&lt;Column8 ID="ODCC"&gt;&lt;Caption&gt;OD : CC&lt;/Caption&gt;&lt;DataMember&gt;ODCC&lt;/DataMember&gt;&lt;Key&gt;ODCC&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;/Column8&gt;&lt;Column9 ID="ODCCPH"&gt;&lt;Caption&gt;OD cC+PH&lt;/Caption&gt;&lt;DataMember&gt;ODCCPH&lt;/DataMember&gt;&lt;Key&gt;ODCCPH&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;/Column9&gt;&lt;Column10 ID="OSSC"&gt;&lt;Caption&gt;OS : sC&lt;/Caption&gt;&lt;DataMember&gt;OSSC&lt;/DataMember&gt;&lt;Key&gt;OSSC&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;/Column10&gt;&lt;Column11 ID="OSCC"&gt;&lt;Caption&gt;OS : CC&lt;/Caption&gt;&lt;DataMember&gt;OSCC&lt;/DataMember&gt;&lt;Key&gt;OSCC&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;/Column11&gt;&lt;Column12 ID="OSCCPH"&gt;&lt;Caption&gt;OS cC+PH&lt;/Caption&gt;&lt;DataMember&gt;OSCCPH&lt;/DataMember&gt;&lt;Key&gt;OSCCPH&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;/Column12&gt;&lt;Column13 ID="ODSPH"&gt;&lt;Caption&gt;OD : SPH&lt;/Caption&gt;&lt;DataMember&gt;ODSPH&lt;/DataMember&gt;&lt;Key&gt;ODSPH&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;/Column13&gt;&lt;Column14 ID="ODCYL"&gt;&lt;Caption&gt;OD CYL&lt;/Caption&gt;&lt;DataMember&gt;ODCYL&lt;/DataMember&gt;&lt;Key&gt;ODCYL&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;/Column14&gt;&lt;Column15 ID="ODVA"&gt;&lt;Caption&gt;OD VA&lt;/Caption&gt;&lt;DataMember&gt;ODVA&lt;/DataMember&gt;&lt;Key&gt;ODVA&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;/Column15&gt;&lt;Column16 ID="OSSPH"&gt;&lt;Caption&gt;OS SPH&lt;/Caption&gt;&lt;DataMember&gt;OSSPH&lt;/DataMember&gt;&lt;Key&gt;OSSPH&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;/Column16&gt;&lt;Column17 ID="OSCYL"&gt;&lt;Caption&gt;OS CYL&lt;/Caption&gt;&lt;DataMember&gt;OSCYL&lt;/DataMember&gt;&lt;Key&gt;OSCYL&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;/Column17&gt;&lt;Column18 ID="OSVA"&gt;&lt;Caption&gt;OS VA&lt;/Caption&gt;&lt;DataMember&gt;OSVA&lt;/DataMember&gt;&lt;Key&gt;OSVA&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;/Column18&gt;&lt;Column19 ID="ODMMHG"&gt;&lt;Caption&gt;OD mmHg&lt;/Caption&gt;&lt;DataMember&gt;ODMMHG&lt;/DataMember&gt;&lt;Key&gt;ODMMHG&lt;/Key&gt;&lt;Position&gt;19&lt;/Position&gt;&lt;/Column19&gt;&lt;Column20 ID="OSMMHG"&gt;&lt;Caption&gt;OS mmHg&lt;/Caption&gt;&lt;DataMember&gt;OSMMHG&lt;/DataMember&gt;&lt;Key&gt;OSMMHG&lt;/Key&gt;&lt;Position&gt;20&lt;/Position&gt;&lt;/Column20&gt;&lt;Column21 ID="SLIT_LAM"&gt;&lt;Caption&gt;Slit Lamp Examination&lt;/Caption&gt;&lt;DataMember&gt;SLIT_LAM&lt;/DataMember&gt;&lt;Key&gt;SLIT_LAM&lt;/Key&gt;&lt;Position&gt;21&lt;/Position&gt;&lt;/Column21&gt;&lt;Column22 ID="FUNDUS_FINDING"&gt;&lt;Caption&gt;Fundus Finding&lt;/Caption&gt;&lt;DataMember&gt;FUNDUS_FINDING&lt;/DataMember&gt;&lt;Key&gt;FUNDUS_FINDING&lt;/Key&gt;&lt;Position&gt;22&lt;/Position&gt;&lt;/Column22&gt;&lt;Column23 ID="DIAGNOSIS"&gt;&lt;Caption&gt;Diagnosis:&lt;/Caption&gt;&lt;DataMember&gt;DIAGNOSIS&lt;/DataMember&gt;&lt;Key&gt;DIAGNOSIS&lt;/Key&gt;&lt;Position&gt;23&lt;/Position&gt;&lt;/Column23&gt;&lt;Column24 ID="TREATMENT"&gt;&lt;Caption&gt;Treatment and Recommendation&lt;/Caption&gt;&lt;DataMember&gt;TREATMENT&lt;/DataMember&gt;&lt;Key&gt;TREATMENT&lt;/Key&gt;&lt;Position&gt;24&lt;/Position&gt;&lt;/Column24&gt;&lt;/Columns&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;70&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;35&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+</root>

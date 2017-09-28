@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSRptRequestHistoryStatusTrace" targetNamespace="http://tempuri.org/DSRptRequestHistoryStatusTrace.xsd" xmlns:mstns="http://tempuri.org/DSRptRequestHistoryStatusTrace.xsd" xmlns="http://tempuri.org/DSRptRequestHistoryStatusTrace.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoInventoryConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoInventoryConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoInventoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRptRequestHistoryStatuTraceTableAdapter" GeneratorDataComponentClassName="VRptRequestHistoryStatuTraceTableAdapter" Name="VRptRequestHistoryStatuTrace" UserDataComponentName="VRptRequestHistoryStatuTraceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RequestID, RequestOrderNumber, RequestFromDepartID, RequestDate, RequestDescription, RequestToDepartID, ItemID, Quantity, ResponseQuantity, POStatusID, 
+                      UpdateRequestStatusDate, DepartName, Barcode, ItemName, CateName, UserRequestName, UserApproveName, CurrentBalance, ReceivedDate, ItemUnitName, 
+                      ContainerName
+FROM         VRptRequestHistoryStatuTrace</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="RequestOrderNumber" DataSetColumn="RequestOrderNumber" />
+              <Mapping SourceColumn="RequestFromDepartID" DataSetColumn="RequestFromDepartID" />
+              <Mapping SourceColumn="RequestDate" DataSetColumn="RequestDate" />
+              <Mapping SourceColumn="RequestDescription" DataSetColumn="RequestDescription" />
+              <Mapping SourceColumn="RequestToDepartID" DataSetColumn="RequestToDepartID" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="ResponseQuantity" DataSetColumn="ResponseQuantity" />
+              <Mapping SourceColumn="POStatusID" DataSetColumn="POStatusID" />
+              <Mapping SourceColumn="UpdateRequestStatusDate" DataSetColumn="UpdateRequestStatusDate" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="UserRequestName" DataSetColumn="UserRequestName" />
+              <Mapping SourceColumn="UserApproveName" DataSetColumn="UserApproveName" />
+              <Mapping SourceColumn="CurrentBalance" DataSetColumn="CurrentBalance" />
+              <Mapping SourceColumn="ReceivedDate" DataSetColumn="ReceivedDate" />
+              <Mapping SourceColumn="ItemUnitName" DataSetColumn="ItemUnitName" />
+              <Mapping SourceColumn="ContainerName" DataSetColumn="ContainerName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetHisRequestBYStatus" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetHisRequestBYStatus" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetHisRequestBYStatus" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, CateName, ContainerName, CurrentBalance, DepartName, ItemID, ItemName, ItemUnitName, POStatusID, Quantity, ReceivedDate, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID, ResponseQuantity, UpdateRequestStatusDate, UserApproveName, UserRequestName FROM VRptRequestHistoryStatuTrace WHERE (RequestFromDepartID = @OwnerDepartID) AND (POStatusID = @POStatus) AND (CAST(CONVERT (VARCHAR(10), UpdateRequestStatusDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@TDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestFromDepartID" DataSourceName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatus" ColumnName="POStatusID" DataSourceName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatus" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@TDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetHisIncomingReqByStatus" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetHisIncomingReqByStatus" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetHisIncomingReqByStatus" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Barcode, CateName, ContainerName, CurrentBalance, DepartName, ItemID, ItemName, ItemUnitName, POStatusID, Quantity, ReceivedDate, RequestDate, RequestDescription, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID, ResponseQuantity, UpdateRequestStatusDate, UserApproveName, UserRequestName FROM VRptRequestHistoryStatuTrace WHERE (RequestToDepartID = @OwnerDepartID) AND (POStatusID = @POStatus) AND (CAST(CONVERT (VARCHAR(10), UpdateRequestStatusDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@TDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestToDepartID" DataSourceName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestToDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatus" ColumnName="POStatusID" DataSourceName="TakeoDB.dbo.VRptRequestHistoryStatuTrace" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatus" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@TDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRequestHistoryStatusTraceMasterTableAdapter" GeneratorDataComponentClassName="VRequestHistoryStatusTraceMasterTableAdapter" Name="VRequestHistoryStatusTraceMaster" UserDataComponentName="VRequestHistoryStatusTraceMasterTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestHistoryStatusTraceMaster" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RequestID, RequestOrderNumber, RequestFromDepartID, RequestToDepartID, POStatusID, UpdateRequestStatusDate, DepartName, POStatus, ReceivedDate
+FROM         VRequestHistoryStatusTraceMaster</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="RequestOrderNumber" DataSetColumn="RequestOrderNumber" />
+              <Mapping SourceColumn="RequestFromDepartID" DataSetColumn="RequestFromDepartID" />
+              <Mapping SourceColumn="RequestToDepartID" DataSetColumn="RequestToDepartID" />
+              <Mapping SourceColumn="POStatusID" DataSetColumn="POStatusID" />
+              <Mapping SourceColumn="UpdateRequestStatusDate" DataSetColumn="UpdateRequestStatusDate" />
+              <Mapping SourceColumn="DepartName" DataSetColumn="DepartName" />
+              <Mapping SourceColumn="POStatus" DataSetColumn="POStatus" />
+              <Mapping SourceColumn="ReceivedDate" DataSetColumn="ReceivedDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestHistoryStatusTraceMaster" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetHisRequestBYStatus" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetHisRequestBYStatus" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetHisRequestBYStatus" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepartName, POStatus, POStatusID, ReceivedDate, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID, UpdateRequestStatusDate FROM VRequestHistoryStatusTraceMaster WHERE (RequestFromDepartID = @OwnerDepartID) AND (POStatusID = @POStatusID) AND (CAST(CONVERT (VARCHAR(10), UpdateRequestStatusDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@TDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestFromDepartID" DataSourceName="TakeoDB.dbo.VRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoDB.dbo.VRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@TDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VRequestHistoryStatusTraceDetailTableAdapter" GeneratorDataComponentClassName="VRequestHistoryStatusTraceDetailTableAdapter" Name="VRequestHistoryStatusTraceDetail" UserDataComponentName="VRequestHistoryStatusTraceDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VRequestHistoryStatusTraceDetail" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ItemName, CateName, Barcode, ItemID, RequestID, Quantity, ResponseQuantity FROM dbo.VRequestHistoryStatusTraceDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="CateName" DataSetColumn="CateName" />
+              <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="ResponseQuantity" DataSetColumn="ResponseQuantity" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VIncomingRequestHistoryStatusTraceMasterTableAdapter" GeneratorDataComponentClassName="VIncomingRequestHistoryStatusTraceMasterTableAdapter" Name="VIncomingRequestHistoryStatusTraceMaster" UserDataComponentName="VIncomingRequestHistoryStatusTraceMasterTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     RequestID, RequestOrderNumber, RequestFromDepartID, POStatusID, UpdateRequestStatusDate, POStatus, RequestToDepartID, DepReqName, ReceivedDate
+FROM         VIncomingRequestHistoryStatusTraceMaster</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestID" DataSetColumn="RequestID" />
+              <Mapping SourceColumn="RequestOrderNumber" DataSetColumn="RequestOrderNumber" />
+              <Mapping SourceColumn="RequestFromDepartID" DataSetColumn="RequestFromDepartID" />
+              <Mapping SourceColumn="POStatusID" DataSetColumn="POStatusID" />
+              <Mapping SourceColumn="UpdateRequestStatusDate" DataSetColumn="UpdateRequestStatusDate" />
+              <Mapping SourceColumn="POStatus" DataSetColumn="POStatus" />
+              <Mapping SourceColumn="RequestToDepartID" DataSetColumn="RequestToDepartID" />
+              <Mapping SourceColumn="DepReqName" DataSetColumn="DepReqName" />
+              <Mapping SourceColumn="ReceivedDate" DataSetColumn="ReceivedDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetHisIncomingReq" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetHisIncomingReq" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetHisIncomingReq" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepReqName, POStatus, POStatusID, ReceivedDate, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID, UpdateRequestStatusDate FROM VIncomingRequestHistoryStatusTraceMaster WHERE (RequestToDepartID = @OwnerDepartID) AND (POStatusID = @POStatusID) AND (CAST(CONVERT (VARCHAR(10), UpdateRequestStatusDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@TDate AS DATETIME), 1) AS Datetime))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestToDepartID" DataSourceName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestToDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@TDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetHisIncomingReqSpecificDepart" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetHisIncomingReqSpecificDepart" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetHisIncomingReqSpecificDepart" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DepReqName, POStatus, POStatusID, ReceivedDate, RequestFromDepartID, RequestID, RequestOrderNumber, RequestToDepartID, UpdateRequestStatusDate FROM VIncomingRequestHistoryStatusTraceMaster WHERE (RequestToDepartID = @OwnerDepartID) AND (POStatusID = @POStatusID) AND (CAST(CONVERT (VARCHAR(10), UpdateRequestStatusDate, 1) AS DateTime) BETWEEN CAST(CONVERT (VARCHAR(10), CAST(@FDate AS DATETIME), 1) AS Datetime) AND CAST(CONVERT (VARCHAR(10), CAST(@TDate AS DATETIME), 1) AS Datetime)) AND (RequestFromDepartID = @RequestFromDepartID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OwnerDepartID" ColumnName="RequestToDepartID" DataSourceName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OwnerDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestToDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="POStatusID" ColumnName="POStatusID" DataSourceName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@POStatusID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="POStatusID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@FDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TDate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@TDate" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="RequestFromDepartID" ColumnName="RequestFromDepartID" DataSourceName="TakeoDB.dbo.VIncomingRequestHistoryStatusTraceMaster" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@RequestFromDepartID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestFromDepartID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSRptRequestHistoryStatusTrace" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSRptRequestHistoryStatusTrace" msprop:Generator_DataSetName="DSRptRequestHistoryStatusTrace" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VRptRequestHistoryStatuTrace" msprop:Generator_UserTableName="VRptRequestHistoryStatuTrace" msprop:Generator_RowDeletedName="VRptRequestHistoryStatuTraceRowDeleted" msprop:Generator_RowChangedName="VRptRequestHistoryStatuTraceRowChanged" msprop:Generator_RowClassName="VRptRequestHistoryStatuTraceRow" msprop:Generator_RowChangingName="VRptRequestHistoryStatuTraceRowChanging" msprop:Generator_RowEvArgName="VRptRequestHistoryStatuTraceRowChangeEvent" msprop:Generator_RowEvHandlerName="VRptRequestHistoryStatuTraceRowChangeEventHandler" msprop:Generator_TableClassName="VRptRequestHistoryStatuTraceDataTable" msprop:Generator_TableVarName="tableVRptRequestHistoryStatuTrace" msprop:Generator_RowDeletingName="VRptRequestHistoryStatuTraceRowDeleting" msprop:Generator_TablePropName="VRptRequestHistoryStatuTrace">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" />
+              <xs:element name="RequestOrderNumber" msprop:Generator_UserColumnName="RequestOrderNumber" msprop:Generator_ColumnPropNameInRow="RequestOrderNumber" msprop:Generator_ColumnVarNameInTable="columnRequestOrderNumber" msprop:Generator_ColumnPropNameInTable="RequestOrderNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestFromDepartID" msprop:Generator_UserColumnName="RequestFromDepartID" msprop:Generator_ColumnPropNameInRow="RequestFromDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestFromDepartID" msprop:Generator_ColumnPropNameInTable="RequestFromDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RequestDate" msprop:Generator_UserColumnName="RequestDate" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnVarNameInTable="columnRequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RequestDescription" msprop:Generator_UserColumnName="RequestDescription" msprop:Generator_ColumnPropNameInRow="RequestDescription" msprop:Generator_ColumnVarNameInTable="columnRequestDescription" msprop:Generator_ColumnPropNameInTable="RequestDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestToDepartID" msprop:Generator_UserColumnName="RequestToDepartID" msprop:Generator_ColumnPropNameInRow="RequestToDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestToDepartID" msprop:Generator_ColumnPropNameInTable="RequestToDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" type="xs:int" />
+              <xs:element name="ResponseQuantity" msprop:Generator_UserColumnName="ResponseQuantity" msprop:Generator_ColumnPropNameInRow="ResponseQuantity" msprop:Generator_ColumnVarNameInTable="columnResponseQuantity" msprop:Generator_ColumnPropNameInTable="ResponseQuantityColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="POStatusID" msprop:Generator_UserColumnName="POStatusID" msprop:Generator_ColumnPropNameInRow="POStatusID" msprop:Generator_ColumnVarNameInTable="columnPOStatusID" msprop:Generator_ColumnPropNameInTable="POStatusIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UpdateRequestStatusDate" msprop:Generator_UserColumnName="UpdateRequestStatusDate" msprop:Generator_ColumnPropNameInRow="UpdateRequestStatusDate" msprop:Generator_ColumnVarNameInTable="columnUpdateRequestStatusDate" msprop:Generator_ColumnPropNameInTable="UpdateRequestStatusDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserRequestName" msprop:Generator_UserColumnName="UserRequestName" msprop:Generator_ColumnPropNameInRow="UserRequestName" msprop:Generator_ColumnVarNameInTable="columnUserRequestName" msprop:Generator_ColumnPropNameInTable="UserRequestNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserApproveName" msprop:Generator_UserColumnName="UserApproveName" msprop:Generator_ColumnPropNameInRow="UserApproveName" msprop:Generator_ColumnVarNameInTable="columnUserApproveName" msprop:Generator_ColumnPropNameInTable="UserApproveNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentBalance" msprop:Generator_UserColumnName="CurrentBalance" msprop:Generator_ColumnPropNameInRow="CurrentBalance" msprop:Generator_ColumnVarNameInTable="columnCurrentBalance" msprop:Generator_ColumnPropNameInTable="CurrentBalanceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ReceivedDate" msprop:Generator_UserColumnName="ReceivedDate" msprop:Generator_ColumnVarNameInTable="columnReceivedDate" msprop:Generator_ColumnPropNameInRow="ReceivedDate" msprop:Generator_ColumnPropNameInTable="ReceivedDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ItemUnitName" msprop:Generator_UserColumnName="ItemUnitName" msprop:Generator_ColumnVarNameInTable="columnItemUnitName" msprop:Generator_ColumnPropNameInRow="ItemUnitName" msprop:Generator_ColumnPropNameInTable="ItemUnitNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerName" msprop:Generator_UserColumnName="ContainerName" msprop:Generator_ColumnVarNameInTable="columnContainerName" msprop:Generator_ColumnPropNameInRow="ContainerName" msprop:Generator_ColumnPropNameInTable="ContainerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VRequestHistoryStatusTraceMaster" msprop:Generator_UserTableName="VRequestHistoryStatusTraceMaster" msprop:Generator_RowDeletedName="VRequestHistoryStatusTraceMasterRowDeleted" msprop:Generator_RowChangedName="VRequestHistoryStatusTraceMasterRowChanged" msprop:Generator_RowClassName="VRequestHistoryStatusTraceMasterRow" msprop:Generator_RowChangingName="VRequestHistoryStatusTraceMasterRowChanging" msprop:Generator_RowEvArgName="VRequestHistoryStatusTraceMasterRowChangeEvent" msprop:Generator_RowEvHandlerName="VRequestHistoryStatusTraceMasterRowChangeEventHandler" msprop:Generator_TableClassName="VRequestHistoryStatusTraceMasterDataTable" msprop:Generator_TableVarName="tableVRequestHistoryStatusTraceMaster" msprop:Generator_RowDeletingName="VRequestHistoryStatusTraceMasterRowDeleting" msprop:Generator_TablePropName="VRequestHistoryStatusTraceMaster">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" />
+              <xs:element name="RequestOrderNumber" msprop:Generator_UserColumnName="RequestOrderNumber" msprop:Generator_ColumnPropNameInRow="RequestOrderNumber" msprop:Generator_ColumnVarNameInTable="columnRequestOrderNumber" msprop:Generator_ColumnPropNameInTable="RequestOrderNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestFromDepartID" msprop:Generator_UserColumnName="RequestFromDepartID" msprop:Generator_ColumnPropNameInRow="RequestFromDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestFromDepartID" msprop:Generator_ColumnPropNameInTable="RequestFromDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RequestToDepartID" msprop:Generator_UserColumnName="RequestToDepartID" msprop:Generator_ColumnPropNameInRow="RequestToDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestToDepartID" msprop:Generator_ColumnPropNameInTable="RequestToDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatusID" msprop:Generator_UserColumnName="POStatusID" msprop:Generator_ColumnPropNameInRow="POStatusID" msprop:Generator_ColumnVarNameInTable="columnPOStatusID" msprop:Generator_ColumnPropNameInTable="POStatusIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UpdateRequestStatusDate" msprop:Generator_UserColumnName="UpdateRequestStatusDate" msprop:Generator_ColumnPropNameInRow="UpdateRequestStatusDate" msprop:Generator_ColumnVarNameInTable="columnUpdateRequestStatusDate" msprop:Generator_ColumnPropNameInTable="UpdateRequestStatusDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartName" msprop:Generator_UserColumnName="DepartName" msprop:Generator_ColumnPropNameInRow="DepartName" msprop:Generator_ColumnVarNameInTable="columnDepartName" msprop:Generator_ColumnPropNameInTable="DepartNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POStatus" msprop:Generator_UserColumnName="POStatus" msprop:Generator_ColumnPropNameInRow="POStatus" msprop:Generator_ColumnVarNameInTable="columnPOStatus" msprop:Generator_ColumnPropNameInTable="POStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReceivedDate" msprop:Generator_UserColumnName="ReceivedDate" msprop:Generator_ColumnVarNameInTable="columnReceivedDate" msprop:Generator_ColumnPropNameInRow="ReceivedDate" msprop:Generator_ColumnPropNameInTable="ReceivedDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VRequestHistoryStatusTraceDetail" msprop:Generator_UserTableName="VRequestHistoryStatusTraceDetail" msprop:Generator_RowDeletedName="VRequestHistoryStatusTraceDetailRowDeleted" msprop:Generator_RowChangedName="VRequestHistoryStatusTraceDetailRowChanged" msprop:Generator_RowClassName="VRequestHistoryStatusTraceDetailRow" msprop:Generator_RowChangingName="VRequestHistoryStatusTraceDetailRowChanging" msprop:Generator_RowEvArgName="VRequestHistoryStatusTraceDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="VRequestHistoryStatusTraceDetailRowChangeEventHandler" msprop:Generator_TableClassName="VRequestHistoryStatusTraceDetailDataTable" msprop:Generator_TableVarName="tableVRequestHistoryStatusTraceDetail" msprop:Generator_RowDeletingName="VRequestHistoryStatusTraceDetailRowDeleting" msprop:Generator_TablePropName="VRequestHistoryStatusTraceDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemName" msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CateName" msprop:Generator_UserColumnName="CateName" msprop:Generator_ColumnPropNameInRow="CateName" msprop:Generator_ColumnVarNameInTable="columnCateName" msprop:Generator_ColumnPropNameInTable="CateNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemID" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" type="xs:int" />
+              <xs:element name="ResponseQuantity" msprop:Generator_UserColumnName="ResponseQuantity" msprop:Generator_ColumnPropNameInRow="ResponseQuantity" msprop:Generator_ColumnVarNameInTable="columnResponseQuantity" msprop:Generator_ColumnPropNameInTable="ResponseQuantityColumn" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VIncomingRequestHistoryStatusTraceMaster" msprop:Generator_UserTableName="VIncomingRequestHistoryStatusTraceMaster" msprop:Generator_RowDeletedName="VIncomingRequestHistoryStatusTraceMasterRowDeleted" msprop:Generator_RowChangedName="VIncomingRequestHistoryStatusTraceMasterRowChanged" msprop:Generator_RowClassName="VIncomingRequestHistoryStatusTraceMasterRow" msprop:Generator_RowChangingName="VIncomingRequestHistoryStatusTraceMasterRowChanging" msprop:Generator_RowEvArgName="VIncomingRequestHistoryStatusTraceMasterRowChangeEvent" msprop:Generator_RowEvHandlerName="VIncomingRequestHistoryStatusTraceMasterRowChangeEventHandler" msprop:Generator_TableClassName="VIncomingRequestHistoryStatusTraceMasterDataTable" msprop:Generator_TableVarName="tableVIncomingRequestHistoryStatusTraceMaster" msprop:Generator_RowDeletingName="VIncomingRequestHistoryStatusTraceMasterRowDeleting" msprop:Generator_TablePropName="VIncomingRequestHistoryStatusTraceMaster">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestID" msprop:Generator_UserColumnName="RequestID" msprop:Generator_ColumnVarNameInTable="columnRequestID" msprop:Generator_ColumnPropNameInRow="RequestID" msprop:Generator_ColumnPropNameInTable="RequestIDColumn" type="xs:decimal" />
+              <xs:element name="RequestOrderNumber" msprop:Generator_UserColumnName="RequestOrderNumber" msprop:Generator_ColumnVarNameInTable="columnRequestOrderNumber" msprop:Generator_ColumnPropNameInRow="RequestOrderNumber" msprop:Generator_ColumnPropNameInTable="RequestOrderNumberColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestFromDepartID" msprop:Generator_UserColumnName="RequestFromDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestFromDepartID" msprop:Generator_ColumnPropNameInRow="RequestFromDepartID" msprop:Generator_ColumnPropNameInTable="RequestFromDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="POStatusID" msprop:Generator_UserColumnName="POStatusID" msprop:Generator_ColumnVarNameInTable="columnPOStatusID" msprop:Generator_ColumnPropNameInRow="POStatusID" msprop:Generator_ColumnPropNameInTable="POStatusIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UpdateRequestStatusDate" msprop:Generator_UserColumnName="UpdateRequestStatusDate" msprop:Generator_ColumnVarNameInTable="columnUpdateRequestStatusDate" msprop:Generator_ColumnPropNameInRow="UpdateRequestStatusDate" msprop:Generator_ColumnPropNameInTable="UpdateRequestStatusDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="POStatus" msprop:Generator_UserColumnName="POStatus" msprop:Generator_ColumnVarNameInTable="columnPOStatus" msprop:Generator_ColumnPropNameInRow="POStatus" msprop:Generator_ColumnPropNameInTable="POStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestToDepartID" msprop:Generator_UserColumnName="RequestToDepartID" msprop:Generator_ColumnVarNameInTable="columnRequestToDepartID" msprop:Generator_ColumnPropNameInRow="RequestToDepartID" msprop:Generator_ColumnPropNameInTable="RequestToDepartIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DepReqName" msprop:Generator_UserColumnName="DepReqName" msprop:Generator_ColumnVarNameInTable="columnDepReqName" msprop:Generator_ColumnPropNameInRow="DepReqName" msprop:Generator_ColumnPropNameInTable="DepReqNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReceivedDate" msprop:Generator_UserColumnName="ReceivedDate" msprop:Generator_ColumnVarNameInTable="columnReceivedDate" msprop:Generator_ColumnPropNameInRow="ReceivedDate" msprop:Generator_ColumnPropNameInTable="ReceivedDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:VRequestHistoryStatusTraceMaster" />
+      <xs:field xpath="mstns:RequestID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="VRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msdata:parent="VRequestHistoryStatusTraceMaster" msdata:child="VRequestHistoryStatusTraceDetail" msdata:parentkey="RequestID" msdata:childkey="RequestID" msprop:Generator_UserRelationName="VRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msprop:Generator_RelationVarName="relationVRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msprop:Generator_UserChildTable="VRequestHistoryStatusTraceDetail" msprop:Generator_UserParentTable="VRequestHistoryStatusTraceMaster" msprop:Generator_ParentPropName="VRequestHistoryStatusTraceMasterRow" msprop:Generator_ChildPropName="GetVRequestHistoryStatusTraceDetailRows" />
+      <msdata:Relationship name="VIncomingRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msdata:parent="VIncomingRequestHistoryStatusTraceMaster" msdata:child="VRequestHistoryStatusTraceDetail" msdata:parentkey="RequestID" msdata:childkey="RequestID" msprop:Generator_UserRelationName="VIncomingRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msprop:Generator_RelationVarName="relationVIncomingRequestHistoryStatusTraceMaster_VRequestHistoryStatusTraceDetail" msprop:Generator_UserChildTable="VRequestHistoryStatusTraceDetail" msprop:Generator_UserParentTable="VIncomingRequestHistoryStatusTraceMaster" msprop:Generator_ParentPropName="VIncomingRequestHistoryStatusTraceMasterRow" msprop:Generator_ChildPropName="GetVRequestHistoryStatusTraceDetailRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

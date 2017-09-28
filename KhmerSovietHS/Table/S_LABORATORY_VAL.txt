@@ -1,0 +1,4 @@
+2	Testing Value	25.01
+3	Hello 	60.50
+4	Tesging	12.50
+NULL	NULL	NULL

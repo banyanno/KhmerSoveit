@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetIncomeSummary" targetNamespace="http://tempuri.org/DataSetIncomeSummary.xsd" xmlns:mstns="http://tempuri.org/DataSetIncomeSummary.xsd" xmlns="http://tempuri.org/DataSetIncomeSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     SUM(ConsultationFeeUSD) + SUM(FollowUpFeeUSD) AS OutPatientUSD, SUM(ConsultationFeeRiel) + SUM(FollowUpFeeRiel) AS OutpatientRiel, 
+                      SUM(OperationFeeUSD) + SUM(ArtificialEyeFeeUSD) AS InpatientUSD, SUM(OperationFeeRiel) + SUM(ArtificialEyeFeeRiel) AS InpatientRiel, SUM(GlassFeeUSD) 
+                      AS GlassUSD, SUM(GlassFeeRiel) AS GlassRiel, SUM(ArtificialEyeFeeUSD) AS ArtificialEyeFeeUSD, SUM(ArtificialEyeFeeRiel) AS ArtificialEyeFeeRiel, 
+                      SUM(OtherFeeUSD) AS FeeUSD, SUM(OtherFeeRiel) AS FeeRIEL, SUM(MedicineFeeUSD) AS MediceUSD, SUM(MedicineFeeRiel) AS MediceRIEL, 
+                      SUM(ConsultationFeeUSD) + SUM(FollowUpFeeUSD) + SUM(OperationFeeUSD) + SUM(ArtificialEyeFeeUSD) + SUM(OtherFeeUSD) + SUM(GlassFeeUSD) 
+                      + SUM(MedicineFeeUSD) AS TotalUSD, SUM(ConsultationFeeRiel) + SUM(FollowUpFeeRiel) + SUM(OperationFeeRiel) + SUM(ArtificialEyeFeeRiel) + SUM(OtherFeeRiel)
+                       + SUM(GlassFeeRiel) + SUM(MedicineFeeRiel) AS TotalRiel
+FROM         tblPatientReceipt</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OutPatientUSD" DataSetColumn="OutPatientUSD" />
+              <Mapping SourceColumn="OutpatientRiel" DataSetColumn="OutpatientRiel" />
+              <Mapping SourceColumn="InpatientUSD" DataSetColumn="InpatientUSD" />
+              <Mapping SourceColumn="InpatientRiel" DataSetColumn="InpatientRiel" />
+              <Mapping SourceColumn="GlassUSD" DataSetColumn="GlassUSD" />
+              <Mapping SourceColumn="GlassRiel" DataSetColumn="GlassRiel" />
+              <Mapping SourceColumn="FeeUSD" DataSetColumn="FeeUSD" />
+              <Mapping SourceColumn="FeeRIEL" DataSetColumn="FeeRIEL" />
+              <Mapping SourceColumn="TotalUSD" DataSetColumn="TotalUSD" />
+              <Mapping SourceColumn="TotalRiel" DataSetColumn="TotalRiel" />
+              <Mapping SourceColumn="ArtificialEyeFeeUSD" DataSetColumn="ArtificialEyeFeeUSD" />
+              <Mapping SourceColumn="ArtificialEyeFeeRiel" DataSetColumn="ArtificialEyeFeeRiel" />
+              <Mapping SourceColumn="MediceUSD" DataSetColumn="MediceUSD" />
+              <Mapping SourceColumn="MediceRIEL" DataSetColumn="MediceRIEL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetIncomeSummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetIncomeSummary" msprop:Generator_DataSetName="DataSetIncomeSummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OutPatientUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OutPatientUSD" msprop:Generator_ColumnPropNameInRow="OutPatientUSD" msprop:Generator_ColumnVarNameInTable="columnOutPatientUSD" msprop:Generator_ColumnPropNameInTable="OutPatientUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="OutpatientRiel" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OutpatientRiel" msprop:Generator_ColumnPropNameInRow="OutpatientRiel" msprop:Generator_ColumnVarNameInTable="columnOutpatientRiel" msprop:Generator_ColumnPropNameInTable="OutpatientRielColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="InpatientUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="InpatientUSD" msprop:Generator_ColumnPropNameInRow="InpatientUSD" msprop:Generator_ColumnVarNameInTable="columnInpatientUSD" msprop:Generator_ColumnPropNameInTable="InpatientUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="InpatientRiel" msdata:ReadOnly="true" msprop:Generator_UserColumnName="InpatientRiel" msprop:Generator_ColumnPropNameInRow="InpatientRiel" msprop:Generator_ColumnVarNameInTable="columnInpatientRiel" msprop:Generator_ColumnPropNameInTable="InpatientRielColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="GlassUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GlassUSD" msprop:Generator_ColumnPropNameInRow="GlassUSD" msprop:Generator_ColumnVarNameInTable="columnGlassUSD" msprop:Generator_ColumnPropNameInTable="GlassUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="GlassRiel" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GlassRiel" msprop:Generator_ColumnPropNameInRow="GlassRiel" msprop:Generator_ColumnVarNameInTable="columnGlassRiel" msprop:Generator_ColumnPropNameInTable="GlassRielColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="FeeUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="FeeUSD" msprop:Generator_ColumnPropNameInRow="FeeUSD" msprop:Generator_ColumnVarNameInTable="columnFeeUSD" msprop:Generator_ColumnPropNameInTable="FeeUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="FeeRIEL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="FeeRIEL" msprop:Generator_ColumnPropNameInRow="FeeRIEL" msprop:Generator_ColumnVarNameInTable="columnFeeRIEL" msprop:Generator_ColumnPropNameInTable="FeeRIELColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TotalUSD" msprop:Generator_ColumnPropNameInRow="TotalUSD" msprop:Generator_ColumnVarNameInTable="columnTotalUSD" msprop:Generator_ColumnPropNameInTable="TotalUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalRiel" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TotalRiel" msprop:Generator_ColumnPropNameInRow="TotalRiel" msprop:Generator_ColumnVarNameInTable="columnTotalRiel" msprop:Generator_ColumnPropNameInTable="TotalRielColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ArtificialEyeFeeUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ArtificialEyeFeeUSD" msprop:Generator_ColumnPropNameInRow="ArtificialEyeFeeUSD" msprop:Generator_ColumnVarNameInTable="columnArtificialEyeFeeUSD" msprop:Generator_ColumnPropNameInTable="ArtificialEyeFeeUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ArtificialEyeFeeRiel" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ArtificialEyeFeeRiel" msprop:Generator_ColumnPropNameInRow="ArtificialEyeFeeRiel" msprop:Generator_ColumnVarNameInTable="columnArtificialEyeFeeRiel" msprop:Generator_ColumnPropNameInTable="ArtificialEyeFeeRielColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MediceUSD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MediceUSD" msprop:Generator_ColumnPropNameInRow="MediceUSD" msprop:Generator_ColumnVarNameInTable="columnMediceUSD" msprop:Generator_ColumnPropNameInTable="MediceUSDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MediceRIEL" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MediceRIEL" msprop:Generator_ColumnPropNameInRow="MediceRIEL" msprop:Generator_ColumnVarNameInTable="columnMediceRIEL" msprop:Generator_ColumnPropNameInTable="MediceRIELColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

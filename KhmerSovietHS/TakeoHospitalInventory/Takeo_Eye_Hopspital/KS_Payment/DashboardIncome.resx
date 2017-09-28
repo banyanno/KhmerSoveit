@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnPrintPreview.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAS4AAAAsCAYAAADb/1X8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADVklEQVR4Xu3dP2tTURjH8WNL
+        1aGd6qajHXSyFHTSTRddFfQFJLMIsVMpXVK61qHJUuigYFSEYikhhNJQ6dA/FEWhVCmUIvRNPPI7cA/S
+        BKeUex/yHR6ENEh4+vF773U4CWYWsvm6+93q9brNzs1buVxm2AEGMJCrgcr0TGyS2vRvq1K03q5uWPam
+        45UVO9vcZNgBBjCQq4FmuxPDpTapUVm8YriWG2vxBzu1milaDDvAAAaKYkA3UWqTngTVKjUrtLb2462g
+        fvBraYlhBxjAQGEMKJ7qUhavl69em5oVdBu2WF0ozAclnlw8MICBXgYUMfVKE3T79bNaZdgBBjBQaAOK
+        WfbIGHTrRbgINwYw4MGA4qX/j0/hOqgQMA+/OD4jgRl0A7rZiuFStBh2gAEMeDBAuAg2FywMuDOQwrVT
+        KhnDDjCAAQ8GCBfB5oKFAXcGUri2n78whh1gAAMeDBAugs0FCwPuDKRwdR4/MYYdYAADHgwQLoLNBQsD
+        7gykcLXvPzCGHWAAAx4MEC6CzQULA+4MpHC17t4zhh1gAAMeDKRwNe9MGsMOMIABDwZSuNZv3TaGHWAA
+        Ax4MpHB9uTlhDDvAAAY8GEjhen9pyM5PY2i467Ve7+O17t2xE3aCgYszQLh6BBtwFweO3bLbfhggXISL
+        u2oMuDNAuEDrDm0/rtj8Hb7v/AgX4SJcGHBngHCB1h1a7pZ83y314/eXwvVh5LIx7AADGPBg4L/h+njl
+        KjEj6BjAQOEMpHB9Gh0zhh1gAAMeDBAugs0FCwPuDKRwfR6/Zgw7wAAGPBggXASbCxYG3BlI4Vq9fsMY
+        doABDHgwQLgINhcsDLgzEMNVmZ7hSBuO9cEABtwYULPC7Ny81aam4kGCHs7i4TNyZhQGBteAWqVmheXG
+        mr15+qzrBFQd4erhNEQ+I6d2YmBwDKhValbY3vthemZ89/AR585z9j4GMFBYA2qUHhPVrBiuZrtjtVIp
+        xsvDt3zwGfk2GgwMlgG1SY1Sq2K4zCzsfju01tZ+fHbUrZjepC+GFA7+ZA844N9BXh1Qi9QktUmNUqvU
+        rBiubI6OT+Pz42J1IT4+MuwAAxjI04BapCYd/j5J0eoKl17QGxSwkz9nDDvAAAZyNaAWnY+WOvUXqMmf
+        UsDro5cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnPrintlabel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAS4AAAAsCAYAAADb/1X8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADVklEQVR4Xu3dP2tTURjH8WNL
+        1aGd6qajHXSyFHTSTRddFfQFJLMIsVMpXVK61qHJUuigYFSEYikhhNJQ6dA/FEWhVCmUIvRNPPI7cA/S
+        BKeUex/yHR6ENEh4+vF773U4CWYWsvm6+93q9brNzs1buVxm2AEGMJCrgcr0TGyS2vRvq1K03q5uWPam
+        45UVO9vcZNgBBjCQq4FmuxPDpTapUVm8YriWG2vxBzu1milaDDvAAAaKYkA3UWqTngTVKjUrtLb2462g
+        fvBraYlhBxjAQGEMKJ7qUhavl69em5oVdBu2WF0ozAclnlw8MICBXgYUMfVKE3T79bNaZdgBBjBQaAOK
+        WfbIGHTrRbgINwYw4MGA4qX/j0/hOqgQMA+/OD4jgRl0A7rZiuFStBh2gAEMeDBAuAg2FywMuDOQwrVT
+        KhnDDjCAAQ8GCBfB5oKFAXcGUri2n78whh1gAAMeDBAugs0FCwPuDKRwdR4/MYYdYAADHgwQLoLNBQsD
+        7gykcLXvPzCGHWAAAx4MEC6CzQULA+4MpHC17t4zhh1gAAMeDKRwNe9MGsMOMIABDwZSuNZv3TaGHWAA
+        Ax4MpHB9uTlhDDvAAAY8GEjhen9pyM5PY2i467Ve7+O17t2xE3aCgYszQLh6BBtwFweO3bLbfhggXISL
+        u2oMuDNAuEDrDm0/rtj8Hb7v/AgX4SJcGHBngHCB1h1a7pZ83y314/eXwvVh5LIx7AADGPBg4L/h+njl
+        KjEj6BjAQOEMpHB9Gh0zhh1gAAMeDBAugs0FCwPuDKRwfR6/Zgw7wAAGPBggXASbCxYG3BlI4Vq9fsMY
+        doABDHgwQLgINhcsDLgzEMNVmZ7hSBuO9cEABtwYULPC7Ny81aam4kGCHs7i4TNyZhQGBteAWqVmheXG
+        mr15+qzrBFQd4erhNEQ+I6d2YmBwDKhValbY3vthemZ89/AR585z9j4GMFBYA2qUHhPVrBiuZrtjtVIp
+        xsvDt3zwGfk2GgwMlgG1SY1Sq2K4zCzsfju01tZ+fHbUrZjepC+GFA7+ZA844N9BXh1Qi9QktUmNUqvU
+        rBiubI6OT+Pz42J1IT4+MuwAAxjI04BapCYd/j5J0eoKl17QGxSwkz9nDDvAAAZyNaAWnY+WOvUXqMmf
+        UsDro5cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ToolStripButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAS4AAAAsCAYAAADb/1X8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADVklEQVR4Xu3dP2tTURjH8WNL
+        1aGd6qajHXSyFHTSTRddFfQFJLMIsVMpXVK61qHJUuigYFSEYikhhNJQ6dA/FEWhVCmUIvRNPPI7cA/S
+        BKeUex/yHR6ENEh4+vF773U4CWYWsvm6+93q9brNzs1buVxm2AEGMJCrgcr0TGyS2vRvq1K03q5uWPam
+        45UVO9vcZNgBBjCQq4FmuxPDpTapUVm8YriWG2vxBzu1milaDDvAAAaKYkA3UWqTngTVKjUrtLb2462g
+        fvBraYlhBxjAQGEMKJ7qUhavl69em5oVdBu2WF0ozAclnlw8MICBXgYUMfVKE3T79bNaZdgBBjBQaAOK
+        WfbIGHTrRbgINwYw4MGA4qX/j0/hOqgQMA+/OD4jgRl0A7rZiuFStBh2gAEMeDBAuAg2FywMuDOQwrVT
+        KhnDDjCAAQ8GCBfB5oKFAXcGUri2n78whh1gAAMeDBAugs0FCwPuDKRwdR4/MYYdYAADHgwQLoLNBQsD
+        7gykcLXvPzCGHWAAAx4MEC6CzQULA+4MpHC17t4zhh1gAAMeDKRwNe9MGsMOMIABDwZSuNZv3TaGHWAA
+        Ax4MpHB9uTlhDDvAAAY8GEjhen9pyM5PY2i467Ve7+O17t2xE3aCgYszQLh6BBtwFweO3bLbfhggXISL
+        u2oMuDNAuEDrDm0/rtj8Hb7v/AgX4SJcGHBngHCB1h1a7pZ83y314/eXwvVh5LIx7AADGPBg4L/h+njl
+        KjEj6BjAQOEMpHB9Gh0zhh1gAAMeDBAugs0FCwPuDKRwfR6/Zgw7wAAGPBggXASbCxYG3BlI4Vq9fsMY
+        doABDHgwQLgINhcsDLgzEMNVmZ7hSBuO9cEABtwYULPC7Ny81aam4kGCHs7i4TNyZhQGBteAWqVmheXG
+        mr15+qzrBFQd4erhNEQ+I6d2YmBwDKhValbY3vthemZ89/AR585z9j4GMFBYA2qUHhPVrBiuZrtjtVIp
+        xsvDt3zwGfk2GgwMlgG1SY1Sq2K4zCzsfju01tZ+fHbUrZjepC+GFA7+ZA844N9BXh1Qi9QktUmNUqvU
+        rBiubI6OT+Pz42J1IT4+MuwAAxjI04BapCYd/j5J0eoKl17QGxSwkz9nDDvAAAZyNaAWnY+WOvUXqMmf
+        UsDro5cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AxAcroPDF1.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIQAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAAwAAAAACQAA2BMAANgTAAAL
+</value>
+  </data>
+  <data name="GridIncome_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="INVOICE_ID"&gt;&lt;Caption&gt;Invoice No&lt;/Caption&gt;&lt;DataMember&gt;INVOICE_ID&lt;/DataMember&gt;&lt;FilterEditType&gt;Combo&lt;/FilterEditType&gt;&lt;FormatString&gt;0000000&lt;/FormatString&gt;&lt;Key&gt;INVOICE_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;145&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="WAITING_ID"&gt;&lt;Caption&gt;WAITING_ID&lt;/Caption&gt;&lt;DataMember&gt;WAITING_ID&lt;/DataMember&gt;&lt;Key&gt;WAITING_ID&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="INVOICE_DATE"&gt;&lt;Caption&gt;Invoice Date&lt;/Caption&gt;&lt;DataMember&gt;INVOICE_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd-MM-yyyy&lt;/FormatString&gt;&lt;Key&gt;INVOICE_DATE&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;/Column2&gt;&lt;Column3 ID="PATIENT_NO"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NO&lt;/DataMember&gt;&lt;FilterEditType&gt;Combo&lt;/FilterEditType&gt;&lt;Key&gt;PATIENT_NO&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;194&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="PATIENT_NAME_ENG"&gt;&lt;Caption&gt;Name English&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NAME_ENG&lt;/DataMember&gt;&lt;FilterEditType&gt;Combo&lt;/FilterEditType&gt;&lt;Key&gt;PATIENT_NAME_ENG&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;FilterRowComparison&gt;Contains&lt;/FilterRowComparison&gt;&lt;/Column4&gt;&lt;Column5 ID="PATIENT_NAME_KH"&gt;&lt;Caption&gt;Name Khmer&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NAME_KH&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NAME_KH&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;CellStyle&gt;&lt;Font&gt;Kh Battambang, 12pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column5&gt;&lt;Column6 ID="PATIENT_AGE"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_AGE&lt;/DataMember&gt;&lt;Key&gt;PATIENT_AGE&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;44&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="PATIENT_SEX"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_SEX&lt;/DataMember&gt;&lt;Key&gt;PATIENT_SEX&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;41&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="TOTAL_CONSULT"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Total Con-Fee&lt;/Caption&gt;&lt;DataMember&gt;TOTAL_CONSULT&lt;/DataMember&gt;&lt;Key&gt;TOTAL_CONSULT&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Width&gt;112&lt;/Width&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column8&gt;&lt;Column9 ID="TOTAL_MEDICINCE"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Total Medicince&lt;/Caption&gt;&lt;DataMember&gt;TOTAL_MEDICINCE&lt;/DataMember&gt;&lt;Key&gt;TOTAL_MEDICINCE&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Width&gt;122&lt;/Width&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column9&gt;&lt;Column10 ID="TOTAL"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Total Price&lt;/Caption&gt;&lt;DataMember&gt;TOTAL&lt;/DataMember&gt;&lt;Key&gt;TOTAL&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column10&gt;&lt;Column11 ID="TOTAL_DISCOUNT"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Discount&lt;/Caption&gt;&lt;DataMember&gt;TOTAL_DISCOUNT&lt;/DataMember&gt;&lt;Key&gt;TOTAL_DISCOUNT&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;Width&gt;84&lt;/Width&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column11&gt;&lt;Column12 ID="DEPOSIT"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Deposit&lt;/Caption&gt;&lt;DataMember&gt;DEPOSIT&lt;/DataMember&gt;&lt;Key&gt;DEPOSIT&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column12&gt;&lt;Column13 ID="SUB_TOTAL"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Sub Total&lt;/Caption&gt;&lt;DataMember&gt;SUB_TOTAL&lt;/DataMember&gt;&lt;Key&gt;SUB_TOTAL&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;CellStyle&gt;&lt;BackColor&gt;255, 192, 192&lt;/BackColor&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column13&gt;&lt;Column14 ID="EXCHANGE_RATE"&gt;&lt;Caption&gt;Rate&lt;/Caption&gt;&lt;DataMember&gt;EXCHANGE_RATE&lt;/DataMember&gt;&lt;Key&gt;EXCHANGE_RATE&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column14&gt;&lt;Column15 ID="CASH_RECEIVED"&gt;&lt;Caption&gt;Cash Received&lt;/Caption&gt;&lt;DataMember&gt;CASH_RECEIVED&lt;/DataMember&gt;&lt;Key&gt;CASH_RECEIVED&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;Width&gt;118&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column15&gt;&lt;Column16 ID="CHANG"&gt;&lt;Caption&gt;Change&lt;/Caption&gt;&lt;DataMember&gt;CHANG&lt;/DataMember&gt;&lt;Key&gt;CHANG&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column16&gt;&lt;Column17 ID="RECEIVED_BY"&gt;&lt;Caption&gt;Received By&lt;/Caption&gt;&lt;DataMember&gt;RECEIVED_BY&lt;/DataMember&gt;&lt;Key&gt;RECEIVED_BY&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;/Column17&gt;&lt;Column18 ID="BY_DOCTOR"&gt;&lt;Caption&gt;Exam By Doctor&lt;/Caption&gt;&lt;DataMember&gt;BY_DOCTOR&lt;/DataMember&gt;&lt;Key&gt;BY_DOCTOR&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;/Column18&gt;&lt;Column19 ID="IS_DELETE"&gt;&lt;Caption&gt;IS_DELETE&lt;/Caption&gt;&lt;DataMember&gt;IS_DELETE&lt;/DataMember&gt;&lt;Key&gt;IS_DELETE&lt;/Key&gt;&lt;Position&gt;19&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column19&gt;&lt;Column20 ID="DIAGNOSIS"&gt;&lt;Caption&gt;DIAGNOSIS&lt;/Caption&gt;&lt;DataMember&gt;DIAGNOSIS&lt;/DataMember&gt;&lt;Key&gt;DIAGNOSIS&lt;/Key&gt;&lt;Position&gt;20&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column20&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="Table1"&gt;&lt;Key&gt;Table1&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="IN_DETAIL_ID"&gt;&lt;Caption&gt;IN_DETAIL_ID&lt;/Caption&gt;&lt;DataMember&gt;IN_DETAIL_ID&lt;/DataMember&gt;&lt;Key&gt;IN_DETAIL_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="INVOICE_NO"&gt;&lt;Caption&gt;INVOICE_NO&lt;/Caption&gt;&lt;DataMember&gt;INVOICE_NO&lt;/DataMember&gt;&lt;Key&gt;INVOICE_NO&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="DESCRIPTION"&gt;&lt;Caption&gt;Description&lt;/Caption&gt;&lt;DataMember&gt;DESCRIPTION&lt;/DataMember&gt;&lt;Key&gt;DESCRIPTION&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;202&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="PRICE"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;PRICE&lt;/DataMember&gt;&lt;Key&gt;PRICE&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="QTY"&gt;&lt;Caption&gt;Qty&lt;/Caption&gt;&lt;DataMember&gt;QTY&lt;/DataMember&gt;&lt;Key&gt;QTY&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column4&gt;&lt;Column5 ID="UNIT"&gt;&lt;Caption&gt;UNIT&lt;/Caption&gt;&lt;DataMember&gt;UNIT&lt;/DataMember&gt;&lt;Key&gt;UNIT&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column5&gt;&lt;Column6 ID="SUB_TOTAL"&gt;&lt;AggregateFunction&gt;Sum&lt;/AggregateFunction&gt;&lt;Caption&gt;Sub Total&lt;/Caption&gt;&lt;DataMember&gt;SUB_TOTAL&lt;/DataMember&gt;&lt;Key&gt;SUB_TOTAL&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column6&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderWidth&gt;35&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;35&lt;/RowHeight&gt;&lt;/Table0&gt;&lt;Table1 ID="Prescription"&gt;&lt;Key&gt;Prescription&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="PRES_ID"&gt;&lt;Caption&gt;PRES_ID&lt;/Caption&gt;&lt;DataMember&gt;PRES_ID&lt;/DataMember&gt;&lt;Key&gt;PRES_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="WAITING_ID"&gt;&lt;Caption&gt;WAITING_ID&lt;/Caption&gt;&lt;DataMember&gt;WAITING_ID&lt;/DataMember&gt;&lt;Key&gt;WAITING_ID&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="PATIENT_NO"&gt;&lt;Caption&gt;PATIENT_NO&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NO&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NO&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="MEDICINCE_ID"&gt;&lt;Caption&gt;MEDICINCE_ID&lt;/Caption&gt;&lt;DataMember&gt;MEDICINCE_ID&lt;/DataMember&gt;&lt;Key&gt;MEDICINCE_ID&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column3&gt;&lt;Column4 ID="MEDICINCE_NAME"&gt;&lt;Caption&gt;Medicince Name&lt;/Caption&gt;&lt;DataMember&gt;MEDICINCE_NAME&lt;/DataMember&gt;&lt;Key&gt;MEDICINCE_NAME&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;202&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column4&gt;&lt;Column5 ID="ORDINANCE"&gt;&lt;Caption&gt;Ordinace&lt;/Caption&gt;&lt;DataMember&gt;ORDINANCE&lt;/DataMember&gt;&lt;Key&gt;ORDINANCE&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;199&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column5&gt;&lt;Column6 ID="USAGE"&gt;&lt;Caption&gt;Usage&lt;/Caption&gt;&lt;DataMember&gt;USAGE&lt;/DataMember&gt;&lt;Key&gt;USAGE&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;201&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Kh Battambang, 9.75pt&lt;/Font&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column6&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderWidth&gt;35&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;25&lt;/RowHeight&gt;&lt;TotalRow&gt;False&lt;/TotalRow&gt;&lt;/Table1&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderWidth&gt;35&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;35&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+</root>

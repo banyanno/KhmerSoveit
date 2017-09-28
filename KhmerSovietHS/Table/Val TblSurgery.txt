@@ -1,0 +1,1209 @@
+1	Hordeolum 		H00.0	False
+2	Stye		H00.0	False
+3	Chalazion		H00.1	False
+4	Blepharitis		H01.0	False
+5	Entropion of eyelid 		H02.0	False
+6	Ectropion of eyelid		H02.1	False
+7	lagophthalmos		H02.2	False
+8	Blepharochalasis, Dermatochalasis		H02.3	False
+9	Ptosis of eyelid		H02.4	False
+10	Lid retraction		H02.5	False
+11	foreign body in eyelid		H02.8	False
+13	Disorder of eyelid		H02.9	False
+14	Herpesviral [herpes simplex] infection		H03.1	False
+15	Herpes Zoster 		H03.1	False
+16	Dacryoadenitis		H04.0	False
+17	Dry eye syndrome		H04.1	False
+18	Lacrimal:		H04.1	False
+19	Cyst		H04.1	False
+20	Epiphora		H04.2	False
+21	Dacryocysstitis (Phlegmonous)		H04.3	False
+22	Dacryopericystitis, acute, subacute or unspecified		H04.3	False
+23	Lacrimal canaliculitis		H04.3	False
+24	Dacryocystitis		H04.4	False
+25	Lacrimal:		H04.4	False
+26	Canaliculitis chronic		H04.4	False
+27	Mucolele		H04.4	False
+28	Stenosis and insuffiency of lacrimal passages		H04.5	False
+29	Dacryolith		H04.5	False
+30	Eversion of lacrimal punctum		H04.5	False
+31	Stenosis of lacrimal:		H04.5	False
+32	Punctum		H04.5	False
+33	Canaliculi		H04.5	False
+34	Duct 		H04.5	False
+35	Sac		H04.5	False
+36	Lacrimal fistula		H04.6	False
+37	periorbital cellulitis		H05.0	False
+38	Abscess		H05.0	False
+39	Cellulitis		H05.0	False
+40	Osteomyelitis		H05.0	False
+41	Perostitis		H05.0	False
+42	Tenonitis		H05.0	False
+43	Perorbital cellulitis		H05.0	False
+44	Chronic inflammation disorders of orbit		H05.1	False
+45	Include: orbital pseudotumor		H05.1	False
+46	Granuloma of orbit		H05.1	False
+47	Orbital pseudotumor		H05.1	False
+48	Exophthalmic conditions		H05.2	False
+49	Displacement of globle (lateral) NOS		H05.2	False
+50	Haemorrhage		H05.2	False
+51	Oedema of orbit		H05.2	False
+52	Enophthalmos		H05.4	False
+53	Retroulbar foreign body		H05.5	False
+54	Dysthyroid exophthalmos (E05.-+)		H06.2	False
+55	Include: thyroid ophthalmopathy		H06.2	False
+56	Thyroid ophthalmopathy except dysthyoid exophthalmos (H06.2*)		H06.3	False
+57	Gonococcal infection of eye		A54.3	False
+58	Include:  neonatal GC conjunctivitis			False
+59	Acut atopic conjunctivitis			False
+60	Include: vernal conjunctivitis			False
+61	Allergic conjunctivitis			False
+62	Mucopurulent conjunctivitis		H10.0	False
+63	Acute atopic conjunctivitis		H10.1	False
+64	Allergic conjunctivitis		H10.1	False
+65	Giant papillary conjunctivitis		H10.1	False
+66	Vernal conjunctivitis		H10.1	False
+67	Other acute conjunctivitis		H10.2	False
+68	Acute conjunctivitis, unspecified		H10.3	False
+69	Chronic conjunctivitis 		H10.4	False
+70	Blepharoconjunctivitis		H10.5	False
+71	Other conjunctivitis		H10.8	False
+72	Pseudophemphigoid		H10.8	False
+73	Conjunctivitis, unspecified		H10.9	False
+74	Pterygium		H11.0	False
+75	Pinguecular		H11.0	False
+76	Concretions		H11.1	False
+77	Pinguecular		H11.1	False
+78	Pigmentation		H11.1	False
+79	Xerosis NOS		H11.1	False
+80	Conjunctival scars		H11.2	False
+81	Symblepharon		H11.2	False
+82	Subconjunctival haemorrhage		H11.3	False
+83	Other conunctival vascular disorders and cysts		H11.4	False
+84	Conjunctival:		H11.4	False
+85	Aneurysum		H11.4	False
+86	Hyperaemia		H11.4	False
+87	Chemosis		H11.4	False
+88	Oedema		H11.4	False
+89	Symblepharon		H11.8	False
+90	conjunctival concretion		H11.8	False
+91	conjunctival cyst 		H11.8	False
+92	Pseudophemphigoid		H11.8	False
+93	Pyoenic granuloma of conjunctiva		H11.8	False
+94	Conjunctivochalasis		H11.8	False
+95	Conjunctivitis 		H13.1	False
+96	Acanthamoeba (B60.1+)		H13.1	False
+97	Adenoviral follicular (acute) (B30.1+)		H13.1	False
+98	Chalamydial (A74.0+)		H13.1	False
+99	Diphtheritic (A36.8+)		H13.1	False
+100	Gonococcal (A54.3+)		H13.1	False
+101	Haemorrhagic (acute) (epidemic) (B30.30+)		H13.1	False
+103	meningococcal (A39.8+)		H13.1	False
+104	Newcastle (B30		H13.1	False
+105	Zoster (B02.3+)		H13.1	False
+106	Ocular pemphigoid (L12.-+)		H13.3	False
+107	Scleritis		H15.0	False
+108	Episcleritis		H15.1	False
+109	Equatorial staphyloma		H15.8	False
+110	Scleral ectasia		H15.8	False
+111	Sleromolacia		H15.8	False
+112	Corneal unlcer		H16.0	False
+113	Include: hypopyon corneal ulcer		H16.0	False
+114	Mooren ulcer		H16.0	False
+115	Corneal ulcer		H16.0	False
+116	NOS		H16.0	False
+117	Marginal		H16.0	False
+118	Perforated		H16.0	False
+119	Ring		H16.0	False
+120	With hypopyon		H16.0	False
+121	Other superficial keratitis without conjunctivits		H16.1	False
+122	Include: filamentous Keratitis		H16.1	False
+123	photokeratitis		H16.1	False
+124	infared keratitis		H16.1	False
+125	SPK (superficial punctate keratitis)		H16.1	False
+126	Keratitis		H16.1	False
+127	Areolar		H16.1	False
+128	Filamentary		H16.1	False
+129	Nummular		H16.1	False
+130	Stellate		H16.1	False
+131	Striate		H16.1	False
+132	Superficial punctate		H16.1	False
+133	Photokeratitis		H16.1	False
+134	Snow blindness		H16.1	False
+135	Keratoconjunctivitis		H16.2	False
+136	Neurotrophic keratitis		H16.2	False
+137	Keratoconjunctivitis		H16.2	False
+138	Exposure		H16.2	False
+139	Neurotrophic		H16.2	False
+140	Phlyctenular		H16.2	False
+141	Ophthalmia nodosa		H16.2	False
+142	Superficial keatitis with conjunctivitis		H16.2	False
+143	Superior limbic keratoconjunctivitis (SLK)		H16.2	False
+144	Interstital and deep keratitis		H16.3	False
+145	Corneal neovascularization		H16.4	False
+146	Ghost vessels (corneal)		H16.4	False
+147	Pannus (corneal)		H16.4	False
+148	Corneal opacity		H17.1	False
+149	Corneal scar and opacity, unspecified		H17.9	False
+150	Corneal pigmentations and deposits		H18.0	False
+151	Bullous keratopathy		H18.1	False
+152	Corneal oedema		H18.2	False
+153	Corneal decompensation		H18.2	False
+154	Bullous keratopathy		H18.2	False
+155	Rupture in Descemet's membrane		H18.3	False
+156	Detachment		H18.3	False
+157	Corneal degeneration		H18.4	False
+158	Arucs senilis		H18.4	False
+159	Band keratopathy		H18.4	False
+160	Pellucid marginal degeneration		H18.4	False
+161	Hereditary corneal dystrophies		H18.5	False
+162	Dystrophy:		H18.5	False
+163	Corneal:		H18.5	False
+164	Epithelial		H18.5	False
+165	Granular		H18.5	False
+166	Lattice		H18.5	False
+167	Macular		H18.5	False
+168	Fuchs		H18.5	False
+169	Keratoconus		H18.6	False
+170	Corneal:		H18.7	False
+171	Ectasia		H18.7	False
+172	Staphyloma		H18.7	False
+173	Delen		H18.7	False
+174	Descemetocele		H18.7	False
+175	Keratoglobus		H18.7	False
+176	Recurrent erosion of cornea		H18.8	False
+177	Anaesthesia		H18.8	False
+178	Hypaesthesia of cornea		H18.8	False
+179	Recurrent erosion		H18.8	False
+180	Limbal stem cell deffiency		H18.8	False
+181	Persistent epithelial defect		H18.8	False
+182	Syphilitic episcleritis (A52.7+)		H18.9	False
+183	Tuberculous episcleritis (A18.5+)		H18.9	False
+184	Zoster scleritis (B02.3+)		H18.9	False
+185	Herpesviral keratitis and keratoconjunctivitis (B00.5+)		H19.1	False
+186	Epidemic keratoconjunctivitis (B30.0+)		H19.2	False
+187	Kertitis and keatoconjunctivitis (interstitial ) in:		H19.2	False
+188	Acanthamoebiasis (B60.1+)		H19.2	False
+189	Measles (B05.8+)		H19.2	False
+190	Syphilis (A50.3+)		H19.2	False
+191	Tuberculosis (A18.5+)		H19.2	False
+192	Varicella (B01.8+)		H19.2	False
+193	Zoster (B02.3+)		H19.2	False
+194	Keratoconjunctivitis sicca (M35.0+)		H19.3	False
+195	Acute and subacute iridocyclitis, iritis		H20.0	False
+196	Anterior uveitis		H20.0	False
+197	Cyslitis acute, recurrent or subacute		H20.0	False
+198	Iritis		H20.0	False
+199	Chronic anteror uveitis 		H20.1	False
+200	Phacolytic uveitis		H20.2	False
+201	Phacoanaphylactic uveitis		H20.2	False
+202	Hyphaema (nontraumatic)		H21.0	False
+203	Neovascularization of iris or ciliary body		H21.1	False
+204	Rubeosis of iris		H21.1	False
+205	Degeneration of :		H21.2	False
+206	Iris (pigmentary)		H21.2	False
+207	Pupillary margin		H21.2	False
+208	Iridoschisis 		H21.2	False
+209	Iris atrophy (essential) (progressive)		H21.2	False
+210	Miotic pupillary cyst		H21.2	False
+211	Translucency of iris		H21.2	False
+212	Cyst of iris, ciliary body or anteror chamber:		H21.3	False
+213	NOS		H21.3	False
+214	Exudative		H21.3	False
+215	Implantation		H21.3	False
+216	Parasitic		H21.3	False
+217	Iris bombe		H21.4	False
+218	Pupillary:		H21.4	False
+219	Occlusion		H21.4	False
+220	Seclusion		H21.4	False
+221	Gonioynechiae		H21.5	False
+222	Iridodialysis		H21.5	False
+223	Recesion, chamber angle		H21.5	False
+224	Synechiae (Iris)		H21.5	False
+225	NOS 		H21.5	False
+226	Anterior		H21.5	False
+227	Posterior		H21.5	False
+228	Iridocyclitis in:		H22.0	False
+229	Gonococcal infection (A54.3+)		H22.0	False
+231	Syphils (secondary ) (A51.4+)		H22.0	False
+232	Tuberculosis (A18.5+)		H22.0	False
+233	Varicella (B01.8+)		H22.0	False
+234	Zoster (B02.3+)		H22.0	False
+235	Iridocyclitis in:		H22.1	False
+236	Ankylosing spondylitis (M45+)		H22.1	False
+237	Sarcoidosis (D86.8+)		H22.1	False
+238	Rheumatoid arthritis (M05.3+)		H22.1	False
+239	Psoriasis (L04.-+)		H22.1	False
+240	Juvenile rheumatoid arthritis (M08.0+)		H22.1	False
+241	Reiter's disease (M02.3+)		H22.1	False
+242	Senile incipient cataract		H25.0	False
+243	 Include: senile immature cataract		H25.0	False
+244	SIC (VA equal or better than 3/60)		H25.0	False
+245	Coronary		H25.0	False
+246	Cortical		H25.0	False
+247	Punctate		H25.0	False
+248	Subcapsular poslar senile cataract (anterior) ( posterior)		H25.0	False
+249	Water clefts		H25.0	False
+250	Senile nuclear cataract		H25.1	False
+251	Infantile, juvenile and presenile cataract		H26.0	False
+252	Traumatic cataract		H26.1	False
+253	Complicate cataract		H26.2	False
+254	Cataract in chronic iridocyclitis		H26.2	False
+255	Cataract secondary to ocular disorder		H26.2	False
+256	Glaucomatous flecks  (Subcapsular)		H26.2	False
+257	Steroid induced cataract		H26.3	False
+258	Secondary cataract		H26.4	False
+259	Posterior capsule opacity (PCO)		H26.4	False
+260	Aphakia		H27.0	False
+261	Lens subluxation of len		H27.1	False
+262	Focal chorioretinal inflammation		H30.0	False
+263	Focal:		H30.0	False
+264	chorioretinitis		H30.0	False
+265	Choroiditis		H30.0	False
+266	Retinitis		H30.0	False
+267	Retinochoroiditis		H30.0	False
+268	Disseminated 		H30.1	False
+269	chorioretinitis		H30.1	False
+270	Choriditis		H30.1	False
+271	Posterior uveitis		H30.1	False
+272	Retinitis		H30.1	False
+273	Retinochoroiditis		H30.1	False
+274	Acute retinal necrosis (ARN)		H30.1	False
+275	Vitritis		H30.1	False
+276	Posterior cysclitis		H30.2	False
+277	Intermediate uveitis		H30.2	False
+278	Pars planitis		H30.2	False
+279	Harada's disease		H30.8	False
+280	Chorioretinal inflammation, unspecified		H30.9	False
+281	Chorioretinitis		H30.9	False
+282	Choroiditis		H30.9	False
+283	Retinitis		H30.9	False
+284	Retinochoroiditis		H30.9	False
+285	Chorioretinal scars		H31.0	False
+286	Macula scars of posterior pole (Postinflammatory) (post-traumatic)		H31.0	False
+287	Solar retinopathy		H31.0	False
+288	Choroidal degeneration		H31.1	False
+289	Atrophy		H31.1	False
+290	Sclerosis of choroid		H31.1	False
+291	Hereditary choroidal dystrophy		H31.2	False
+292	Choroideremia		H31.2	False
+293	Dstrophy, choroidal (central areolar) (generalized) (peripapillary)		H31.2	False
+294	Gyrate atrophy, choroid		H31.2	False
+295	Choroidal hamorrhage and rupture		H31.3	False
+296	Choroidal haemorrhage:		H31.3	False
+297	NOS		H31.3	False
+298	Expulsive		H31.3	False
+299	Choroidal detachment		H31.4	False
+300	Disorder of choroid, unspecified		H31.9	False
+301	Chorioretinitis:		H32.0	False
+302	Cytomegaloviral (B25.8+)		H32.0	False
+303	Cytomegaloviral (in HIV disease) (B20.2+)		H32.0	False
+304	Syphilitic , late (A52.7+)		H32.0	False
+305	Toxoplasma (B58.0+)		H32.0	False
+306	Toxocariasis (B83.0+)		H32.0	False
+307	Tuberculous (A18.5+)		H32.0	False
+308	Toxoplasma chorioretinitis		H32.0	False
+309	Rhegmatogenous retinal detachment		H33.0	False
+310	Retinoschisis and retinal cysts		H33.1	False
+311	Cyst of ora serrata		H33.1	False
+312	Parasitic cyst of retina NOS		H33.1	False
+313	Pseudocyst of retina		H33.1	False
+314	Serous retinal detachment		H33.2	False
+315	Exudative RD		H33.2	False
+316	Traction detachment of retina		H33.3	False
+317	Proliferative vitreoretinopahthy with RD		H33.3	False
+318	Traction RD		H33.3	False
+319	Horsehoe tear		H33.3	False
+320	Round hole of retina, without detachment		H33.3	False
+321	Operculum		H33.3	False
+322	Retinal break NOS		H33.3	False
+323	Traction detachment of retina		H33.4	False
+324	Proliferative vitreo-retinopathy with retinal deachment		H33.4	False
+325	Central retinal artery occlusion		H34.1	False
+326	Include: CRAO		H34.1	False
+327	Central retinal artery occlusion		H34.2	False
+328	Hollenhorst's plaque		H34.2	False
+329	Retinal:		H34.2	False
+330	Artery occulsion		H34.2	False
+331	Brach		H34.2	False
+332	Partial		H34.2	False
+333	Microembolism		H34.2	False
+334	 CRVO		H34.8	False
+335	Branch retinal vein occlusions		H34.8	False
+336	Retinal vein occlusion:		H34.8	False
+337	Central		H34.8	False
+338	Incipient		H34.8	False
+339	Partial		H34.8	False
+340	Tributary		H34.8	False
+341	Retinal:		H35.0	False
+342	Micro-aneurysms		H35.0	False
+343	Neovascularization		H35.0	False
+344	Perivasculitis		H35.0	False
+345	Varices		H35.0	False
+346	Vascular sheathing		H35.0	False
+347	Vasculitis		H35.0	False
+348	Retinopath:		H35.0	False
+349	NOS		H35.0	False
+350	Background NOS		H35.0	False
+351	Coats		H35.0	False
+352	Exudative		H35.0	False
+353	Hypertensive		H35.0	False
+354	Retinopathy of prematurity (ROP)		H35.1	False
+355	Retrolental fibroplasia		H35.1	False
+356	PDR		H35.2	False
+357	Proliferaive vitreo-retinopathy		H35.2	False
+358	Epiretinal membran (ERM)		H35.2	False
+359	Degeneration of macula and posterior pole		H35.3	False
+360	Macular drusen		H35.3	False
+361	Macular hemorrhage		H35.3	False
+362	SMD (senile macular degeration)		H35.3	False
+363	Maculr hole		H35.3	False
+364	Tocic maculopathy		H35.3	False
+365	Angioid streaks		H35.3	False
+366	Cyst		H35.3	False
+367	Drusen (degenerative) of macula		H35.3	False
+368	Hole		H35.3	False
+369	Puckering		H35.3	False
+370	Edema		H35.3	False
+371	Kuhnt-Junius deeneration		H35.3	False
+372	Senile macular degeneration (atrophic) (exudative)		H35.3	False
+373	Solar maculopathy		H35.3	False
+374	Toxic maculopathy		H35.3	False
+375	Use additional external cause code (Chapter XX), if desired, to identify drug, if drug-induced		H35.3	False
+376	Peripheral retinal degeneration		H35.4	False
+377	Degenration, retina:		H35.4	False
+378	NOS		H35.4	False
+379	Lattice		H35.4	False
+380	Microcystoid		H35.4	False
+381	Palisade		H35.4	False
+382	Paving stone		H35.4	False
+383	Reticular		H35.4	False
+384	Hereditary retinal dystrophy		H35.5	False
+385	Retinitis pigmentosa		H35.5	False
+386	Dystrophy:		H35.5	False
+387	Retinal (albipunctate) (pigmentary) (viterlliform)		H35.5	False
+388	Tapetoretinal		H35.5	False
+389	Vitreoretinal		H35.5	False
+390	Retinitis pigmentosa		H35.5	False
+391	Stargardt's disease		H35.5	False
+392	Retinal haemorrhage		H35.6	False
+393	Separation of retinal layers		H35.7	False
+394	ICSC, RPE detachment		H35.7	False
+395	Central serous chorioretinopathy		H35.7	False
+396	Detachment of retinal pigment epithlium		H35.7	False
+397	Idiopathic central serous chorioretinopathy (ICSC)		H35.7	False
+398	Diabetic retinopathy		H36.0	False
+399	Atheroschlerotic retinopathy (I70.8+)		H36.8	False
+400	Proliferative sickle-cell retinopathy (D57.-+)		H36.8	False
+401	Retinal dystrophy in lipid storage disorders (E75.-+)		H36.8	False
+402	Glaucoma suspect		H40.0	False
+403	Ocular hypertension		H40.0	False
+404	Forward lens movement		H40.0	False
+405	Occludable angle		H40.0	False
+406	Ocular hypertension		H40.0	False
+407	Plateaur iris configuration		H40.0	False
+408	Primary open-angle glaucoma		H40.1	False
+409	Low tension glaucoma		H40.1	False
+410	pigmentary glaucoma		H40.1	False
+411	pseudoexfotiation glaucoma		H40.1	False
+412	Glaucoma (primary) (residual stage):		H40.1	False
+413	Capsular with pseudoexfoliation of lens		H40.1	False
+414	Chronic simple		H40.1	False
+415	Low-tension		H40.1	False
+416	Pigmentary		H40.1	False
+417	Juvenile open angle glaucoma		H40.1	False
+418	Primary angle-closure glaucoma		H40.2	False
+419	Acute glaucoma		H40.2	False
+420	intermittent angle closure glaucoma		H40.2	False
+421	CNAG (chronic narrow angle glaucoma)		H40.2	False
+422	Angle-closure glaucoma (primary) (residual stage):		H40.2	False
+423	Acute		H40.2	False
+424	Chronic 		H40.2	False
+425	Intrmittent		H40.2	False
+426	Plateaur iris with glaucoma		H40.2	False
+427	Glaucoma secondary to eye trauma		H40.3	False
+428	Traumatic glaucoma		H40.3	False
+429	Angle recess glaucoma		H40.3	False
+430	Glaucoma secondary to radiation		H40.3	False
+431	Glaucoma secondary to y surgical trauma		H40.3	False
+432	Glaucoma secondary to chemical burn		H40.3	False
+433	Lens particle glaucoma		H40.3	False
+434	Use additional code, if desired, to identif cause		H40.3	False
+435	Glaucoma secondary to eye inflammation		H40.4	False
+436	Uveitis with glaucoma		H40.4	False
+437	Glaucomatocyclitic crisis (Posner-Scholssman syndrome)		H40.4	False
+438	Phacolytic glaucoma		H40.4	False
+439	Phacoanaphylactic glaucoma		H40.4	False
+440	Use additional code, f desired, to identify cause		H40.4	False
+441	ICE symdrome		H40.5	False
+442	Aphakic glaucoma, NVG		H40.5	False
+443	Ghost cell glaucoma		H40.5	False
+444	ICE syndrome with glaucoma		H40.5	False
+445	Mobile lens with glaucoma		H40.5	False
+446	Neovascular glaucoma (NVG)		H40.5	False
+447	Steroid induced glaucoma		H40.6	False
+448	Use additional external cause code (Chapter XX), if desired, to idetify drug		H40.6	False
+449	Malignant glaucoma		H40.8	False
+450	Glaucoma		H40.9	False
+451	Vitreous haemorrhage		H43.0	False
+452	Asteroid hyalosis		H43.2	False
+453	Vitreous membranes and strands		H43.3	False
+454	Vitreous flaoter		H43.8	False
+455	PVD (posteror vitreous detachment)		H43.8	False
+456	Degeneration, floater		H43.8	False
+457	Detachment		H43.8	False
+458	Endophthalmitis		H44.0	False
+459	Infectious endophthalmitis/panuveitis		H44.0	False
+460	Panophthalmitis		H44.0	False
+461	Vitreous abscess		H44.0	False
+462	Sympathetic ophthalmia		H44.1	False
+463	Noninfectious endophthalmitis/panuveitis		H44.1	False
+464	Panophthalmitis		H44.1	False
+465	Sympathetic uveitis		H44.1	False
+466	Degenerative myopia		H44.2	False
+467	Chalcosis 		H44.3	False
+468	Siderosis of eye		H44.3	False
+469	Hypotony of eye		H44.4	False
+470	Absoluet glaucoma		H44.5	False
+471	Phthisis bulbi		H44.5	False
+472	Absolute glaucoma		H44.5	False
+473	Atrophy of globe		H44.5	False
+474	Retained (old) magnetic forreign body (in):		H44.6	False
+475	Anteriror chamber		H44.6	False
+476	Ciliary body		H44.6	False
+477	Iris		H44.6	False
+478	Lens		H44.6	False
+479	Posterior wall globe		H44.6	False
+480	Vitreous body		H44.6	False
+481	Retained (old) intraocular foreign body, nonmagnetic		H44.7	False
+482	Retained (nonmagnetic) (old) foreign body (in):		H44.7	False
+483	Anterior chamber		H44.7	False
+484	Ciliary body		H44.7	False
+485	Iris		H44.7	False
+486	Lens		H44.7	False
+487	Posterior wall globe		H44.7	False
+488	Vitreous body		H44.7	False
+489	Haemophthalmos		H44.8	False
+490	Luxation of globe		H44.8	False
+491	Diabetic vitreous haemorrhage ( E10-E14+with common fourth character.3)		H45.0	False
+492	Endophthalimitis in:		H45.1	False
+493	Cysticercosis (B69.1+)		H45.1	False
+494	Onchocerciasis (B73+)		H45.1	False
+495	Toxocariasis (B83.0+)		H45.1	False
+496	Optic neuritis		H46.0	False
+497	Retrobulbar optic neuritis		H46.0	False
+498	papillitis		H46.0	False
+499	Optic :		H46.0	False
+500	Neuropathy, except ischaemic		H46.0	False
+501	Papillitis		H46.0	False
+502	Retrobulbar neuritis NOS		H46.0	False
+503	Optic nerve compression		H47.0	False
+504	Haemorrhage in optic nerve shealth		H47.0	False
+505	Ischemic optic neuropathy (ION)		H47.0	False
+506	Compression of optic nerve		H47.0	False
+507	Paplloedema		H47.1	False
+508	Optic atrophy		H47.2	False
+509	Temporal pallor of optic disc		H47.2	False
+510	Pseudo papilloedema		H47.3	False
+511	Drusen of optic disc		H47.3	False
+512	Disorders of optic tracts, geniculate nuclei and optic radiations		H47.5	False
+513	Optic atrophy in late syphilis (A52.1+)		H47.6	False
+514	Retrobulbar neuritis in:		H48.1	False
+515	Late syphilis (A52.1+)		H48.1	False
+516	Meningococcal infection (A39.8+)		H48.1	False
+517	Multiple sclerosis (G35+)		H48.1	False
+518	Third [oculomotor] nerve palsy		H49.0	False
+519	Fourth [trochlear] nerve palsy		H49.1	False
+520	Sixth [abducent] nerve palsy		H49.2	False
+521	Total [external] ophthalmologia		H49.3	False
+522	Progressive external ophthalmoplegia		H49.4	False
+523	Other paralytic stabismus		H49.8	False
+524	External ophthalmoplegia NOS		H49.8	False
+525	Kearns-Sayre syndrome		H49.8	False
+526	Paralytic strabismus, unspecified		H49.9	False
+527	Convergent concomitant strabismus (ET)		H50.0	False
+528	Alternet ET		H50.0	False
+529	Esotropia (alternating ) (monocular), except intermittent		H50.0	False
+530	Divergent concomitant strabismis (XT)		H50.1	False
+531	 alternet XT		H50.1	False
+532	Exsotropia (alternating) (monocular), except intermittent		H50.1	False
+533	Intermittent heterotropia		H50.3	False
+534	intermittent ET		H50.3	False
+535	Intermittent XT		H50.3	False
+536	Esotropia		H50.3	False
+537	Exotropia (alternating) ( monocular)		H50.3	False
+538	Hypertropia, hypotropia		H50.4	False
+539	Cyclotropia		H50.4	False
+540	Microtropia		H50.4	False
+541	Concomitant strabismus NOS		H50.4	False
+542	Cysclotropia		H50.4	False
+543	Hypertropia		H50.4	False
+544	Hypotropia		H50.4	False
+545	Microtropia		H50.4	False
+546	Monofixation syndrome		H50.4	False
+547	Heterophoria		H50.5	False
+548	Alternating hyperphoria Esophoria		H50.5	False
+549	Exophoria		H50.5	False
+550	Mechanical strabismus		H50.6	False
+551	Brown's sheath syndrome		H50.6	False
+552	Strabismus due to adhesion		H50.6	False
+553	Strabismus in thyroid ophthalmopathy		H50.6	False
+554	Traumatic strabismus		H50.6	False
+555	Strabismus fixus		H50.6	False
+556	Traumatic limitation of dectio of eye muscle		H50.6	False
+557	Other specified strabismus		H50.8	False
+558	Duane's syndrome		H50.8	False
+559	Strabismus		H50.9	False
+560	Convergence insufficiency and excess		H51.1	False
+561	Internuclear ophthalmoplegia		H51.2	False
+562	Hypermetropia		H52.0	False
+563	Myopia		H52.1	False
+564	Anisometropia and aniseilkonia		H52.3	False
+565	Presbyopia		H52.4	False
+566	Disorders of accommodation		H52.5	False
+567	Internal ophthalmoplegia (complete) (Total)		H52.5	False
+568	Paresis		H52.5	False
+569	Spasm of accommodation		H52.5	False
+570	Antimetropia		H52.6	False
+571	Amblyopia		H53.0	False
+572	Refractive amblyopia		H53.0	False
+573	Strabismus amblyopia		H53.0	False
+574	Deprivation amblyopia		H53.0	False
+575	Anisometropai		H53.0	False
+576	asthenopia		H53.1	False
+577	Day blindness		H53.1	False
+578	Photophobia		H53.1	False
+579	Sudden visual loss		H53.1	False
+580	Eye strain		H53.1	False
+581	Hemeralopia		H53.1	False
+582	Oscillopsia		H53.1	False
+583	Metamorphopsia		H53.1	False
+584	Visual halos		H53.1	False
+585	Diplopia		H53.2	False
+586	Abnormal retinal correspondence		H53.3	False
+587	Fusion with defective stereopsis		H53.3	False
+588	Simultaneous visual perception without usion Suppression of binocular vission 		H53.3	False
+589	Enlarged blind spot 		H53.3	False
+590	Generallized contraction of visual field		H53.3	False
+591	Hemianop (s)ia ( heeronymous) (hoonymous)		H53.3	False
+592	Quadant anop (s)ia		H53.3	False
+593	Scotoma: 		H53.3	False
+594	Arcuate		H53.3	False
+595	Bjerrum		H53.3	False
+596	Central		H53.3	False
+597	Ring		H53.3	False
+598	Colour vision deficiencies		H53.5	False
+599	Night blidness		H53.6	False
+600	Other visual disturbances		H53.8	False
+601	Visual disturbance, unspecified		H53.9	False
+602	Blindness, both eyes		H54.0	False
+603	Visual impairment categories 3,4,5 in both eyes		H54.0	False
+604	Blindness, one eye, low vision other eye		H54.1	False
+605	Visual impairment categories 3,4,5 in one eyes, with categories 1 or 2 in the other eyes		H54.1	False
+606	Low vision, both eye		H54.2	False
+607	Visual impairment categories 1 or 2 in both eyes		H54.2	False
+608	Unqualified visual loss, both eyes		H54.3	False
+609	Visual impairment categories 9 in both eyes		H54.3	False
+610	Blindness, one eye		H54.4	False
+611	Visual impairment categories 3, 4, 5 in one eye [normal vision in other eye]		H54.4	False
+612	Low vision, one eye		H54.5	False
+613	Visual impairment categories 1 or 2 in one eye [normal vision in other eye]		H54.5	False
+614	Unqualified visual loss, both eyes		H54.6	False
+615	Visual impairment categories 9 in one eye [normal vision in other eye]		H54.6	False
+616	Unspecified visual loss		H54.7	False
+617	Visual impairment category 9 NOS		H54.7	False
+618	Nystagmus:		H55	False
+619	Deprivation		H55	False
+620	Dissociated		H55	False
+621	Laten		H55	False
+622	Adie's pupil		H57.0	False
+623	Eye irritation		H57.1	False
+624	Ocular involvement in Steven-Johnson syndrome		H57.8	False
+625	Include eye irritation		H57.9	False
+626	Anomaly of pupillary function in Horner's syndrome		H58.0	False
+627	Argyll Robertsom phenomenon or pupil, syphiitic (A52.1)		H58.0	False
+628	Syphilitic oculopathy NEC:		H58.8	False
+629	Congenital		H58.8	False
+630	Early (A50.0+)		H58.8	False
+631	Late (A50.3+)		H58.8	False
+632	Early (secondary ) (A51.4+)		H58.8	False
+633	Late (A52.7+)		H58.8	False
+634	Ocular involvement in Steven-Johnson syndrome  (L51.1+)		H58.8	False
+635	Vitreous sndrome following cataract surgery		H59.0	False
+636	Chorioredtinal scars after surgery for detachment		H59.8	False
+637	Diphtheritic conjunctivitis+ (H13.1*)		A36.8	False
+638	Meningococcal conjunc tivitis+ (H13.1*)		A39.8	False
+639	Meningococcal retrobulbar neuritis+ (H48.1*)		A39.8	False
+640	Any congenital syphilitic condition specified as early or manifest less		A50.0	False
+641	than two years after birth			False
+642	Early congenital syphilitic oculopathy 		A50.0	False
+643	Late congenital syphilitic oculopathy 		A50.3	False
+644	Late congenital syphilitic interstitial keratitis+ (H19.2*)		A50.3	False
+645	Late congenital syphilitic oculopathy NEC (H58.8*)		A50.3	False
+646	Secondary syphilitic:		A51.4	False
+647	Iridocyclitis +(H22.0*)		A51.4	False
+648	Oculopathy NEC+ (H58.8*)		A51.4	False
+649	Symtomatic neurosyphilis		A52.1	False
+650	Late syphilitic:		A52.1	False
+651	Optic atrophy+ (H48.0*)		A52.1	False
+652	Retrobulbar neuritis+ (H48.1*)		A52.1	False
+653	Late syphilitic:		A52.7	False
+654	Chorioretinitis+  (H32.0*)		A52.7	False
+655	Episcleritis+ (H19.0*)		A52.7	False
+656	Oculopathy NEC+ (H58.8*)		A52.7	False
+657	Gonococcal:		A54.3	False
+658	Conjunctivitis+ (H13.1*)		A54.3	False
+659	Iridocyclitis+ (H22.0*)		A54.3	False
+660	Ophthalmia neonatorum due to gonococcus		A54.3	False
+661	Trachoma dubium		A71.0	False
+662	Active stage of trachoma		A71.1	False
+663	Granular conjunctivitis (trachomatous)		A71.1	False
+664	Trachomatous:		A71.1	False
+665	Follicular conjunctivitis		A71.1	False
+666	Pannus		A71.1	False
+667	Trachoma		A71.9	False
+668	Chlamydial conjunctivitis (H13.1*)		A74.0+	False
+669	Paratrachoma		A74.0+	False
+670	Herpesviral ocular disease		B00.5+ 	False
+671	Herpesviral:		B00.5+ 	False
+672	Conjunctivitis (H13.1*)		B00.5+ 	False
+673	Dermatitis of eyelid (H03.1*)		B00.5+ 	False
+674	Iridocyclitis (H22.0*)		B00.5+ 	False
+675	Iritis (H22.0*)		B00.5+ 	False
+676	Keratitis (H19.1*)		B00.5+ 	False
+677	Keratoconjunctivitis (H19.1*)		B00.5+ 	False
+678	Uveitis, anterior (H22.0*)		B00.5+ 	False
+679	Zoster ocular diseas		B02.3+	False
+680	Zoster:		B02.3+	False
+681	Blepharitis (H03.1*)		B02.3+	False
+682	Conjunctivitis (H13.1*)		B02.3+	False
+683	Iridocyclitis (H22.0*)		B02.3+	False
+684	Iritis (H22.0*)		B02.3+	False
+685	Keratitis (H19.2*)		B02.3+	False
+686	Keratoconjunctivitis (H19.2*)		B02.3+	False
+687	Scleritis (H19.0*)		B02.3+	False
+688	Measles keratitis and keratoconjunctivitis+ (H19.2*)		B05.8	False
+689	CMV chorioretinitis in HIV (H32.0*)		B20.2	False
+690	Cytomegaloviral chorioretinitis (H32.0*)		B25.8	False
+691	Epidemic keratoconjunctivitis		B30.0+	False
+692	Shipyard eye		B30.0+	False
+693	Conjunctivitis due to adenovirus (H13.1*)		B30.1+	False
+694	Acute adenoviral follicular conjunctivitis		B30.1+	False
+695	Swimming-pool conjunctivitis		B30.1+	False
+696	Viral conjunctivitis		B30.9	False
+697	Toxoplasma oculopathy		B58.0+	False
+698	Toxoplasma chorioretinitis (H32.0*)		B58.0+	False
+699	Acanthamoebiasis		B60.1	False
+700	Conjunctivitis due to Acanthamoeba+(H13.1*)		B60.1	False
+701	Keratoconjunctivitis due to Acanthamoeba+ (H19.2*)		B60.1	False
+702	Cysticercosis of eye		B69.1	False
+703	Disseminated strongyloidiasis		B78.7	False
+704	Gnathostomiasis 		B83.1	False
+705	Wandering swelling		B83.1	False
+706	Sequelae of trachoma 		B94.0	False
+707	Malignant neoplasm of bones of skull and face		C41.0	False
+708	Maxilla (superior)		C41.0	False
+709	Orbital bone		C41.0	False
+710	Malignant melanoma of eyelid, including canthus		C43.1	False
+711	Other malignant neoplasm of skin of eyelid, including canthus		C44.1	False
+712	Malignant neoplasm of connective and soft tissue of head, face, and neck		C49.0	False
+713	Connective tissue of:		C49.0	False
+714	 Ear		C49.0	False
+715	Eyelid		C49.0	False
+716	Malignant neoplasm of conjunctiva		C69.0	False
+717	Malignant neoplasm of cornea		C69.1	False
+718	Malignant neoplasm of retina		C69.2	False
+719	Malignant neoplasm of choroid		C69.3	False
+720	Malignant neoplasm of ciliary body		C69.4	False
+721	Eyeball		C69.4	False
+722	Malignant neoplasm of lacrimal gland and duct		C69.5	False
+723	Lacrimal sac		C69.5	False
+724	Nasolacrimal duct		C69.5	False
+725	Malignant neoplasm of orbit 		C69.6	False
+726	Connective tissue of orbit		C69.6	False
+727	Extraocular muscle		C69.6	False
+728	Peripheral nerves of orbit 		C69.6	False
+729	Retrobulbar tissue		C69.6	False
+730	Retro-ocular tissue		C69.6	False
+731	Malignant neoplasm of overlapping lesion of eye and adnexa		C69.8	False
+732	Malignant neoplasm of eye, unspecified		C69.9	False
+733	Malignant neoplasm of optic nerve		C72.3	False
+734	Melanoma in situ of eyelid, including canthus		D03.1	False
+735	Carcinoma in situ of skin of eyelid. Including canthus 		D04.1	False
+736	Carcinoma in situ of eye 		D09.2	False
+737	Benign neoplasm of bones of skull and face		D16.4	False
+738	Maxilla (superior)		D16.4	False
+739	Orbital bone		D16.4	False
+740	Benign neoplasm of connective and other soft tissue of head, face and neck		D21.0	False
+741	Connective tissue of:		D21.0	False
+742	Ear		D21.0	False
+743	Eyelid		D21.0	False
+744	Melanocytic naevi of eyelid, including canthus		D22.1	False
+745	Other benign neoplasm of skin of eyelid, including canthus		D23.1	False
+746	Benign neoplasm of conjunctiva		D31.0	False
+747	Benign neoplasm of cornea		D31.1	False
+748	Benign neoplasm of retina		D31.2	False
+749	Benign neoplasm of choroid		D31.3	False
+750	Benign neoplasm of ciliary body		D31.4	False
+751	Eyeball		D31.4	False
+752	Benign neoplasm of lacrimal gland and duct		D31.5	False
+753	Lacrimal sac		D31.5	False
+754	Nasolacrimal duct		D31.5	False
+755	Benign neoplasm of orbit, unspecified		D31.6	False
+756	Connective tissue of orbit		D31.6	False
+757	Extraocular muscle		D31.6	False
+758	Peripheral nerves of orbit 		D31.6	False
+759	Retrobulbar tissue		D31.6	False
+760	Retro-ocular tissue		D31.6	False
+761	Benign neoplasm of eye, unspecified		D31.9	False
+762	Benign neoplasm of cranial nerves		D33.3	False
+763	Olfactory bulb		D33.3	False
+764	Optic nerve		D33.3	False
+765	Neoplasm of uncertain or unknow behaviour of cranial nerves		D43.3	False
+766	Optic nerve		D43.3	False
+767	Neoplasm of uncertain or unknow behaviour of connective and 		D48.1	False
+768	other soft tissue		D48.1	False
+769	Connective tissue of:		D48.1	False
+770	Ear		D48.1	False
+771	Eyelid		D48.1	False
+772	Neoplasm of uncertain or unknow behaviour of other specified sites		D48.7	False
+773	Eye		D48.7	False
+774	heart		D48.7	False
+775	Peripheral nerves of orbit 		D48.7	False
+776	Excluded: connective tissue (D48.1)		D48.7	False
+777	Skin of eyelid (D48.5)		D48.7	False
+778	Thyrotoxicosis with diffuse goitre		E05.0	False
+779	Exophthalmic or toxic goitre NOS 		E05.0	False
+780	Graves' disease		E05.0	False
+781	Toxic diffuse goitre		E05.0	False
+782	3+ with ophthalmic complications			False
+783	Cataract		H28.0*	False
+784	Retinopathy (H36.0*)		H36.0*	False
+785	Diabetes mellitus type 1		E10	False
+786	Includes: diabetes (mellitus):		E10	False
+787	Brittle		E10	False
+788	Juvenile-onset		E10	False
+789	Ketosis-prone 		E10	False
+790	Type I		E10	False
+791	Diabetes mellitus typ 2		E11	False
+792	Includes: diabetes (mellitus)(nonobese)(obese):		E11	False
+793	Abult-onset		E11	False
+794	Maturity-onset		E11	False
+795	Nonketotic		E11	False
+796	Stable		E11	False
+797	Type II		E11	False
+798	Non-insulin-dependent diabetes of the young		E11	False
+799	Malnutrition-related (E12.-)		E11	False
+800	Neonatal (P70.2)		E11	False
+801	Pregnancy, childbirth and the puerperium (O24.-)		E11	False
+802	Glycosuria:		E11	False
+803	NOS (R81)		E11	False
+804	Renal (E74.8)		E11	False
+805	Impaired glucose tolerance (R73.0)		E11	False
+806	Postsurgical hypoinsulinaemia (E89.1)		E11	False
+807	Malnutrition related diabetes mellitus		E12	False
+808	Includes: maluntrition-related diabetes mellitus:		E12	False
+809	Insulin-dependent		E12	False
+810	Non-insulin-dependent 		E12	False
+811	Glycosuria:		E12	False
+812	NOS (R81)		E12	False
+813	Renal (E74.8)		E12	False
+814	Impaired glucose tolerance (R73.0)		E12	False
+815	Neonata dia betes mellitus (P70.2)		E12	False
+816	Postsurgical hypoinsulinaemia (E89.1)		E12	False
+817	Other specified diabetes mellitus		E13	False
+818	Disease of exocrine pancrease		E13	False
+819	Drugs or chemical-induced		E13	False
+820	Endocrinopathies		E13	False
+821	Genetic defects of B-cell function		E13	False
+822	Genetic defects in insulin action		E13	False
+823	Infection		E13	False
+824	Uncommon forms of immune mediated diabetes		E13	False
+825	Genetic syndrome		E13	False
+826	Unspecified diabetes mellitus		E14	False
+827	Includes: Diabetes NOS		E14	False
+828	Vitamin A deficiency with conjunctival xerosis		E50.0	False
+829	Vitamin A deficiency with Bitot's spot and conjunctival xerosis		E50.1	False
+830	Bitot's spot in the young child 		E50.1	False
+831	Vitamin A deficiency with corneal xerosis		E50.2	False
+832	Vitamin A deficiency with corneal ulceration and xerosis		E50.3	False
+833	Vitamin A deficiency with keratomalacia 		E50.4	False
+834	Vitamin A deficiency with night blindness		E50.5	False
+835	Vitamin A deficiency with xerophthalmic scars of cornea		E50.6	False
+836	Other ocular manifestations of vitamin A deficiency 		E50.7	False
+837	Xerophthalmia NOS 		E50.7	False
+838	Sequelae of vitamin A deficiency		E64.1	False
+839	Albinism		E70.3	False
+840	Albinism:		E70.3	False
+841	Ocular		E70.3	False
+842	Oculocutaneous 		E70.3	False
+843	Syndrome:		E70.3	False
+844	Chediak(-Steinbrinck)-Higashi		E70.3	False
+845	Cross		E70.3	False
+846	Hermansky-Pudlak 		E70.3	False
+847	Transient tic disorder		F95.0	False
+848	Meets the general criteria for a tic disorder but the tics do not persist longer than 			False
+849	12 months. The tics usually take the form of eye- blinking, facial grimacing, or head-jerking.			False
+850	Chronic motor or vocal tic disorder		F95.1	False
+851	Meets the general criteria for a tic disorder, in which there are motor or vocal tics (but not both)			False
+852	that may be either single or multiple ( but usually multiple), and last for more than a year. 			False
+853	Combined vocal and multiple motor tic disorder [de la Tourette]		F95.2	False
+854	although these need not have occurred concurrently. The disorder usually worsen during adolescence 			False
+855	associated gestural echopraxia which may also be of an obscene nature (copropraxia).			False
+856	Other tic disorder		F95.8	False
+857	Tic disorder, unspecified		F95.9	False
+858	Tic NOS		F95.9	False
+859	Progressive supranuclear ophthalmoplegia		G23.1	False
+860	[Steele-Richardson-Olszewski]		G23.1	False
+861	Blepharospasm		G24.5	False
+862	Drug-induced tics and other tics of organic origin 		G25.6	False
+863	Use additional external cause code (Chapter XX), if desires, to identify drug,		G25.6	False
+864	if drug-induced			False
+865	Neuromyelitis optica [Devic]		G36.0	False
+866	Demyelination in optic neuritis 		G36.0	False
+867	Other migraine		G43.8	False
+868	Ophthalmoplegic migraine 		G43.8	False
+869	Retinal migraine		G43.8	False
+870	Amaurosis fugax 		G45.3	False
+871	Bell's palsy		G51.0	False
+872	Facial palsy 		G51.0	False
+873	Clonic hemifacial spasm 		G51.3	False
+874	Facial myokymia		G51.4	False
+875	Blepharokymia 		G51.4	False
+876	Myasthenia gravis		G70.0	False
+877	Systemic myasthenia gravis		G70.0	False
+878	Other speified myoneural disorders		G70.8	False
+879	Ocular myastenia giravis		G70.8	False
+880	Impetigo (any organism)(any site)		L01.0+	False
+881	Involvement of eyelid in impetigo (H03.8*)		L01.0+	False
+882	Bullous erythema multiforme		L51.1+	False
+883	Stevens-Johnson syndrome		L51.1+	False
+884	Rheumaatoid arthritis with involvement of other organs and systems		M05.3+	False
+885	Rheumatoid iridocyclitis (H22.1*)		M05.3+	False
+886	Other giant cell arteritis		M31.6	False
+887	Temporal arteritis		M31.6	False
+888	Birth injury to eye		P15.3	False
+889	Rupture of Descemet's membrane		P15.3	False
+890	Subconjunctival haemorrhage		P15.3	False
+891	Traumatic glaucoma		P15.3	False
+892	Neonatal conjunctivitis and dacryocystitis		P39.1	False
+893	Neonatal chlamydial conjunctivitis		P39.1	False
+894	Ophthalmia neonatorum NOS		P39.1	False
+895	Congenital ptosis		Q10.0	False
+896	Congenital ectropion		Q10.1	False
+897	Congenital entropion		Q10.2	False
+898	Other congenital malformations of eyelid		Q10.3	False
+899	Ablepharom		Q10.3	False
+900	Absence or agenesis of:		Q10.3	False
+901	Cilia		Q10.3	False
+902	Eyelid		Q10.3	False
+903	Accessory		Q10.3	False
+904	Eyelid		Q10.3	False
+905	eye muscle		Q10.3	False
+906	Blepharophimosis, congenital		Q10.3	False
+907	Coloboma of eyelid		Q10.3	False
+908	Congenital malformation of eyelid NOS		Q10.3	False
+909	Absence and agenesis of lacrimal apparatus		Q10.4	False
+910	Absence of punctum lacrimale		Q10.4	False
+911	Congenital stenosis and stricture of lacrimal duct		Q10.5	False
+912	Other congenital malformations of lacrimal apparatus		Q10.6	False
+913	Congenital malformation of lacrimal apparatus NOS		Q10.6	False
+914	Congenital malformation of orbit		Q10.7	False
+915	Cystic eyeball 		Q11.0	False
+916	Other anophthalmos		Q11.1	False
+917	Agenesis		Q11.1	False
+918	Aplasia		Q11.1	False
+919	Microphthalmos		Q11.2	False
+920	Cryptophthalmos NOS		Q11.2	False
+921	Dysplasia of eye 		Q11.2	False
+922	Hypoplasia of eye		Q11.2	False
+923	Rudiamentary eye		Q11.2	False
+924	Macrophthalmos		Q11.3	False
+925	Congenital cataract		Q12.0	False
+926	Congenital displaced lens		Q12.1	False
+927	Coloboma of lens		Q12.2	False
+928	Congenital aphakia		Q12.3	False
+929	Spherophakia		Q12.4	False
+930	Other congenital lens malformation		Q12.8	False
+931	Congenital lens malformation, unspecified		Q12.9	False
+932	Coloboma of iris		Q13.0	False
+933	Coloboma NOS		Q13.0	False
+934	Absence of iris		Q31.1	False
+935	Aniridia		Q31.1	False
+936	Other congenital malformtions of iris		Q13.2	False
+937	Anisocoria, congenital		Q13.2	False
+938	Atresia of pupil		Q13.2	False
+939	Congenital malformation of iris NOS		Q13.2	False
+940	Corectopia		Q13.2	False
+941	Congenital corneal opacity		Q13.3	False
+942	Congenital sclerocornea		Q13.3	False
+943	Other congenital corneal malformations		Q13.4	False
+944	Congenital malformation of cornea NOS		Q13.4	False
+945	Microcornea		Q13.4	False
+946	Peter's anomaly		Q13.4	False
+947	Blue sclera		Q13.5	False
+948	Other congenital malformations of anterior segment of eye		Q13.8	False
+949	Rieger's anomaly		Q13.8	False
+950	Congenital malformation of anterior segment of eye, unspecified		Q13.9	False
+951	Congenital malformation of vitreous humour		Q14.0	False
+952	Congenital vitreous opacity		Q14.0	False
+953	Persistent hyperplastic primary vitreous (PHPV)		Q14.0	False
+954	Congenital malformation of retina		Q14.1	False
+955	Congenital retinal aneurysm		Q14.1	False
+956	Congenital malformation of optic disc		Q14.2	False
+957	Coloboma of optic disc		Q14.2	False
+958	Tilted optic disc		Q14.2	False
+959	Congenital malformation of choroid		Q14.3	False
+960	Other congenital malformation of posterior segment of eye		Q14.8	False
+961	Coloboma of the fundus		Q14.8	False
+962	Congenital malformation of posterior segment of eye, unspecified		Q14.9	False
+963	Congenital glaucoma		Q15.0	False
+964	Axenfeld's anomaly		Q15.0	False
+965	Buphthalmos		Q15.0	False
+966	Glaucoma of newborn		Q15.0	False
+967	Hydrophthalmos		Q15.0	False
+968	Keratoglobus, congenital		Q15.0	False
+969	Macrophthalmos in congenital glaucoma		Q15.0	False
+970	Megalocornea		Q15.0	False
+971	Other specified congenital malformations of eye		Q15.8	False
+972	Nanophthalmos		Q15.8	False
+973	Congenital malformation of eye, unspecified		Q15.9	False
+974	Congenital:		Q15.9	False
+975	anomaly 		Q15.9	False
+976	deformityNOS of eye		Q15.9	False
+977	Abnormal results of function studies of peripheral nervous system and special senses		R94.1	False
+978	Abnormal:			False
+979	electromyogram [EMG]		R94.1	False
+980	electro-oculogram [EOG]		R94.1	False
+981	electroretinogram [ERG]		R94.1	False
+982	response to nerve stimulation		R94.1	False
+983	visually evoked potentail [VEP]		R94.1	False
+984	Contusion of eyelid and periocular area		S00.1	False
+985	Include: Traumatic black eye		S00.1	False
+986	Black eye		S00.1	False
+987	Other superficial injuries of eyelid and periocular area		S00.2	False
+988	Open wound of eyelid and periocular area with or 		S01.1	False
+989	without involvement of lacrimal passages			False
+990	Include: lid laceration with or without tear of canaliculi		S01.1	False
+991	Fracture of base of skull		S02.1	False
+992	Fossa:		S02.1	False
+993	Anterior		S02.1	False
+994	Middle		S02.1	False
+995	Posteriror 		S02.1	False
+996	Occiput		S02.1	False
+997	Orbital roof		S02.1	False
+998	Sinus:		S02.1	False
+999	Ethmoid		S02.1	False
+1000	Frontal		S02.1	False
+1001	Sphenoid		S02.1	False
+1002	Temporal of bone		S02.1	False
+1003	Fracture of orbital floor		S02.3	False
+1004	Fracturs of other skull and facial bones		S02.8	False
+1005	Alveolus		S02.8	False
+1006	Orbit NOS		S02.8	False
+1007	Palate		S02.8	False
+1008	Injury of optic nerve and pathways		S04.0	False
+1009	Include: traumatic optic neuropathy		S04.0	False
+1010	Optic chiasm		S04.0	False
+1011	2nd cranial nerve		S04.0	False
+1012	Visual cortex		S04.0	False
+1013	Injury of oculomotor nerve		S04.1	False
+1014	3rd cranial nerve		S04.1	False
+1015	Injury of oculomotor nerve		S04.2	False
+1016	4th cranial nerve		S04.2	False
+1017	Injury of abducent nerve		S04.4	False
+1018	6th cranial nerve		S04.4	False
+1019	Injury of conjuctiva and corneal abrasion without mention of foreign body		S05.0	False
+1020	Include: Subconjonctival hemorrhage		S05.0	False
+1021	Corneal abrasion		S05.0	False
+1022	Contusion of eyeball and orbital tissues		S05.1	False
+1023	Include: Traumatic hyphema		S05.1	False
+1024	Ocular laceration and rupture with prolapse or loss of intraocular tissue		S05.2	False
+1025	Ocular laceration without prolapsse or loss of intraocular tissue 		S05.3	False
+1026	Laceration of eye NOS		S05.3	False
+1027	Penetrating wouud of orbit with or without foreign body		S05.4	False
+1028	Penetrating wound of eyeball with foreign body		S05.5	False
+1029	Penetrating wound of eyeball without foreign body		S05.6	False
+1030	Ocular penetratio NOS		S05.6	False
+1031	Avulsion of eye		S05.7	False
+1032	Traumatic enucleation		S05.7	False
+1033	Other unjuries of eye and orbit		S05.8	False
+1034	Lacrimal duct injury		S05.8	False
+1035	Injury of eye and orbit, part unspecified		S05.9	False
+1036	Include: Perforation, laceration penetration, rupture		S05.9	False
+1037	with or without foreign body		S05.9	False
+1038	Injury of eye NOS		S05.9	False
+1039	Injury of blood vessels of head, not elswhere classified		S09.0	False
+1040	Traumatic C-C fistula		S09.0	False
+1041	Foreign body in cornea		T15.0	False
+1042	Foreign body in conjunctival sac		T15.1	False
+1043	Foreign body in other and multiple part of external eye 		T15.8	False
+1044	Include conjunctival FB		T15.8	False
+1045	Foreign body in lacrimal punctum		T15.8	False
+1046	Foreign body on external eye, part unspecified		T15.9	False
+1047	Burn of eyelid and periocular area		T26.0	False
+1048	Burn of cornea and conjunctival sac		T26.1	False
+1049	Burn with resulting rupture and destruction of eyeball		T26.2	False
+1050	Burn of toher parts of eye and adnexa		T26.3	False
+1051	Burn of eye and adnexa, part unspecified 		T26.4	False
+1052	Corrosion of eyelid and periocular area 		T26.5	False
+1053	Corrosion of cornea and onjuctival sac 		T26.6	False
+1054	Corrosion with resulting rupture and destruction of eyeball		T26.7	False
+1055	Corrosion of other parts of eye and adnexa		T26.8	False
+1056	Corrosion of eye and adnexa, part unspecified		T26.9	False
+1057	Poisoning by ophthalmological drugs and preparations 		T49.5	False
+1058	primarily affectting skin and mucous membrance			False
+1059	Eye anti-infectives		T49.5	False
+1060	Haemorrgage and haematoma complicationg a procedure, NEC		T81.0	False
+1061	Postoperative hyphema		T81.0	False
+1062	Accidental puncture and laceratio during a procedure, NEC		T81.2	False
+1063	Rupture posterior capsule durig cataract surgery		T81.2	False
+1064	Disruption of operation wound, not elsewhere classified		T81.3	False
+1065	Dehiscence of operation wound		T81.3	False
+1066	Rupture posterior capsule durig cataract surgery		T81.3	False
+1067	Infection following a procedure, NEC		T81.4	False
+1068	Postoperative endophthalmitis		T81.4	False
+1069	Other compications of procedures, NEC		T81.8	False
+1070	Dropped nucleus of lens during cataract surgery		T81.8	False
+1071	Mechanical complication of intraocular lens		T85.2	False
+1072	Mechanical complication of ocular prosthetic, implants, grafts		T85.3	False
+1073	Due to: 			False
+1074	Corneal graft		T85.3	False
+1075	Prosthetic orbit of eye (eg. Shallow fornix)		T85.3	False
+1076	Failure and rejection of other transplanted organs and tissues		T86.8	False
+1077	Transplant failure or rejection of cornea		T86.8	False
+1078	Sequelae of superficial injury of head		T90.0	False
+1079	Sequelae of injury classified to SOO-		T90.0	False
+1080	Sequelae of open wound of head		T90.1	False
+1081	Sequelae of injury classifiable to SO1-		T90.1	False
+1082	Sequelae of fracture of skull and facial bones		T90.2	False
+1083	Sequelae of injury classifiable to SO2-		T90.2	False
+1084	Sequlae of injury of cranial nerves		T90.3	False
+1085	Sequelae of injury classifieable to SO4		T90.3	False
+1086	Sequelae of injury of eye and orbit		T90.4	False
+1087	Sequelae of injury classifiable to SO5		T90.4	False
+1088	Sequelae of other specified injuies of head		T90.8	False
+1089	Sequelae of injury classifiable to SO3, SO7-SO8 and S09.0-S09.8		T90.8	False
+1090	Aderse effexts in therapeutic use of ohthalmological drugs		Y56.5	False
+1091	and preparations prmarily affecting skin and mucous membrance.			False
+1092	Diagnostic ophthalmic devices associated 		Y77.0	False
+1093	Therapeutic ophtalmic devices associated with advrse incidents		Y77.1	False
+1094	Ophthalmic prosthetic and implants associated with adverse incidents		Y77.2	False
+1095	Ophthalmic surgical instruments, materials including sutrues associated with adverse 		Y77.3	False
+1096	incidence			False
+1097	Miscellaneous opthalmic devices associated with adverse incidents		Y77.8	False
+1098	Examination of eyes and vision		Z01.0	False
+1099	Normal eye (no reported diagnosis after eye examination)		Z01.0	False
+1100	Examination for driving licence		Z02.4	False
+1101	Obervation for other suspected disseases and condition		Z03.8	False
+1102	No abnormality detected after examination and observation (NAD)		Z03.8	False
+1103	Include: consulted case with NAD ( no abnormality detected)		Z03.8	False
+1104	Follow-up examination after surgery for other condition		Z09.0	False
+1105	Include:  first and second visit after eye surgery 		Z09.0	False
+1106	Examination of eyes and vision		Z01.0	False
+1107	Include: routine check-up or eye		Z01.0	False
+1108	normal eye		Z01.0	False
+1109	Special sreening exxamination for eye and ear disorders		Z13.5	False
+1110	Fitting and adjustment of artificial eye		Z44.2	False
+1111	Fitting and adjustment of spectacles and contact lenses		Z46.0	False
+1112	Attention to surgical dressings and sutures		Z48.0	False
+1113	Change of dressings		Z48.0	False
+1114	Removal of sutures		Z48.0	False
+1115	Other specified surgical follow-up care		Z48.8	False
+1116	Post-Op follow up to deal with residual states or to prevent recurrence			False
+1117	Cornea donor		Z52.5	False
+1118	Procedure not carried out because of contraindication		Z53.0	False
+1119	Procedure not carried out because of patien's decision for 		Z53.1	False
+1120	reasons of belief or group pressure			False
+1121	Procedure not carried out because of patien's decision for other and unspecified reasons		Z53.2	False
+1122	Procedure not carried out for other reaseons		Z53.8	False
+1123	Procedure not carried out, unspecified reason 		Z53.9	False
+1124	Issue of repeast prescription 		Z76.0	False
+1125	For: Appliance 		Z76.0	False
+1126	Medicaments		Z76.0	False
+1127	Spectacles		Z76.0	False
+1128	Family history of blindness and visual loss		Z82.1	False
+1129	Conditions classifiable to H54		Z82.1	False
+1130	Family history of eye and ear disorders		Z83.5	False
+1131	Conditions classifiable to H00-H53, H55-H83, H92-H95		Z83.5	False
+1132	Acquired absence of part of head and neck		Z90.0	False
+1133	Eye ( after removal of eyeball)		Z90.0	False
+1134	Larynx		Z90.0	False
+1135	Nose		Z90.0	False
+1136	Corneal transplant status		Z94.7	False
+1137	Presence of intraocular lens		Z96.1	False
+1138	Pseudophakia		Z96.1	False
+1139	Presence of artificial eye		Z97.0	False
+1140	Other specified postsurgical states		Z98.8	False
+1141	Include: status post glaucoma surgery			False
+1142	(ocular tension controlled without medication)			False
+1143	status post retinal detachment surgery			False
+1144	Refractive Error		r0	False
+1145	Trichiasis 		H02.0	False
+1146	old trab.		o1	False
+1147	posner schlossman syndrom		p01	False
+1148	blunt trauma		bt	False
+1149	floater		001	False
+1150	PCO		0002	False
+1151	toxic optic neuropathy		0003	False
+1152	6th nerve palsy		0004	False
+1153	traumatic optic neuropathy		00005	False
+1154	NLDO		0006	False
+1155	dendritic keratitis		0007	False
+1156	cornea erosion		0008	False
+1157	Pengueculitis 		E12342	False
+1158	(RE) cataract+glaucoma		cg	False
+1159	III nerve palsy		001	False
+1160	caroti-cavernous fistula		cf	False
+1161	proptosis		0010	False
+1162	Filament K		0011	False
+1163	eye lid skin lesion		el1	False
+1164	astigmatism		at1	False
+1165	retinal detachment		rd0	False
+1166	uveitis		0011	False
+1167	traumatic iridodialysis+phacodonesis		tp	False
+1168	pseudophakia+RD		01	False
+1169	CSR		C1	False
+1170	suspect CMV		s1	False
+1171	Trauma		0002	False
+1172	Retinoblastoma			False
+1173	Photo-toxicity 		EH0112	False
+1174	N L D O		EH 232	False
+1175	cornea wound repaire			False
+1176	cataract+DR		cdr	False
+1177	Sever NPDR			False
+1178	papilledema		o1	False
+1179	Hemifacial spasm		hfs	False
+1180	IOL dislocation		o0	False
+1181	Wart		l0	False
+1182	Cystoid macula edema 		H59.033	False
+1183	Central retinal vein occlusion (CRVO)		H34.819	False
+1184	PCV Polypoidal Choroidal Vasculopathy		H35.059	False
+1185	pseudophakia+Glaucoma		pg	False
+1186	cornea decompensation 		371.89	False
+1187	IOL subluxation		T85.2	False
+1188	conjunctiva granuloma			False
+1189	Hemengioma			False
+1190	traumatic hyphema		th	False
+1191	Macular scar		msc	False
+1192	cataract+SCH		csch	False
+1193	AION		001	False
+1194	dermoid cyst		d01	False
+1195	cataract+pterygium		cpt	False
+1196	cataract+glaucoma		cg	False
+1197	nystagmus		00123	False
+1198	cornea scar		00017	False
+1199	Epiblepharon 		E 1234	False
+1200	ophthalmic migrain		om	False
+1201	pseudophakia+DR		pdr	False
+1202	socket		sk	False
+1203	Acute PVD 		RE 213	False
+1204	AcutePVD 		RVE 1223	False
+1205	Basal Cell Carcinoma			False
+1206	Graft failur			False
+1207	conjunctivitis+corneal abrasion		ca	False
+1208	AACG		H40.9	False
+1209	Phacomorphic glaucoma			False
+1210	Districhiasis			False
+1211	floater+ Macular hole		fm1	False
+NULL	NULL	NULL	NULL	NULL

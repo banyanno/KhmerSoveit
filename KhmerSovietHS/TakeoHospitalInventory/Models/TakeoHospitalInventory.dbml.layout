@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 26.375" name="TakeoHospitalInventory">
+  <DataContextMoniker Name="/TakeoHospitalInventoryDataContext" />
+  <nestedChildShapes>
+    <classShape Id="490fe900-af5d-4e4a-9716-0ad2914011e5" absoluteBounds="0.75, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblCabinet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4d2460e-0433-4ea2-8a1a-80d4678a0d3b" absoluteBounds="0.765, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75affaee-8041-4f22-bba9-247b01d4741c" absoluteBounds="0.75, 4.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblCabinetLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1f667a8-0129-4ec5-b7cc-fc82123f3e9a" absoluteBounds="0.76500000000000012, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fccb7a1-ab26-4040-910e-4adb72be968b" absoluteBounds="3.5, 3.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85713324-8617-46f7-a285-d68075e9e8f7" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5481d060-a01b-43a3-bed6-b160101289f6" absoluteBounds="0.75, 6.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblChemical" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81281100-db70-471a-9d9c-80744535dc0a" absoluteBounds="0.765, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f14fb543-8892-4e6e-ac11-3e7c7ec25eb2" absoluteBounds="6.75, 4.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblItemChemicalDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf8265dd-5c62-4d78-991f-8e1d6cc852ef" absoluteBounds="6.7650000000000006, 4.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8386d2c9-c403-492b-b5bb-191ad2a54c03" absoluteBounds="9.375, 5.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblItemUnit" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e8bc5c9-66e7-4db3-8a85-edf2c8de740e" absoluteBounds="9.39, 6.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55144830-e5b5-4607-a436-e2f102ed25b0" absoluteBounds="9.375, 7.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblLabourFactory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27c0b3db-a3f9-445c-b316-79730788fb9f" absoluteBounds="9.39, 7.5850000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bceaeb54-12f8-40e9-b5f9-8d9e04278958" absoluteBounds="12.75, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblLocationItemDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10dbdbff-fcbd-481b-bfab-dd4821c3423a" absoluteBounds="12.765, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35cc5252-86bf-4ae8-b100-feccdefa4b43" absoluteBounds="6.75, 13, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblOrderDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6b92131-2aac-41ca-b124-99e43676dc5c" absoluteBounds="6.765, 13.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65e77a9c-984e-4552-8c76-3a17c7e962c8" absoluteBounds="12.75, 7.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblPermissionItemShoworHideForDepart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e800c0a1-7f89-4eff-8aba-f832bb72942d" absoluteBounds="12.765, 8.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c413302d-d8aa-44c0-a6da-b985b954746c" absoluteBounds="9.375, 9.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblPurchaseOrderStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9fd94ac-243b-4665-918e-267559c1e8f1" absoluteBounds="9.39, 9.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2de9b1e5-994c-4bcd-b2f4-25448c212b4d" absoluteBounds="12.75, 11.375, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblReceivedDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97b06dd5-25ea-4985-b43d-0726c370c874" absoluteBounds="12.765, 11.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="189ae2c6-b7ef-4eef-bce7-98a9209939a1" absoluteBounds="0.75, 10.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblReceivedStatusTracking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13632bfd-a303-42b0-a80c-b24c15b79c56" absoluteBounds="0.765, 10.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3ab9dab-aa7a-4519-b183-0c099b121a1a" absoluteBounds="3.5, 16.875, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblRequestStatusTracking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23a719bb-b80e-401b-b9f2-55e2b3585054" absoluteBounds="3.515, 17.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73fa2a69-1b41-4f03-bd60-150ca537ee36" absoluteBounds="6.75, 15, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblVender" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57e6c0c0-b179-44f0-a75f-7df3fb660e57" absoluteBounds="6.765, 15.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cee943f-5dbc-414d-8b78-4a7f91e65afe" absoluteBounds="12.75, 9.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblReceived" />
+      <nestedChildShapes>
+        <elementListCompartment Id="829b12df-5152-4b5a-8c68-7cd2bd120961" absoluteBounds="12.765, 9.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3385f4ae-86c9-422e-a331-8086bcb1abaa" absoluteBounds="12.75, 2.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblUsed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d2c0b33-a392-476a-bb6c-51ca3fdca1f5" absoluteBounds="12.765, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7217cb5d-915a-4f1b-bc42-835abb992126" absoluteBounds="15.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblUsedDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb192856-4eed-4865-8cb5-06e50fed7fc7" absoluteBounds="15.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4643c3e2-d4d1-4c5f-b994-3aed8cefcbb5" absoluteBounds="0.75, 8.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblBeginBalanceTrace" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7dda99f6-ff6a-4733-b5b3-6898a50d1166" absoluteBounds="0.76499999999999968, 8.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88e3824e-27c9-46d3-b990-9aefc5245f4a" absoluteBounds="3.5, 11.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblEndofMonthRun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dec3aa85-e14c-4c79-a4b9-b32c3baa1cd4" absoluteBounds="3.5149999999999997, 11.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5fadedea-44e1-4c92-8e3a-77ea861ad150" absoluteBounds="6.625, 6.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblDeptStock" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78f4bad9-e716-4adc-95f1-7f051073592f" absoluteBounds="6.64, 6.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65123c67-704b-470e-8710-a2f005e01ff3" absoluteBounds="3.5, 0.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblAdjustStockHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cd3d041-5dcf-4a7b-936d-0fea1f3560bb" absoluteBounds="3.5149999999999997, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38963cf9-5fbd-46e8-85de-a17f453023be" absoluteBounds="0.75, 12.375, 2, 4.46311686197917">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/TblPatient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="532c29c3-8d94-4ece-b5d9-1592a8e8fbed" absoluteBounds="0.76500000000000012, 12.835, 1.9700000000000002, 3.9031168619791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b242510-96dc-403e-8ab6-471ce12bd7f0" absoluteBounds="0.75, 16.875, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/TblDoctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69d98956-78e3-4193-b9e7-f4ecf830ed63" absoluteBounds="0.76499999999999968, 17.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83cae0f3-0d89-4788-a3fc-543fb9cf2ad7" absoluteBounds="15.75, 7.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblEndofDayRunStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a03c1a1a-2e9b-42c0-b429-57b606112aa6" absoluteBounds="15.765, 7.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="782f3cfc-825b-4fc3-9a57-5aca700af886" absoluteBounds="0.75, 2.125, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblItemPrice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dd962c0-eab2-4b41-9c22-da978e6f7d59" absoluteBounds="0.76500000000000012, 2.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d386226-d6c0-4363-be9b-6e657aeb3c2d" absoluteBounds="1, 23.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/CURRENCY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4687c147-dd05-46e1-ad3f-b3b58c7a3fac" absoluteBounds="1.0149999999999997, 23.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebf6e604-c9f2-4f12-b80e-2c7072dcad2d" absoluteBounds="0.75, 21.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e61314d0-14ee-4d0f-86db-76acf80168f0" absoluteBounds="0.76499999999999968, 22.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e16e999d-a95c-4c87-8802-1bdb90947f8f" absoluteBounds="3.5, 7.125, 2, 4.2708154296875005">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fafda7f-0316-49f6-8a04-921a62ad6cdc" absoluteBounds="3.5149999999999997, 7.5850000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7eb9ab4e-d18d-48db-852c-20d244dd353a" absoluteBounds="12.75, 4, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/ITEM_OUTSIDE_INVENTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d0fe3af0-1a52-4f6c-94a2-0a691dc1263e" absoluteBounds="12.765, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4944134d-0bb5-4337-bcc6-df56d3c3659b" absoluteBounds="6.75, 18.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/ITEM_PROVIDER_TRAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e984f44-b230-442c-8e50-36dc2310a52a" absoluteBounds="6.765, 19.335, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a16c872-9265-4383-9aac-f1833f198e59" absoluteBounds="6.75, 2.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblContainer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1952e1a-1cd6-4b79-a18e-61684c4a23c9" absoluteBounds="6.765, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b628284-c2db-4786-a4d5-10f8745e384a" absoluteBounds="6.75, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblCentralInventory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fb023fe-3f3d-42ba-be6f-e1459fc7e564" absoluteBounds="6.765, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44196519-7f06-445e-be8b-d6dba24b0c10" absoluteBounds="9.375, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/PRESCIP_INVENTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3126ca29-8069-4f76-a20a-11135ef8bfec" absoluteBounds="9.39, 0.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e7cd96d-acbc-4138-9582-7ff8bd2dca5f" absoluteBounds="9.375, 13.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblVendorItemSupplyStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d6c305b-3eef-4922-a21b-c6a84ccfc04a" absoluteBounds="9.39, 14.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="856d176c-979d-4cf3-a41b-7dfefc903e47" absoluteBounds="3.5, 5.75, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dc73b01-00f1-4753-9cdc-37dad4ec5e1c" absoluteBounds="3.5149999999999997, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24d73d78-78e0-42ab-a187-3377b30e7f36" absoluteBounds="6.75, 21.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/PARAMS_INVEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35721cae-aeda-46e8-9e93-6265edbd502e" absoluteBounds="6.765, 22.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9078b4b9-6732-4e79-9e74-765c80d66f40" absoluteBounds="12.75, 13.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/TblReceiptNIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b9ded9d-d7f9-4d4f-9857-711667aad6ca" absoluteBounds="12.765, 13.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff9bce30-4a08-4ae3-b988-d87f49bb48c4" absoluteBounds="15.75, 9.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/TblReceiptNILDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cc96862-9b80-4f37-bd17-69bc613b584f" absoluteBounds="15.765, 9.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f194d6f-1e19-4e14-9323-ec41469c8260" absoluteBounds="9.25, 21.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblRequestHistoryStatusTracking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c42a16c4-3278-4734-8844-d07b683f4db4" absoluteBounds="9.265, 22.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4c3e7ad-3ad5-4ba3-bfbc-e66739ab2da6" absoluteBounds="15.75, 3, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblRequestDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d0513b1-9ced-4298-b307-9a94b9f670da" absoluteBounds="15.765, 3.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="717cb912-28a6-4c36-a03f-09ae6b1c2ca6" absoluteBounds="15.625, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e8245bb-7316-4f3b-b0b5-dedddab0e41c" absoluteBounds="15.64, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75668861-4f6d-447b-aad6-4665903f0718" absoluteBounds="9.25, 24, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblTempUsedItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ed46058-deef-4a6c-815e-fd4f25ef22d9" absoluteBounds="9.265, 24.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb935c9b-3aad-47b8-8905-cf1a83a794b0" absoluteBounds="9.375, 19.75, 2, 1.5785953776041701">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/VAllUsedItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22d09c15-61fb-4fbb-9c6c-5956bb2c5a10" absoluteBounds="9.39, 20.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c136af9-8d10-4ab6-bfec-396705c5a407" absoluteBounds="6.75, 23.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblTempBeginBalance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcc05d66-e924-46fb-ae78-7c37900c853a" absoluteBounds="6.7650000000000006, 24.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69094221-296a-4e46-a40d-c58df30f39fc" absoluteBounds="6.75, 9.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblItemExpireControl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1231f382-9d58-46f4-8d04-6899e94e5b77" absoluteBounds="6.765, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41c9e59b-36c3-4cca-aa44-238d5097cfbb" absoluteBounds="9.375, 10.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/CARITAS_REQ_ITEM_PROVIDER_INFO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e495a737-4bde-4401-af47-c7c45455e503" absoluteBounds="9.39, 11.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="195b5471-7922-4caa-808a-349accc611cb" absoluteBounds="9.5, 3, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/PRESCRIP_DETAIL_INVENTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dbaf04e-2a21-49d6-8b63-fc917355e970" absoluteBounds="9.515, 3.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1c99fd6-8965-472f-b993-abd704ac3236" absoluteBounds="12.25, 21.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblTempRequestAllItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62e03555-1760-4b0b-a459-025152669a8f" absoluteBounds="12.265, 22.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77999851-14e7-427f-93f3-384877a6298d" absoluteBounds="12.625, 15.625, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/VAllRequestItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b2f4238-521b-41d8-ab9f-d8550dbc320e" absoluteBounds="12.64, 16.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fef4ddd4-abf3-4dff-a5a6-d69384d4447b" absoluteBounds="12.625, 24.375, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/VAllBeginBalance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb33da6d-ece6-4392-a096-6d8173871fb7" absoluteBounds="12.64, 24.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="099a987e-58e6-4d5d-ad38-cd11719ca783" absoluteBounds="3.375, 14, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/tblEndofDayRun" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e68b4a8-ed3a-44c6-b5d6-0f8b06b7dfc7" absoluteBounds="3.3899999999999997, 14.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d68fd712-fa1c-4247-ae01-33f99e9d0bd9" absoluteBounds="1.125, 19.125, 2, 2.73240397135417">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/CARITAS_REQUEST_INVENTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0f09c5e-b71c-4c05-9e12-fe12f3335f2f" absoluteBounds="1.1400000000000001, 19.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eafb90c4-e7f2-430b-b001-19c4246cf820" absoluteBounds="3.5, 19, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/TakeoHospitalInventoryDataContext/CARITAS_REQUEST_DETAIL_INVENTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72cd746f-30ed-4cfd-be16-0ca64bef877e" absoluteBounds="3.5149999999999997, 19.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

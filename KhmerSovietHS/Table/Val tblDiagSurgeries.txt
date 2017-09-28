@@ -1,0 +1,136 @@
+1	Chalazion excision 30	8.01	False	30.00
+2	Tarsorraphy	8.02	False	0.00
+3	Biopsy of eye lids	8.11	False	0.00
+4	Removal of Meibomian gland	8.2	False	0.00
+5	Excision of verruca, wart	8.22	False	0.00
+6	Wedge resection of eye lid	8.24	False	0.00
+7	Frontalis sling with suture	8.31	False	0.00
+8	Chalazion Excision 75	8.33	False	75.00
+9	Levator tucking 	8.34	False	0.00
+10	Tarso mullerectomy 	8.38	False	0.00
+11	Repair of entropion or extropion by thermocauterization	8.41	False	0.00
+12	Repair of entropion or extropion by suture technique	8.42	False	0.00
+13	Repair or entropion or ectropion with wedge resection	8.43	False	0.00
+14	Repair of ectropion or ectropion with lid reconstruction	8.44	False	0.00
+15	Brow lift	8.7	False	0.00
+16	Lower lid blepharoplasty	8.86	False	300.00
+17	Upper lid blepharoplasty	8.87	False	350.00
+18	Manual epilation 	8.93	False	0.00
+19	Incision and drainage of lacrimal gland cyst	9	False	0.00
+20	Biopsy of lacrimal gland/sac	9.12	False	0.00
+21	Partial dacryoadenectomy	9.22	False	0.00
+22	Total dacryoadenectomy	9.23	False	0.00
+23	Probing of lacrimal punctum 	9.41	False	0.00
+24	Probing of lacrimal canaliculi 	9.42	False	0.00
+25	Probing of nasolacrimal duct 	9.43	False	0.00
+26	Snip incision of lacrimal punctum 	9.51	False	0.00
+27	Incision and drainage of lacrial sac 	9.53	False	0.00
+28	Excision of lacrimal sac 	9.6	False	0.00
+29	Correction of everted punctum 	9.71	False	0.00
+30	Dacryocystorhinostomy (DCR)	9.81	False	350.00
+31	Conjunctivocystorhinostomy (CDR)	9.82	False	0.00
+32	CDCR with tube or stent 	9.83	False	0.00
+33	Obliteration of lacrimal punctum 	9.91	False	0.00
+34	Removal of FB	10	False	0.00
+35	Biopsy of conjunctiva 	10.21	False	0.00
+36	Excision of lesion or tissue of conjunctiva 	10.31	False	0.00
+37	Destruction of lesion of conjunctiva 	10.32	False	0.00
+38	Removal of trachoma follicles 	10.33	False	0.00
+39	Removal of concretions	10.33	False	1.50
+40	Repair of symblepharon with free graft	10.41	False	0.00
+41	Gunderson flap/conjunctiva hooding 	10.49	False	0.00
+42	Division of symblepharon 	10.5	False	0.00
+43	Repair of laceration of conjunctiva	10.99	False	0.00
+44	Removal of FB	11	False	0.00
+45	Scraping 	11.21	False	0.00
+46	Biopsy of cornea 	11.22	False	0.00
+49	Suture of cornea laceration 	11.51	False	0.00
+50	Repair of cornea laceration with glue 	11.59	False	0.00
+51	Removal of FB	12	False	1.50
+52	Iridotomy with transfixion 	12.11	False	0.00
+53	Laser iridotomy	12.12	False	0.00
+54	Excision of prolapsed iris 	12.13	False	0.00
+55	Iridectomy 	12.14	False	0.00
+56	Anterior chamber tapping 	12.21	False	0.00
+57	biopsy of iris 	12.22	False	0.00
+58	Laser iridoplasty 	12.35	False	0.00
+59	Excision of lesion of ciliary body 	12.44	False	0.00
+60	Goniopuncture without goniotomy	12.51	False	0.00
+61	Goniotomy without goniopuncture	12.52	False	0.00
+62	Goniotomy with goniopuncture	12.53	False	0.00
+63	Trabeculomotomy 	12.54	False	0.00
+64	Cyclodialysis 	12.55	False	0.00
+65	Laser trabeculoplasty 	12.59	False	0.00
+66	Trabeculectomy 	12.64	False	0.00
+67	Cryocyclotherapy	12.72	False	0.00
+68	Cyclophotocoagulation 	12.73	False	0.00
+69	Intracapsular extraction of lens (ICCE)	13.19	False	0.00
+70	Extracapsular extraction of lens (ECCE)	13.2	False	250.00
+71	Simple lens aspiration 	13.3	False	0.00
+72	Phacoemulsification (Clear IOL) 	13.41	False	500.00
+73	Surgical capsulotomy 	13.65	False	0.00
+74	Laser capsulotomy 	13.66	False	50.00
+75	IOL reposition 	13.7	False	0.00
+76	IOL implatation 	13.71	False	0.00
+77	Secondary IOL implantation 	13.72	False	0.00
+78	Removal of IOL 	13.8	False	0.00
+79	Scleral fixation 		False	0.00
+80	Removal of FB from posterior segment 	14	False	0.00
+81	Vitreous tapping	14.11	False	0.00
+82	Repair of retinal detachent by diathermy 	14.21	False	0.00
+83	Repair of retinal detachment by cryotherapy, laser 	14.22	False	0.00
+84	Repair of retinal detachment by xenon arc photocoagulation 	14.23	False	0.00
+85	Repair of retinal detachment with laser photocoagulation 	14.24	False	0.00
+86	Drainage of retinal detachment	14.59	False	0.00
+87	Scleral buckle with air tamponade	14.41	False	0.00
+88	Scleral buckle with PPV	14.41	False	0.00
+89	Scleral buckle 	14.41	False	0.00
+90	Anterior vitrectomy by vitrectomy machine	14.73	False	0.00
+91	Pars plana vitrectomy 	14.74	False	0.00
+92	Fluid gas exchange 	14.75	False	0.00
+93	Silicone oil injection 	14.75	False	0.00
+94	Pneumatic retinopexy	14.75	False	0.00
+95	Intravitreal injection of medication 	14.79	False	0.00
+96	Epiretinal membrane stripping 	14.9	False	0.00
+97	Recession of one EOM	15.11	False	0.00
+98	Advancement of one EOM	15.12	False	0.00
+99	Resection of one EOM	15.13	False	0.00
+100	lengthening procedure on one EOM	15.21	False	0.00
+101	Shortening procedure on one EOM	15.22	False	0.00
+102	Recession-Resection of EOM	15.3	False	0.00
+103	Transposition of EOM	15.5	False	0.00
+104	Other iridotomy	12.12	False	0.00
+105	LPI (laser peripheral iridotomy)	12.12	False	0.00
+106	Other iridoplasty 	12.39	False	0.00
+107	Laser iridoplasty	12.39	False	0.00
+108	Other facilitation of intraocular circulation	12.59	False	0.00
+109	Laser trabeculoplasty	12.59	False	0.00
+111	LC (laser capsulotomy)	13.66	False	0.00
+112	Destruction of chorioretinal lesion by laser photocoagulation	14.24	False	0.00
+113	Laser for diabetic retinopathy	14.24	False	0.00
+114	Laser for maculopathy, small tumor	14.24	False	0.00
+115	Laser for retinopathy of prematurity (ROP)	14.24	False	0.00
+141	Khmer + Contact Len (1)		True	13.00
+142	Khmer + Contact Len (2)		True	18.00
+143	Khmer + Dilate		True	12.00
+144	Foreigner + Contact Len (1)		True	20.00
+145	Foreigner + Contact Len (2)		True	25.00
+146	N/A		True	0.00
+147	Khmer	0	True	8.00
+148	Foreigner	1	True	15.00
+149	Chalazion excision 25	8.01	False	25.00
+150	Chalazion excision 40 	8.01	False	40.00
+151	Phacoemulsification (Yellow IOL) 	13.41	False	700.00
+152	Phacoemulsification (Multifocal IOL) 	13.41	False	2000.00
+153	Small Incision Cataract Surgery 		False	250.00
+154	Refraction		False	2.50
+155	Pterygium Excision 	11.32	False	250.00
+156	Surgery on Intravitreal Injoction of Medication Avastin	0000	False	150.00
+157	Removel FB	0000	False	1.50
+158	Punctun Plug 3 Month	00000	False	30.00
+159	Punctun Plug 1 Month	00000	False	15.00
+160	Punctal plug	00	False	150.00
+161	lens aspiration with IOL		False	700.00
+162	Irigation Sca	00000	False	1.50
+163	Excision tumor		False	0.00
+NULL	NULL	NULL	NULL	NULL

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSProvinceReport" targetNamespace="http://tempuri.org/DSProvinceReport.xsd" xmlns:mstns="http://tempuri.org/DSProvinceReport.xsd" xmlns="http://tempuri.org/DSProvinceReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TakeoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TakeoDBConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TakeoHospitalInventory.My.MySettings.GlobalReference.Default.TakeoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTblProvinceReportTableAdapter" GeneratorDataComponentClassName="DTblProvinceReportTableAdapter" Name="DTblProvinceReport" UserDataComponentName="DTblProvinceReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataByMonth" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetDataByMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataByMonth" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     p1.Province, p1.District, p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '0-4' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNew_Old_OutPatient AS p2 ON p1.PatientNo = p2.PatientNo
+WHERE     (p1.Age BETWEEN 0 AND 4) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False') AND (p2.Diagnosis &lt;&gt; '')
+GROUP BY p1.Province, p1.District, p2.Diagnosis
+UNION
+SELECT     p1.Province, p1.District, p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '5-14' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNew_Old_OutPatient AS p2 ON p1.PatientNo = p2.PatientNo
+WHERE     (p1.Age BETWEEN 5 AND 14) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False') AND (p2.Diagnosis &lt;&gt; '')
+GROUP BY p1.Province, p1.District, p2.Diagnosis
+UNION
+SELECT     p1.Province, p1.District, p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '15-49' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNew_Old_OutPatient AS p2 ON p1.PatientNo = p2.PatientNo
+WHERE     (p1.Age BETWEEN 15 AND 49) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False') AND (p2.Diagnosis &lt;&gt; '')
+GROUP BY p1.Province, p1.District, p2.Diagnosis
+UNION
+SELECT     p1.Province, p1.District, p2.Diagnosis, COUNT(p1.Male) AS male, COUNT(p1.Female) AS female, '&gt;=50' AS AgeRang
+FROM         TblPatients AS p1 INNER JOIN
+                      TblNew_Old_OutPatient AS p2 ON p1.PatientNo = p2.PatientNo
+WHERE     (p1.Age &gt;= 50) AND (CAST(CONVERT(VARCHAR(10), p2.CreateDate, 1) AS DateTime) BETWEEN CAST(CONVERT(VARCHAR(10), 
+                      CAST(@DateFrom AS DATETIME), 1) AS Datetime) AND CAST(CONVERT(VARCHAR(10), CAST(@DateTo AS DATETIME), 1) AS Datetime)) AND 
+                      (p2.DeleteOption = 'False') AND (p2.Diagnosis &lt;&gt; '')
+GROUP BY p1.Province, p1.District, p2.Diagnosis</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateTo" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateTo" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateFrom" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="DateTime" Direction="Input" ParameterName="@DateFrom" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Province" DataSetColumn="Province" />
+              <Mapping SourceColumn="District" DataSetColumn="District" />
+              <Mapping SourceColumn="male" DataSetColumn="male" />
+              <Mapping SourceColumn="female" DataSetColumn="female" />
+              <Mapping SourceColumn="AgeRang" DataSetColumn="AgeRang" />
+              <Mapping SourceColumn="Diagnosis" DataSetColumn="Diagnosis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblConsultationEachTableAdapter" GeneratorDataComponentClassName="TblConsultationEachTableAdapter" Name="TblConsultationEach" UserDataComponentName="TblConsultationEachTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TakeoDB.dbo.TblPatients" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '1' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '1') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '2' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '2') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '3' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '3') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '4' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '4') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '5' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '5') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '6' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '6') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '7' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '7') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '8' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '8') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '9' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '9') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '10' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '10') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '11' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '11') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province
+UNION
+SELECT     COUNT(TblPatients.PatientNo) AS NumberConsultaint, TblPatients.District, TblPatients.Province, '12' AS Months
+FROM         TblNew_Old_OutPatient INNER JOIN
+                      TblPatients ON TblNew_Old_OutPatient.PatientNo = TblPatients.PatientNo
+WHERE     (MONTH(TblNew_Old_OutPatient.CreateDate) = '12') AND (YEAR(TblNew_Old_OutPatient.CreateDate) = @Years) AND 
+                      (TblNew_Old_OutPatient.DeleteOption = 'False') AND (TblNew_Old_OutPatient.Diagnosis &lt;&gt; '')
+GROUP BY TblPatients.District, TblPatients.Province</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Years" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="@Years" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberConsultaint" DataSetColumn="NumberConsultaint" />
+              <Mapping SourceColumn="Province" DataSetColumn="Province" />
+              <Mapping SourceColumn="Months" DataSetColumn="Months" />
+              <Mapping SourceColumn="District" DataSetColumn="District" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSProvinceReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSProvinceReport" msprop:Generator_DataSetName="DSProvinceReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTblProvinceReport" msprop:Generator_UserTableName="DTblProvinceReport" msprop:Generator_RowDeletedName="DTblProvinceReportRowDeleted" msprop:Generator_RowChangedName="DTblProvinceReportRowChanged" msprop:Generator_RowClassName="DTblProvinceReportRow" msprop:Generator_RowChangingName="DTblProvinceReportRowChanging" msprop:Generator_RowEvArgName="DTblProvinceReportRowChangeEvent" msprop:Generator_RowEvHandlerName="DTblProvinceReportRowChangeEventHandler" msprop:Generator_TableClassName="DTblProvinceReportDataTable" msprop:Generator_TableVarName="tableDTblProvinceReport" msprop:Generator_RowDeletingName="DTblProvinceReportRowDeleting" msprop:Generator_TablePropName="DTblProvinceReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Province" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Province" msprop:Generator_ColumnVarNameInTable="columnProvince" msprop:Generator_ColumnPropNameInRow="Province" msprop:Generator_ColumnPropNameInTable="ProvinceColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="District" msdata:ReadOnly="true" msprop:Generator_UserColumnName="District" msprop:Generator_ColumnVarNameInTable="columnDistrict" msprop:Generator_ColumnPropNameInRow="District" msprop:Generator_ColumnPropNameInTable="DistrictColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="male" msdata:ReadOnly="true" msprop:Generator_UserColumnName="male" msprop:Generator_ColumnVarNameInTable="columnmale" msprop:Generator_ColumnPropNameInRow="male" msprop:Generator_ColumnPropNameInTable="maleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="female" msdata:ReadOnly="true" msprop:Generator_UserColumnName="female" msprop:Generator_ColumnVarNameInTable="columnfemale" msprop:Generator_ColumnPropNameInRow="female" msprop:Generator_ColumnPropNameInTable="femaleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="AgeRang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="AgeRang" msprop:Generator_ColumnVarNameInTable="columnAgeRang" msprop:Generator_ColumnPropNameInRow="AgeRang" msprop:Generator_ColumnPropNameInTable="AgeRangColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diagnosis" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Diagnosis" msprop:Generator_ColumnVarNameInTable="columnDiagnosis" msprop:Generator_ColumnPropNameInRow="Diagnosis" msprop:Generator_ColumnPropNameInTable="DiagnosisColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblConsultationEach" msprop:Generator_UserTableName="TblConsultationEach" msprop:Generator_RowDeletedName="TblConsultationEachRowDeleted" msprop:Generator_RowChangedName="TblConsultationEachRowChanged" msprop:Generator_RowClassName="TblConsultationEachRow" msprop:Generator_RowChangingName="TblConsultationEachRowChanging" msprop:Generator_RowEvArgName="TblConsultationEachRowChangeEvent" msprop:Generator_RowEvHandlerName="TblConsultationEachRowChangeEventHandler" msprop:Generator_TableClassName="TblConsultationEachDataTable" msprop:Generator_TableVarName="tableTblConsultationEach" msprop:Generator_RowDeletingName="TblConsultationEachRowDeleting" msprop:Generator_TablePropName="TblConsultationEach">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberConsultaint" msdata:ReadOnly="true" msprop:Generator_UserColumnName="NumberConsultaint" msprop:Generator_ColumnPropNameInRow="NumberConsultaint" msprop:Generator_ColumnVarNameInTable="columnNumberConsultaint" msprop:Generator_ColumnPropNameInTable="NumberConsultaintColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Province" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Province" msprop:Generator_ColumnPropNameInRow="Province" msprop:Generator_ColumnVarNameInTable="columnProvince" msprop:Generator_ColumnPropNameInTable="ProvinceColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Months" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Months" msprop:Generator_ColumnPropNameInRow="Months" msprop:Generator_ColumnVarNameInTable="columnMonths" msprop:Generator_ColumnPropNameInTable="MonthsColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="District" msdata:ReadOnly="true" msprop:Generator_UserColumnName="District" msprop:Generator_ColumnPropNameInRow="District" msprop:Generator_ColumnVarNameInTable="columnDistrict" msprop:Generator_ColumnPropNameInTable="DistrictColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
